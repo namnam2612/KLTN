@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --color-background: #121314;
+  --color-surface: #121314;
+  --color-surface-container-lowest: #0d0e0f;
+  --color-surface-container-low: #1b1c1d;
+  --color-surface-container: #1f2021;
+  --color-surface-container-high: #292a2b;
+  --color-surface-container-highest: #343536;
+  --color-surface-variant: #343536;
+  
+  --color-primary: #adc6ff;
+  --color-primary-container: #2a73e1;
+  --color-on-primary: #002e69;
+  --color-on-primary-container: #ffffff;
+  
+  --color-secondary: #a8c8ff;
+  --color-secondary-container: #114784;
+  --color-on-secondary: #003061;
+  --color-on-secondary-container: #8cb6fb;
+  
+  --color-tertiary: #ffb691;
+  --color-tertiary-container: #c55500;
+  
+  --color-on-surface: #e3e2e3;
+  --color-on-surface-variant: #c1c6d6;
+  
+  --color-outline: #8b909f;
+  --color-outline-variant: #414754;
+
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;600;700;800&display=swap');
+
+  body {
+    @apply bg-background text-on-surface font-body selection:bg-primary/30;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-surface-container-highest/70 backdrop-blur-3xl border border-white/5 shadow-2xl;
+  }
+  
+  .loom-progress {
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-tertiary), var(--color-primary));
+    background-size: 200% 100%;
+    animation: loom 3s ease-in-out infinite;
+  }
+
+  @keyframes loom {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
