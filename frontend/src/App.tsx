@@ -29,6 +29,7 @@ import {
   LogOut,
   Shield
 } from 'lucide-react';
+import { askQuestion } from './services/chatApi';
 import { motion, AnimatePresence } from 'motion/react';
 import { useState, useRef, useEffect } from 'react';
 import Markdown from 'react-markdown';
@@ -66,51 +67,52 @@ export default function App() {
   }, [messages]);
 
   const handleSendMessage = async () => {
-    if (!input.trim() || isTyping) return;
+  if (!input.trim() || isTyping) return;
 
-    const currentInput = input;
-    setInput('');
-    
-    // Thêm tin nhắn của user vào UI ngay lập tức
-    const userMessage: Message = { role: 'user', content: currentInput };
-    setMessages(prev => [...prev, userMessage]);
-    
-    // Khóa input để người dùng phải chờ server xử lý xong
-    setIsTyping(true);
+  const currentInput = input;
+  setInput('');
 
-    try {
-      // Sử dụng kho dữ liệu nội bộ hoặc mock responses
-      const defaultResponses = [
-        "That's an interesting question. I'd be happy to help you with that.",
-        "I understand what you're asking. Here's how I would approach it: ...",
-        "Great point! Let me provide some insight on this topic.",
-        "I can help you explore this further. Consider the following aspects:"
-      ];
-      
-      // Nếu có file được upload, có thể xử lý từ file; Nếu không, dùng mock responses
-      const mockContent = knowledgeBase.length > 0 
-        ? `Based on the uploaded documents: ${input}`
-        : defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
-      
-      let aiContent = "";
-      setMessages(prev => [...prev, { role: 'model', content: '' }]);
+  // Hiển thị tin nhắn user ngay
+  const userMessage: Message = { role: 'user', content: currentInput };
+  setMessages(prev => [...prev, userMessage]);
 
-      for (let i = 0; i < mockContent.length; i++) {
-        await new Promise(resolve => setTimeout(resolve, 30)); 
-        aiContent += mockContent[i];
-        setMessages(prev => {
-          const newMessages = [...prev];
-          newMessages[newMessages.length - 1] = { role: 'model', content: aiContent };
-          return newMessages;
-        });
-      }
-    } catch (error) {
-      console.error("API Error:", error);
-      setMessages(prev => [...prev, { role: 'model', content: "I encountered an error while processing your request. Please try again." }]);
-    } finally {
-      setIsTyping(false); // Mở khóa input khi chatbot đã trả lời xong
+  // Khóa input trong lúc chờ AI
+  setIsTyping(true);
+
+  try {
+    // Gọi backend thật
+    const data = await askQuestion(currentInput);
+    const answer = data.answer || 'Không có câu trả lời từ hệ thống.';
+
+    let aiContent = '';
+    setMessages(prev => [...prev, { role: 'model', content: '' }]);
+
+    for (let i = 0; i < answer.length; i++) {
+      await new Promise(resolve => setTimeout(resolve, 15));
+      aiContent += answer[i];
+
+      setMessages(prev => {
+        const newMessages = [...prev];
+        newMessages[newMessages.length - 1] = {
+          role: 'model',
+          content: aiContent
+        };
+        return newMessages;
+      });
     }
-  };
+  } catch (error) {
+    console.error('API Error:', error);
+    setMessages(prev => [
+      ...prev,
+      {
+        role: 'model',
+        content: 'Đã có lỗi khi gọi backend AI.'
+      }
+    ]);
+  } finally {
+    setIsTyping(false);
+  }
+};
 
   
   const handleSuggestionClick = (suggestion: string) => {
