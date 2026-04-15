@@ -1,4 +1,5 @@
 import json
+import re
 from pathlib import Path
 
 from app.core.config import settings
@@ -29,9 +30,77 @@ def infer_category_and_subcategory(source_file: str) -> tuple[str, str]:
     return "unknown", "unknown"
 
 
-def build_search_text(source_file: str, page_text: str) -> str:
+def infer_document_type(category: str, sub_category: str, filename: str) -> str:
+    filename_lower = filename.lower()
+
+    if sub_category == "quy_trinh_hoc_vu":
+        return "quy_trinh_hoc_vu"
+    if sub_category == "thuc_tap_kltn":
+        return "thuc_tap_kltn"
+    if sub_category == "quy_doi_chung_chi_diem":
+        return "quy_doi_chung_chi_diem"
+    if category == "quy_che":
+        return "quy_che"
+    if category == "so_tay":
+        return "so_tay"
+    if category == "ctdt":
+        return "ctdt"
+    if category == "ke_hoach":
+        return "ke_hoach"
+
+    if "quy đổi" in filename_lower:
+        return "quy_doi_chung_chi_diem"
+
+    return "general"
+
+
+def split_by_structure(text: str, document_type: str):
+    text = text.strip()
+    if not text:
+        return []
+
+    patterns = {
+        "quy_trinh_hoc_vu": r"(?=(Bước\s+\d+[:.]|BƯỚC\s+\d+[:.]|Hồ sơ gồm[:]?|Mẫu đơn[:]?))",
+        "thuc_tap_kltn": r"(?=(Bước\s+\d+[:.]|BƯỚC\s+\d+[:.]|Hồ sơ gồm[:]?|Phiếu[:]?|Mẫu[:]?|Quy trình[:]?))",
+        "quy_doi_chung_chi_diem": r"(?=(\d+\.\d+\.\s|IELTS|TOEIC|TOEFL|HSK|TOPIK|JLPT|Chứng chỉ))",
+        "quy_che": r"(?=(Điều\s+\d+[.:]?|Chương\s+[IVXLC0-9]+))",
+        "so_tay": r"(?=(Điều\s+\d+[.:]?|Chương\s+[IVXLC0-9]+|MỤC\s+\d+[.:]?))",
+        "ctdt": r"(?=(CHƯƠNG TRÌNH ĐÀO TẠO|Học phần|Khối kiến thức|Mã học phần))",
+        "ke_hoach": r"(?=(Học kỳ\s+[IVXLC0-9]+|Tuần\s+\d+|THỜI GIAN HỌC TẬP))",
+    }
+
+    pattern = patterns.get(document_type)
+    if not pattern:
+        return []
+
+    parts = re.split(pattern, text)
+    merged = []
+
+    current = ""
+    for part in parts:
+        if not part or not part.strip():
+            continue
+        if re.match(pattern, part.strip()):
+            if current.strip():
+                merged.append(current.strip())
+            current = part.strip()
+        else:
+            current += "\n" + part.strip()
+
+    if current.strip():
+        merged.append(current.strip())
+
+    return [p for p in merged if len(p.strip()) > 50]
+
+
+def extract_section_title(chunk_text: str) -> str:
+    first_line = chunk_text.strip().splitlines()[0].strip()
+    return first_line[:200]
+
+
+def build_search_text(source_file: str, page_text: str, section_title: str) -> str:
     filename = Path(source_file).stem
-    boosted = f"{filename}\n{filename}\n{page_text}"
+    boosted = f"{filename}\n{section_title}\n{page_text}"
     return boosted.strip()
 
 
@@ -48,25 +117,35 @@ def main():
         source_file = data["source_file"]
         filename = Path(source_file).name
         category, sub_category = infer_category_and_subcategory(source_file)
+        document_type = infer_document_type(category, sub_category, filename)
 
         for page in data["pages"]:
             page_text = page.get("text", "").strip()
             if not page_text:
                 continue
 
-            search_text = build_search_text(source_file, page_text)
-            chunks = splitter.split_text(search_text)
+            structured_chunks = split_by_structure(page_text, document_type)
 
-            for idx, chunk in enumerate(chunks):
+            if structured_chunks:
+                chunks = structured_chunks
+            else:
+                chunks = splitter.split_text(page_text)
+
+            for idx, raw_chunk in enumerate(chunks):
+                section_title = extract_section_title(raw_chunk)
+                search_text = build_search_text(source_file, raw_chunk, section_title)
+
                 all_chunks.append({
                     "id": f"{json_file.stem}_p{page['page']}_{idx}",
-                    "text": chunk,
+                    "text": search_text,
                     "metadata": {
                         "source_file": source_file,
                         "filename": filename,
                         "page": page["page"],
                         "category": category,
                         "sub_category": sub_category,
+                        "document_type": document_type,
+                        "section_title": section_title,
                     }
                 })
 
