@@ -1,0 +1,1101 @@
+﻿category,question,answer,sources,correct,notes
+QUY_TRINH_HOC_VU,nghỉ học tạm thời,Không tìm thấy thông tin phù hợp trong tài liệu.,[PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 1) | [PHỤ LỤC 18] THỦ TỤC CHUYỂN CƠ SỞ ĐÀO TẠO.pdf (trang 1) | [PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 2),0.0,sai; có tài liệu nhưng trả không tìm thấy
+QUY_TRINH_HOC_VU,hồ sơ nghỉ học tạm thời gồm gì,"Hồ sơ nghỉ học tạm thời gồm:
+- Đơn đăng ký nghỉ học tạm thời và bảo lưu kết quả học tập có xác nhận của cố vấn học tập (01 bản gốc);
+- Bảng điểm học tập (tính đến học kỳ gần nhất);
+- Giấy xác nhận không nợ sách thư viện;
+- Bản sao lệnh gọi nghĩa vụ quân sự hoặc photo giấy xác nhận của bệnh viện (có bản gốc đối chiếu) đối với người học được gọi nghĩa vụ quân sự và người học.
+
+Nguồn:
+- [PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC (trang 2)",[PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 2) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 2) | [PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 3),1.0,đúng; nêu đủ hồ sơ chính
+QUY_TRINH_HOC_VU,điều kiện nghỉ học tạm thời là gì,"Các điều kiện nghỉ học tạm thời bao gồm:
+- Sinh viên đăng ký nghỉ học tạm thời mà đã đăng ký học, phải hoàn thành học phí theo quy định.
+- Thời gian nghỉ học tạm thời vì lý do cá nhân không quá 1 năm và chỉ được 1 lần trong một chương trình đào tạo.
+
+Nguồn:
+- [PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 2)",[PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 2) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 2) | [PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 1),1.0,đúng; nêu điều kiện/lưu ý chính
+QUY_TRINH_HOC_VU,thời gian tối đa được phép nghỉ học tạm thời là bao lâu,"Lỗi khi gọi API: HTTPConnectionPool(host='127.0.0.1', port=8010): Read timed out. (read timeout=120)",,0.0,"timeout API, chưa có câu trả lời"
+QUY_TRINH_HOC_VU,"tôi bị ốm phải nhập viện 1 tháng, giờ xin bảo lưu thì cần giấy tờ gì của bệnh viện","Bạn cần nộp các giấy tờ sau:
+
+- Đơn đăng ký nghỉ học tạm thời và bảo lưu kết quả học tập có xác nhận của cố vấn học tập (1 bản gốc)  
+- Bảng điểm học tập tính đến học kỳ gần nhất (in tại Phòng Tiếp sinh viên)  
+- Giấy xác nhận không nợ sách thư viện  
+- Bản sao lệnh gọi nghĩa vụ quân sự hoặc photo giấy xác nhận của bệnh viện (có bản gốc đối chiếu)  
+
+Nguồn:  
+- Tài liệu 1 (Trang 2)",[PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 2) | SỔ TAY SINH VIÊN K38.pdf (trang 10) | SỔ TAY SINH VIÊN K38.pdf (trang 121),1.0,đúng; trả đúng giấy tờ bệnh viện và hồ sơ liên quan
+QUY_TRINH_HOC_VU,đang trong thời gian bảo lưu có được đăng ký tín chỉ kỳ tiếp theo không,"Không tìm thấy thông tin phù hợp trong tài liệu.  
+
+Nguồn:  
+- Tài liệu 1 (trang 3)  
+- Tài liệu 2 (trang 36)",SỔ TAY SINH VIÊN K38.pdf (trang 36) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 3) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 3),0.5,đúng một phần; fallback an toàn nhưng chưa trả lời trực tiếp
+QUY_TRINH_HOC_VU,quay trở lại học cần những gì,Không tìm thấy thông tin phù hợp trong tài liệu.,[PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1).pdf (trang 1) | [PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 1) | [PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 1),0.0,sai; có tài liệu về quay trở lại học nhưng trả không tìm thấy
+QUY_TRINH_HOC_VU,thủ tục xin tiếp tục học tập sau khi hết hạn bảo lưu chậm nhất là khi nào,Không tìm thấy thông tin phù hợp trong tài liệu.,SỔ TAY SINH VIÊN K38.pdf (trang 32) | SỔ TAY SINH VIÊN K38.pdf (trang 30) | SỔ TAY SINH VIÊN K38.pdf (trang 17),0.5,đúng một phần; fallback an toàn nhưng chưa đủ thông tin
+QUY_TRINH_HOC_VU,chuyển cơ sở đào tạo cần hồ sơ gì,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Trong ngữ cảnh chỉ có thông tin về **chuyển chương trình/ngành đào tạo** (chuyển ngành trong trường), không có thông tin về chuyển cơ sở đào tạo.
+
+Nguồn:
+- [PHỤ LỤC 17] QUY TRÌNH CHUYỂN CHƯƠNG TRÌNH.pdf (Trang 2)
+- SỔ TAY SINH VIÊN K38.pdf (Trang 110)",[PHỤ LỤC 17] QUY TRÌNH CHUYỂN CHƯƠNG TRÌNH.pdf (trang 2) | SỔ TAY SINH VIÊN K38.pdf (trang 110) | [PHỤ LUC 19] THỦ TỤC THỰC HIỆN ĐĂNG KÝ HỌC CHƯƠNG TRÌNH THỨ HAI.pdf (trang 2),0.0,sai; có phụ lục 18 nhưng retrieval lệch
+QUY_TRINH_HOC_VU,chuyển ngành cần những bước nào,"- Nguồn: Tài liệu 1 và 2  
+
+Nguồn: - Tên file (trang X)","[PHỤ LỤC 12] QUY TRÌNH NHẬN, XỬ LÝ VÀ SỬA ĐIỂM QUÁ TRÌNH, ĐIỂM THI_HUNG (1).pdf (trang 2) | [PHỤ LỤC 12] QUY TRÌNH NHẬN, XỬ LÝ VÀ SỬA ĐIỂM QUÁ TRÌNH, ĐIỂM THI_HUNG (1).pdf (trang 1) | [PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 6)",0.0,"sai; answer lỗi prompt, không có nội dung"
+QUY_TRINH_HOC_VU,cpa dưới 2.0 có được làm đơn xin chuyển từ ngành kế toán sang khoa học máy tính không,"Khôngtìm thấy thông tin phù hợp trong tài liệu.  
+Nguồn: [PHỤ LỤC 17] (trang 2) và [PHỤ LỤC 15] (trang 1).",[PHỤ LỤC 17] QUY TRÌNH CHUYỂN CHƯƠNG TRÌNH.pdf (trang 2) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 1) | SỔ TAY SINH VIÊN K38.pdf (trang 33),0.5,đúng một phần; fallback an toàn cho câu tình huống chưa có dữ kiện đủ
+QUY_TRINH_HOC_VU,chuyển chương trình học cần gì,"-Đơn đăng ký chuyển chương trình/ngành (theo mẫu) với ý kiến đồng ý từ trưởng khoa/bộ môn hiện tại và chuyển đến.  
+- Bảng kết quả học tập (tính đến học kỳ gần nhất).  
+- Giấy báo trúng tuyển của chương trình/ngành đang theo học (1 bản photo).  
+
+Nguồn: [PHỤ LỤC 17] QUY TRÌNH CHUYỂN CHƯƠNG TRÌNH.pdf | Trang: 2",[PHỤ LỤC 17] QUY TRÌNH CHUYỂN CHƯƠNG TRÌNH.pdf (trang 2) | [PHỤ LUC 19] THỦ TỤC THỰC HIỆN ĐĂNG KÝ HỌC CHƯƠNG TRÌNH THỨ HAI.pdf (trang 3) | [PHỤ LỤC 17] QUY TRÌNH CHUYỂN CHƯƠNG TRÌNH.pdf (trang 3),1.0,đúng; nêu đúng hồ sơ chính để chuyển chương trình
+QUY_TRINH_HOC_VU,điều kiện để học cùng lúc hai chương trình song bằng,"- Đã được xếp trình độ năm thứ hai của chương trình thứ nhất và còn thời gian học chương trình thứ hai;  
+- Tại thời điểm đăng ký, sinh viên phải đáp ứng **một** trong các điều kiện sau:  
+  a) Điểm trung bình tích lũy của chương trình thứ nhất xếp loại khá trở lên và đáp ứng ngưỡng bảo đảm chất lượng của chương trình thứ hai trong cùng năm tuyển sinh;  
+  b) Điểm trung bình tích lũy của chương trình thứ nhất xếp loại trung bình và đáp ứng điều kiện trúng tuyển của chương trình thứ hai trong cùng năm tuyển sinh;  
+  c) Được sự đồng ý của Trưởng Khoa/Bộ môn phụ trách chương trình thứ hai.  
+
+Nguồn:
+- SỔ TAY SINH VIÊN K38.pdf (trang 36)",SỔ TAY SINH VIÊN K38.pdf (trang 36) | [PHỤ LUC 19] THỦ TỤC THỰC HIỆN ĐĂNG KÝ HỌC CHƯƠNG TRÌNH THỨ HAI.pdf (trang 1) | SỔ TAY SINH VIÊN K38.pdf (trang 37),1.0,đúng; nêu khá đầy đủ điều kiện học chương trình 2
+QUY_TRINH_HOC_VU,khi nào bị cảnh báo học tập,"Nguồn: [PHỤ LỤC 14]  
+- Sinh viên bị cảnh báo học tập/buộc thôi học (dự kiến)  
+
+*Nguyên nhân: Dựa trên thông tin trực tiếp trong tài liệu, chỉ liệt kê các mức xuất hiện được nêu trực tiếp.*","[PHỤ LỤC 14] QUY TRÌNH XÉT CẢNH BÁO HỌC TẬP, BUỘC THÔI HỌC.pdf (trang 2) | [PHỤ LỤC 14] QUY TRÌNH XÉT CẢNH BÁO HỌC TẬP, BUỘC THÔI HỌC.pdf (trang 2) | [PHỤ LỤC 14] QUY TRÌNH XÉT CẢNH BÁO HỌC TẬP, BUỘC THÔI HỌC.pdf (trang 2)",0.5,đúng một phần; có nguồn đúng nhưng không nêu điều kiện cụ thể
+QUY_TRINH_HOC_VU,bị cảnh báo học tập mức 2 thì sẽ ra sao,"Sinh viên bị cảnh báo học tập mức 2 sẽ được liệt kê trong danh sách sinh viên bị cảnh báo học tập/buộc thôi học. Quá trình bao gồm:
+- Phòng Đào tạo lập danh sách dựa trên kết quả học tập và quy định của Quy chế đào tạo trình độ đại học hiện hành.
+- Danh sách được rà soát và gửi về khoa/bộ môn.
+- Khoa/bộ môn xác nhận và phản hồi lại cho Phòng Đào tạo trong 02 ngày làm việc.
+- Phòng Đào tạo tổng hợp lại và gửi danh sách cuối cùng về Phòng Công tác Chính trị - Sinh viên.
+
+Nguồn:
+- [PHỤ LỤC 14] QUY TRÌNH XÉT CẢNH BÁO HỌC TẬP, BUỘC THÔI HỌC.pdf (Trang 2)","[PHỤ LỤC 14] QUY TRÌNH XÉT CẢNH BÁO HỌC TẬP, BUỘC THÔI HỌC.pdf (trang 2) | [PHỤ LỤC 14] QUY TRÌNH XÉT CẢNH BÁO HỌC TẬP, BUỘC THÔI HỌC.pdf (trang 2) | [PHỤ LUC 19] THỦ TỤC THỰC HIỆN ĐĂNG KÝ HỌC CHƯƠNG TRÌNH THỨ HAI.pdf (trang 1)",0.5,đúng một phần; mô tả quy trình xử lý hơn là hậu quả mức 2
+QUY_TRINH_HOC_VU,3 kỳ liên tiếp bị cảnh báo học tập có bị buộc thôi học không,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Nguồn:
+- [PHỤ LỤC 14] QUY TRÌNH XÉT CẢNH BÁO HỌC TẬP, BUỘC THÔI HỌC.pdf (trang 2)","[PHỤ LỤC 14] QUY TRÌNH XÉT CẢNH BÁO HỌC TẬP, BUỘC THÔI HỌC.pdf (trang 2) | [PHỤ LỤC 14] QUY TRÌNH XÉT CẢNH BÁO HỌC TẬP, BUỘC THÔI HỌC.pdf (trang 2) | [PHỤ LỤC 14] QUY TRÌNH XÉT CẢNH BÁO HỌC TẬP, BUỘC THÔI HỌC.pdf (trang 3)",0.5,"đúng một phần; fallback an toàn, chưa kết luận rõ"
+QUY_TRINH_HOC_VU,thủ tục xét tốt nghiệp gồm những bước nào,"- Bước1.1. Thông báo nhận hồ sơ tốt nghiệp  
+- Bước 5: Họp Hội đồng xét tốt nghiệp  
+
+Nguồn:
+- PHỤ LỤC 15 QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 1)  
+- PHỤ LỤC 15 QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 2)",[PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 2) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 1) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 2),0.5,đúng một phần; nêu được vài bước nhưng chưa đầy đủ toàn quy trình
+QUY_TRINH_HOC_VU,chưa có chứng chỉ thể dục có được nộp hồ sơ xét tốt nghiệp không,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Nguồn:
+- Tài liệu 1 (PHỤ LỤC 15) QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf | Trang: 3
+- Tài liệu 2 (PHỤ LỤC 15) QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf | Trang: 2",[PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 1) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 3) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 2),0.5,"đúng một phần; fallback an toàn, chưa đủ căn cứ"
+QUY_TRINH_HOC_VU,quy trình sửa điểm quá trình và điểm thi như thế nào,"- Xử lý điểm chuyên cần theo quy trình được cung cấp.
+
+Nguồn: [Tài liệu 1]
+
+Cập nhật:
+Không tìm thấy thông tin phù hợp trong tài liệu.","[PHỤ LỤC 12] QUY TRÌNH NHẬN, XỬ LÝ VÀ SỬA ĐIỂM QUÁ TRÌNH, ĐIỂM THI_HUNG (1).pdf (trang 2) | [PHỤ LỤC 12] QUY TRÌNH NHẬN, XỬ LÝ VÀ SỬA ĐIỂM QUÁ TRÌNH, ĐIỂM THI_HUNG (1).pdf (trang 2) | [PHỤ LỤC 18] THỦ TỤC CHUYỂN CƠ SỞ ĐÀO TẠO.pdf (trang 1)",0.0,"sai; trả lời mơ hồ, không nêu quy trình đúng"
+QUY_TRINH_HOC_VU,"xin cấp bản sao bảng điểm hệ 4 ở đâu, mất phí bao nhiêu",Không tìm thấy thông tin phù hợp trong tài liệu.,[PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 5) | [PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 1) | [PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 4),1.0,đúng; không thấy thông tin trong tài liệu
+QUY_TRINH_HOC_VU,thủ tục xin giấy chứng nhận sinh viên để hoãn nghĩa vụ quân sự,"- Đăng ký nghỉ họctạm thời và bảo lưu kết quả học tập (theo mẫu đăng ký);
+- Cung cấp bảng điểm học tập tính đến học kỳ gần nhất;
+- Cung cấp giấy xác nhận không nợ sách thư viện;
+- Đính kèm bản sao lệnh gọi nghĩa vụ quân sự hoặc photo giấy xác nhận bệnh viện (có bản gốc đối chiếu) nếu là sinh viên được gọi nghĩa vụ quân sự.
+
+Nguồn:
+- [PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC (trang 2)",SỔ TAY SINH VIÊN K38.pdf (trang 35) | [PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 2) | SỔ TAY SINH VIÊN K38.pdf (trang 34),0.0,"sai; trả lẫn sang nghỉ học tạm thời, không đúng câu hỏi"
+QUY_TRINH_HOC_VU,làm lại thẻ sinh viên bị mất tốn bao lâu,Không tìm thấy thông tin phù hợp trong tài liệu.,SỔ TAY SINH VIÊN K38.pdf (trang 32) | SỔ TAY SINH VIÊN K38.pdf (trang 30) | SỔ TAY SINH VIÊN K38.pdf (trang 35),1.0,đúng; không thấy thông tin trong tài liệu
+QUY_TRINH_HOC_VU,cách tính điểm trung bình chung tích lũy cpa hệ 4 và hệ 10,"Công thức tính điểm trung bình chung tích lũy (CPA) hệ 4 và hệ 10 trong tài liệu được đưa ra như sau:
+
+- **Với hệ điểm 4 (thang 4.0)**:
+  - Dùng trực tiếp điểm số (a_i) trên thang 4.
+
+- **Với hệ điểm 10**:
+  - Phải quy đổi điểm chữ của mỗi học phần qua thang điểm 4 theo bảng quy đổi (mức điểm chữ không nêu cụ thể trong đoạn trích, nên chỉ dùng thông tin trực tiếp: ""mức điểm chữ của mỗi học phần phải được quy đổi qua thang điểm 4"").
+  - Sau đó áp dụng công thức tương tự như trên thang 4.
+
+Công thức chung (áp dụng cho cả hệ 4 và hệ 10 sau khi quy đổi):
+- \( A = \frac{\sum (a_i \times n_i)}{\sum n_i} \)
+- Trong đó:
+  - \( a_i \): điểm của học phần thứ i (theo thang điểm 4 sau khi quy đổi nếu cần).
+  - \( n_i \): số tín chỉ của học phần thứ i.
+  - \( n \): tổng số học phần (không kể các môn học Giáo dục thể chất và Giáo dục quốc phòng và an ninh).
+
+Yêu cầu quan trọng:
+- Chỉ dùng thông tin trực tiếp trong ngữ cảnh.
+- Điểm trung bình được làm tròn đến hai chữ số thập phân.
+
+Nguồn:
+- SỔ TAY SINH VIÊN K38.pdf (trang 31)",SỔ TAY SINH VIÊN K38.pdf (trang 31) | SỔ TAY SINH VIÊN K38.pdf (trang 31) | SỔ TAY SINH VIÊN K38.pdf (trang 26),1.0,đúng; có công thức tính CPA trong tài liệu
+QUY_TRINH_HOC_VU,quy trình khiếu nại điểm thi phúc khảo bài thi mất bao lâu thì có kết quả,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Cách trả lời:
+- Thông báo đã được nhận và xác nhận.
+
+Nguồn: [Tài liệu 1]",[PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 2) | SỔ TAY SINH VIÊN K38.pdf (trang 30) | [PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 2),0.5,đúng một phần; fallback an toàn nhưng answer bị lẫn prompt
+QUY_TRINH_HOC_VU,"hủy học phần đã đăng ký như thế nào, có được hoàn tiền không","Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Nguồn:
+- PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 1)
+- SỔ TAY SINH VIÊN K38.pdf (trang 29)",SỔ TAY SINH VIÊN K38.pdf (trang 29) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 3) | [PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 1),0.5,"đúng một phần; fallback an toàn, chưa trả lời trực tiếp"
+QUY_TRINH_HOC_VU,thủ tục xin chuyển lớp tín chỉ sau khi hệ thống đã đóng,Không tìm thấy thông tin phù hợp trong tài liệu.,SỔ TAY SINH VIÊN K38.pdf (trang 106) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 3) | SỔ TAY SINH VIÊN K38.pdf (trang 36),1.0,đúng; không thấy thông tin trong tài liệu
+THUC_TAP_KLTN,đăng ký thực tập tốt nghiệp,"## Thủ tục đăng ký thực tập tốt nghiệp
+
+**Điều kiện đăng ký:**
+- Sinh viên đã tích luỹ từ 75% tổng khối lượng tín chỉ của CTĐT (bao gồm các học phần cốt lõi thuộc CTĐT), được khoa/bộ môn xác nhận trong đề cương chi tiết học phần
+- Sinh viên đăng ký học phần thực tập tốt nghiệp tại phần mềm trên Cổng đăng ký học của Trường và hoàn thành học phí theo quy định của Trường
+- Có xác nhận của cơ sở thực tập tiếp nhận và đã cử người hướng dẫn sinh viên tại cơ sở thực tập (do khoa/bộ môn giới thiệu hoặc sinh viên tự liên hệ)
+
+**Quy trình:**
+- Khoa/bộ môn kiểm tra điều kiện, xác nhận và đề xuất giảng viên hướng dẫn sinh viên thực tập, trình Hiệu trưởng phê duyệt quyết định danh sách sinh viên thực tập tốt nghiệp (thông qua Phòng Đào tạo)
+
+Nguồn:
+- [PHỤ LỤC 2] THỦ TỤC ĐĂNG KÝ THỰC TẬP TỐT NGHIỆP (1).pdf (trang 1)",[PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 1) | [PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 1) | [PHỤ LỤC 2] THỦ TỤC ĐĂNG KÝ THỰC TẬP TỐT NGHIỆP (1).pdf (trang 1),1.0,đúng; trả đúng thủ tục/điều kiện chính
+THUC_TAP_KLTN,điều kiện sinh viên đăng ký thực tập tốt nghiệp,"Điều kiện sinh viên đăng ký thực tập tốt nghiệp:
+- Sinh viên đã tích luỹ từ 75% tổng khối lượng tín chỉ của chương trình đào tạo (bao gồm các học phần cốt lõi thuộc chương trình đào tạo), được khoa/bộ môn xác nhận trong đề cương chi tiết học phần.
+- Sinh viên đăng ký học phần thực tập tốt nghiệp tại phần mềm trên Cổng đăng ký học của Trường và hoàn thành học phí theo quy định của Trường.
+- Có xác nhận của cơ sở thực tập tiếp nhận và đã cử người hướng dẫn sinh viên tại cơ sở thực tập (do khoa/bộ môn giới thiệu hoặc sinh viên tự liên hệ).
+
+Nguồn:
+- [PHỤ LỤC 2] THỦ TỤC ĐĂNG KÝ THỰC TẬP TỐT NGHIỆP (1).pdf (trang 1)",[PHỤ LỤC 2] THỦ TỤC ĐĂNG KÝ THỰC TẬP TỐT NGHIỆP (1).pdf (trang 1) | [PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 2) | [PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 1),1.0,đúng; nêu đúng điều kiện thực tập tốt nghiệp
+THUC_TAP_KLTN,còn nợ 2 môn chuyên ngành có được đi thực tập tốt nghiệp không,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Tài liệu chỉ nêu điều kiện sinh viên đăng ký thực tập tốt nghiệp là:
+- Tích luỹ từ 75% tổng khối lượng tín chỉ của CTĐT (bao gồm các học phần cốt lõi)
+- Hoàn thành học phí theo quy định
+- Có xác nhận của cơ sở thực tập
+
+Tài liệu không đề cập đến trường hợp sinh viên còn nợ môn chuyên ngành.
+
+Nguồn:
+- File: [PHỤ LỤC 2] THỦ TỤC ĐĂNG KÝ THỰC TẬP TỐT NGHIỆP (1).pdf (Trang 1)",[PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1).pdf (trang 1) | [PHỤ LỤC 2] THỦ TỤC ĐĂNG KÝ THỰC TẬP TỐT NGHIỆP (1).pdf (trang 1) | [PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 1),0.5,đúng một phần; suy luận hợp lý từ điều kiện 75% tín chỉ nhưng không trả trực diện
+THUC_TAP_KLTN,hướng dẫn thực tập tốt nghiệp,Không tìm thấy thông tin phù hợp trong tài liệu.,[PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 1) | [PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 1) | [PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 8),0.0,sai; có thông tin hướng dẫn nhưng trả không tìm thấy
+THUC_TAP_KLTN,hồ sơ thực tập tốt nghiệp gồm gì,"Dựa trên ngữ cảnh, hồ sơ thực tập tốt nghiệp gồm:
+
+- Nhật ký thực tập
+- Báo cáo thực tập
+- Cả hai tài liệu trên phải có xác nhận của cơ sở thực tập
+
+Nguồn:
+- Tài liệu 1 (Phụ lục 2) Trang: 1",[PHỤ LỤC 2] THỦ TỤC ĐĂNG KÝ THỰC TẬP TỐT NGHIỆP (1).pdf (trang 1) | [PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 3) | [PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 1),0.5,đúng một phần; nêu tài liệu thực tập nhưng chưa chắc đúng 'hồ sơ' chính thức
+THUC_TAP_KLTN,xin giấy giới thiệu thực tập của trường có cần dấu xác nhận của công ty trước không,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Nguồn:
+- [PHỤ LỤC 2] THỦ TỤC ĐĂNG KÝ THỰC TẬP TỐT NGHIỆP (1).pdf (trang 1)",[PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 7) | [PHỤ LỤC 2] THỦ TỤC ĐĂNG KÝ THỰC TẬP TỐT NGHIỆP (1).pdf (trang 1) | [PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 2),1.0,đúng; không thấy thông tin trong tài liệu
+THUC_TAP_KLTN,công ty startup không có dấu mộc tròn thì có được chấp nhận làm nơi thực tập không,Không tìm thấy thông tin phù hợp trong tài liệu.,[PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1).pdf (trang 1) | [PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 6) | [PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 1),1.0,đúng; không thấy thông tin trong tài liệu
+THUC_TAP_KLTN,quy trình đánh giá khóa luận tốt nghiệp,"Quy trình đánh giá khóa luận tốt nghiệp bao gồm các bước sau:
+
+- Đánh giá KLTN được căn cứ vào các tiêu chí do khoa/bộ môn quyết định nhưng phải gồm: kết quả thực hiện đề tài khóa luận; hình thức trình bày báo cáo khóa luận; phần trình bày bảo vệ khóa luận trước hội đồng.
+- Từng thành viên hội đồng đánh giá KLTN theo thang điểm 10, có thể lẻ đến 01 chữ số thập phân. Điểm của từng thành viên trong hội đồng không được lệch so với điểm trung bình cộng của các thành viên hội đồng quá 02 điểm, hoặc chênh lệch điểm giữa các thành viên hội đồng không được vượt quá 03 điểm. Nếu xảy ra trường hợp này, chủ tịch hội đồng triệu tập cuộc họp giữa các thành viên hội đồng và thống nhất cách xử lý.
+- Điểm đánh giá khóa luận tốt nghiệp là trung bình cộng điểm chấm của các thành viên hội đồng, làm tròn đến 01 chữ số lẻ.
+- Hội đồng tổng kết kết quả bảo vệ, hoàn tất hồ sơ bảo vệ và công bố kết quả cho sinh viên vào cuối buổi bảo vệ.
+
+Nguồn:
+- [PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 2)",[PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 1) | [PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 2) | [PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 8),1.0,đúng; nêu được quy trình đánh giá KLTN
+THUC_TAP_KLTN,thay đổi người hướng dẫn khóa luận tốt nghiệp,"Điều kiện thay đổi người hướng dẫn khóa luận tốt nghiệp:
+- Sinh viên chỉ được đề nghị thay đổi người hướng dẫn nếu sau 01 tháng kể từ ngày được phê duyệt, giao đề tài mà sinh viên không liên hệ được với người hướng dẫn hoặc người hướng dẫn không hướng dẫn thực hiện đề tài khóa luận tốt nghiệp cho sinh viên với lý do chính đáng (Ví dụ: lý do sức khỏe, chuyên môn, điều kiện công tác…).
+
+Thủ tục thay đổi:
+- Sinh viên nộp đơn (theo mẫu dưới đây) điền đầy đủ thông tin nộp bản cứng về khoa/bộ môn để được giải quyết.
+- Thời gian giải quyết trong 07 ngày làm việc nếu sinh viên nộp đơn hợp lệ.
+
+Nguồn:
+- [PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1).pdf (trang 1)",[PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1).pdf (trang 1) | [PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 8) | [PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 1),1.0,đúng; nêu điều kiện thay đổi người hướng dẫn
+THUC_TAP_KLTN,giảng viên thỉnh giảng có được hướng dẫn khóa luận tốt nghiệp không,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Nguồn:
+- [PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1).pdf (Trang 1)
+- [PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (Trang 8)",[PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 8) | [PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 1) | [PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1).pdf (trang 1),1.0,đúng; không thấy thông tin rõ trong tài liệu
+THUC_TAP_KLTN,thể thức trình bày khóa luận tốt nghiệp,Không tìm thấy thông tin phù hợp trong tài liệu.,[PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 1) | [PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 8) | [PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1).pdf (trang 1),0.0,sai; có phụ lục 7 nhưng trả không tìm thấy
+THUC_TAP_KLTN,quy định về trích dẫn tài liệu tham khảo trong quyển khóa luận,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+[PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC
+PHỤ LỤC
+PHỤ LỤC
+(Kèm theo Quy định về thể thức trình bày khóa luận tốt nghiệp trình độ đại học)
+
+I. Hướng dẫn cách trích dẫn và liệt kê tài liệu tham khảo
+1. Hình thức trích dẫn tài liệu tham khảo
+Có 3 hình thức trích dẫn:
+- Trích dẫn trực tiếp là trích dẫn nguyên văn một phần câu, một câu, một đoạn văn,
+hình ảnh, sơ đồ, quy trình,… của bản gốc vào bài viết. Trích dẫn nguyên văn phải bảo đảm
+đúng chính xác từng câu, từng chữ, từng dấu câu được sử dụng trong bản gốc được trích
+dẫn. Phần trích dẫn được đặt trong ngoặc kép. Không nên dùng quá nhiều cách trích dẫn
+này vì bài viết sẽ nặng nề và đơn điệu.
+- Trích dẫn gián tiếp là sử dụng ý tưởng, kết quả, hoặc ý của một vấn đề để diễn tả
+lại theo cách viết của mình nhưng phải đảm bảo đúng nội dung của bản gốc. Đây là cách
+trích dẫn được khuyến khích sử dụng trong nghiên cứu khoa học. Khi trích dẫn theo cách
+này cần cẩn trọng và chính xác để tránh diễn dịch sai, đ
+
+Nguồn: [PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 8)",[PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 8) | [PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 7) | [PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 3),0.5,đúng một phần; timeout/quota fallback nhưng nguồn đúng
+THUC_TAP_KLTN,phiếu theo dõi tiến độ khóa luận gồm những gì,"Không tìm thấy thông tin phù hợp trong tài liệu.  
+
+Nguồn:  
+- Tài liệu 1 (trang 2)  
+- Tài liệu 2 (trang 1)",[PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 1) | [PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 1) | [PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 2),0.5,"đúng một phần; fallback an toàn, chưa trích được nội dung phiếu"
+THUC_TAP_KLTN,không đủ cpa làm khóa luận thì phải học mấy học phần thay thế,"Không tìm thấy thông tin phù hợp trong tài liệu.  
+
+Nguồn:  
+- Tài liệu 1 (trang 1)  
+- Tài liệu 2 (trang 1)",[PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1).pdf (trang 1) | [PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 3) | [PHỤ LỤC 2] THỦ TỤC ĐĂNG KÝ THỰC TẬP TỐT NGHIỆP (1).pdf (trang 1),1.0,đúng; không thấy thông tin trong tài liệu
+THUC_TAP_KLTN,khóa luận tốt nghiệp có được làm theo nhóm 2 người không,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+[PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1)
+THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP
+THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP
+1. Điều kiện thay đổi người hướng dẫn Khóa luận tốt nghiệp
+- Sinh viên chỉ được đề nghị thay đổi người hướng dẫn nếu sau 01 tháng kể từ ngày
+được phê duyệt, giao đề tài mà sinh viên không liên hệ được với người hướng dẫn hoặc
+người hướng dẫn không hướng dẫn thực hiện đề tài khóa luận tốt nghiệp cho sinh viên với
+lý do chính đáng (Ví dụ: lý do sức khỏe, chuyên môn, điều kiện công tác…).
+2. Thủ tục
+- Sinh viên nộp đơn (theo mẫu dưới đây) điền đầy đủ thông tin nộp bản cứng về
+khoa/bộ môn để được giải quyết.
+- Thời gian giải quyết trong 07 ngày làm việc nếu sinh viên nộp đơn hợp lệ.
+
+
+Phụ lục số 05
+
+Nguồn: [PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1).pdf (trang 1)",[PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 1) | [PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 8) | [PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1).pdf (trang 1),0.5,"đúng một phần; timeout/quota fallback, chưa có căn cứ rõ"
+THUC_TAP_KLTN,slide bảo vệ khóa luận giới hạn trong bao nhiêu trang,"Không tìm thấy thông tin phù hợp trong tài liệu.  
+Nguồn:
+- PHỤ LỤC 7 (trang 2)  
+- PHỤ LỤC 3 (trang 4)",[PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 2) | [PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 4) | [PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 3),1.0,đúng; không thấy thông tin trong tài liệu
+THUC_TAP_KLTN,quy trình doanh nghiệp chấm điểm thực tập của sinh viên như thế nào,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+[PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1)
+THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP
+THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP
+1. Điều kiện thay đổi người hướng dẫn Khóa luận tốt nghiệp
+- Sinh viên chỉ được đề nghị thay đổi người hướng dẫn nếu sau 01 tháng kể từ ngày
+được phê duyệt, giao đề tài mà sinh viên không liên hệ được với người hướng dẫn hoặc
+người hướng dẫn không hướng dẫn thực hiện đề tài khóa luận tốt nghiệp cho sinh viên với
+lý do chính đáng (Ví dụ: lý do sức khỏe, chuyên môn, điều kiện công tác…).
+2. Thủ tục
+- Sinh viên nộp đơn (theo mẫu dưới đây) điền đầy đủ thông tin nộp bản cứng về
+khoa/bộ môn để được giải quyết.
+- Thời gian giải quyết trong 07 ngày làm việc nếu sinh viên nộp đơn hợp lệ.
+
+
+Phụ lục số 05
+
+Nguồn: [PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1).pdf (trang 1)",[PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1).pdf (trang 1) | [PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 1) | [PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 1),0.5,"đúng một phần; quota fallback, chưa trả lời được"
+QUY_DOI_CHUNG_CHI,quy đổi ielts,"Quy đổi IELTS:
+
+1. Nhóm ngành không chuyên
+- IELTS 8.0-9.0: tieng anh so cap: 10; tieng anh so trung cap: 10; tieng anh trung cap: 10
+- IELTS 6.5-7.5: tieng anh so cap: 10; tieng anh so trung cap: 10; tieng anh trung cap: 10
+- IELTS 5.0-6.0: tieng anh so cap: 10; tieng anh so trung cap: 10; tieng anh trung cap: 10
+- IELTS 4.0-4.5: tieng anh so cap: 10; tieng anh so trung cap: 9
+
+2. Nhóm ngành ngôn ngữ Anh
+- IELTS 6.5-7.5: ky nang so cap 1: 10; ky nang so cap 2: 10; ky nang so trung cap: 9; ky nang trung cap: 8
+- IELTS 5.0-6.0: ky nang so cap 1: 10; ky nang so cap 2: 10; ky nang so trung cap: 9; ky nang trung cap: 8
+- IELTS 4.0-4.5: ky nang so cap 1: 10; ky nang so cap 2: 9
+
+Nguồn: [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1)",[PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 2) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 2) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 2),1.0,đúng; structured answer ổn định cho IELTS
+QUY_DOI_CHUNG_CHI,quy đổi toeic,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Nguồn:
+- (không có)",,0.0,sai; có dữ liệu TOEIC nhưng hiện chưa structured
+QUY_DOI_CHUNG_CHI,quy đổi toefl,"- 8.0 – 9.0: 905 – 990 (Nghe/Đọc), 370 – 400 (Nói/Viết), 640 – 677, 110 – 120  
+- 6.5 – 7.5: 785 – 900 (Nghe/Đọc), 330 – 369 (Nói/Viết), 575 – 635, 79 – 109  
+- 5.0 – 6.0: 735 – 780 (Nghe/Đọc), 310 – 329 (Nói/Viết), 550 – 574, 60 – 78  
+- 4.0 – 4.5: 690 – 730 (Nghe/Đọc), 290 – 309 (Nói/Viết), 520 – 549, 45 – 59  
+
+Nguồn:  
+- Tên file (trang 1)",[PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 2),0.5,"đúng một phần; trả nhầm dạng bảng so sánh, thiếu format TOEFL trực diện"
+QUY_DOI_CHUNG_CHI,quy đổi chứng chỉ ngoại ngữ quốc tế,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Ngữ cảnh chỉ hiển thị tiêu đề và cấu trúc của phụ lục, không có bảng quy đổi cụ thể.
+
+Nguồn:
+- [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (Trang 1)",[PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 2) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1),0.5,đúng một phần; fallback an toàn nhưng câu quá rộng
+QUY_DOI_CHUNG_CHI,quy đổi điểm và xếp lớp tiếng anh,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+[PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ
+TOPIK: được cấp bởi Viện Giáo dục Quốc tế Hàn
+TOPIK: được cấp bởi Viện Giáo dục Quốc tế Hàn
+Quốc thuộc Bộ Giáo dục Hàn Quốc.
+- Mức điểm chứng chỉ phải đạt từ ngưỡng tối thiểu trở lên theo quy định tại Bảng quy
+đổi chứng chỉ ngoại ngữ quốc tế
+- Việc xét miễn học và qui đổi điểm chỉ thực hiện một lần duy nhất cho sinh viên mới
+nhập học, trước khi sinh viên học chính thức.
+2. Bảng quy đổi điểm chứng chỉ quốc tế môn ngoại ngữ
+2.1.
+2.1.
+
+Nguồn: [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1)",[PHỤ LỤC 11] BẢN QUY ĐỔI ĐIỂM VÀ XẾP LỚP TIẾNG ANH.pdf (trang 1) | [PHỤ LỤC 4] BẢNG QUY ĐỔI ĐIỂM TỪ CÁC GIẢI THƯỞNG ÂM NHẠC VÀ SẢN PHẨM ÂM NHẠC  (1).pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1),0.0,sai; quota fallback không trả lời đúng phụ lục 11
+QUY_DOI_CHUNG_CHI,ielts 6.5 được quy đổi như thế nào,"Quy đổi IELTS:
+
+1. Nhóm ngành không chuyên
+- IELTS 8.0-9.0: tieng anh so cap: 10; tieng anh so trung cap: 10; tieng anh trung cap: 10
+- IELTS 6.5-7.5: tieng anh so cap: 10; tieng anh so trung cap: 10; tieng anh trung cap: 10
+- IELTS 5.0-6.0: tieng anh so cap: 10; tieng anh so trung cap: 10; tieng anh trung cap: 10
+- IELTS 4.0-4.5: tieng anh so cap: 10; tieng anh so trung cap: 9
+
+2. Nhóm ngành ngôn ngữ Anh
+- IELTS 6.5-7.5: ky nang so cap 1: 10; ky nang so cap 2: 10; ky nang so trung cap: 9; ky nang trung cap: 8
+- IELTS 5.0-6.0: ky nang so cap 1: 10; ky nang so cap 2: 10; ky nang so trung cap: 9; ky nang trung cap: 8
+- IELTS 4.0-4.5: ky nang so cap 1: 10; ky nang so cap 2: 9
+
+Nguồn: [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1)",[PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 2) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 2) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 2),1.0,đúng; structured trả lời được mức 6.5-7.5
+QUY_DOI_CHUNG_CHI,ielts 4.5 được quy đổi ra sao,"Quy đổi IELTS:
+
+1. Nhóm ngành không chuyên
+- IELTS 8.0-9.0: tieng anh so cap: 10; tieng anh so trung cap: 10; tieng anh trung cap: 10
+- IELTS 6.5-7.5: tieng anh so cap: 10; tieng anh so trung cap: 10; tieng anh trung cap: 10
+- IELTS 5.0-6.0: tieng anh so cap: 10; tieng anh so trung cap: 10; tieng anh trung cap: 10
+- IELTS 4.0-4.5: tieng anh so cap: 10; tieng anh so trung cap: 9
+
+2. Nhóm ngành ngôn ngữ Anh
+- IELTS 6.5-7.5: ky nang so cap 1: 10; ky nang so cap 2: 10; ky nang so trung cap: 9; ky nang trung cap: 8
+- IELTS 5.0-6.0: ky nang so cap 1: 10; ky nang so cap 2: 10; ky nang so trung cap: 9; ky nang trung cap: 8
+- IELTS 4.0-4.5: ky nang so cap 1: 10; ky nang so cap 2: 9
+
+Nguồn: [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1)",[PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 2) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 2) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 2),1.0,đúng; structured trả lời được mức 4.0-4.5
+QUY_DOI_CHUNG_CHI,toefl ibt được quy đổi như thế nào,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+[PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ
+TOEFL IBT
+TOEFL IBT
+(ETS cấp)
+Tiếng Anh
+sơ cấp
+Tiếng Anh sơ
+trung cấp
+Tiếng Anh
+trung cấp
+8.0 – 9.0
+905 – 990 (Nghe/Đọc)
+370 – 400 (Nói/Viết)
+640 – 677
+110 – 120
+10
+10
+10
+6.5 – 7.5
+785 – 900 (Nghe/Đọc)
+330 – 369 (Nói/Viết)
+575 – 635
+79 – 109
+10
+10
+10
+5.0 – 6.0
+735 – 780 (Nghe/Đọc)
+310 – 329 (Nói/Viết)
+550 – 574
+60 – 78
+10
+10
+-
+4.0 – 4.5
+690 – 730 (Nghe/Đọc)
+290 – 309 (Nói/Viết)
+520 – 549
+45 – 59
+10
+-
+-
+b) Ngành Ngôn ngữ Anh
+Loại chứng chỉ quốc tế
+Điểm quy đổi cho các học phần tiếng Anh
+
+Nguồn: [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1)",[PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 2),0.5,"đúng một phần; quota fallback, chưa trả lời trực tiếp"
+QUY_DOI_CHUNG_CHI,toeic 450 quy đổi ra mấy điểm môn tiếng anh 1,"Không tìm thấy thông tin phù hợp trong tài liệu.  
+Nguồn: - Tên file (trang X)",,0.5,"đúng một phần; fallback an toàn, chưa có structured TOEIC 450"
+QUY_DOI_CHUNG_CHI,chứng chỉ jlpt n3 tiếng nhật có thay thế được chuẩn đầu ra tiếng anh không,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+[PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ
+JLPT), Nat – Test, Top J, J.Test … (các chứng chỉ này không ghi
+JLPT), Nat – Test, Top J, J.Test … (các chứng chỉ này không ghi
+thời hạn);
++ Sinh viên có chứng chỉ quốc tế
+
+Nguồn: [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1)",[PHỤ LỤC 4] BẢNG QUY ĐỔI ĐIỂM TỪ CÁC GIẢI THƯỞNG ÂM NHẠC VÀ SẢN PHẨM ÂM NHẠC  (1).pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1),0.5,"đúng một phần; quota fallback, chưa trả lời trực tiếp"
+QUY_DOI_CHUNG_CHI,chứng chỉ tin học mos ic3 có được miễn học phần tin học đại cương không,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+[PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP
+MẪU BÁO CÁO THỰC TẬP TỐ T NGHIỆP
+MẪU BÁO CÁO THỰC TẬP TỐ T NGHIỆP
+1. CẤU TRÚC CỦA BÁO CÁO THỰC TẬP:
+Báo cáo thực tập tốt nghiệp (sau đây gọi tắt là Báo cáo) được trình bày trang khổ A4
+theo trình tự như sau:
+- Trang bìa (theo mẫu)
+- Trang bìa phụ
+- Lời cảm ơn
+- Mục lục (theo mẫu)
+- Danh mục các chữ viết tắt (nếu có) (theo mẫu)
+- Danh mục các bảng biểu, hình vẽ, đồ thị, công thức… (theo mẫu)
+- Lời mở đầu
+- Nội dung của Báo cáo (trình bày trong 30-40 trang), xem phần Bố cục nội dung
+của Báo cáo.
+- Kết luận
+- Phụ lục (nếu có) (theo mẫu)
+- Danh mục tài liệu tham khảo (theo mẫu)
+2. BỐ CỤC PHẦN NỘI DUNG CỦA BÁO CÁO THỰC TẬP
+ Mở đầu: phần này trình bày một cách ngắn gọn lý do sinh viên chọn đơn vị thực
+tập và chủ đề viết Báo cáo.
+ Phần I: Khái quát về đơn vị thực tập (không quá 5 trang)
+Phần này cần trình bày được những nội dung sau:
+- Quá trình hình thành và phát triển của đơn vị thực tập
+- Cơ cấu tổ chức của đơn vị (trình bày dưới dạng sơ đồ
+
+Nguồn: [PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 1)",[PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 1) | [PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 5) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 1),1.0,đúng; không thấy thông tin MOS/IC3 trong tài liệu
+QUY_DOI_CHUNG_CHI,chứng chỉ ielts thi từ năm nhất thì đến năm 4 nộp xét tốt nghiệp còn hợp lệ không,"Quy đổi IELTS:
+
+1. Nhóm ngành không chuyên
+- IELTS 8.0-9.0: tieng anh so cap: 10; tieng anh so trung cap: 10; tieng anh trung cap: 10
+- IELTS 6.5-7.5: tieng anh so cap: 10; tieng anh so trung cap: 10; tieng anh trung cap: 10
+- IELTS 5.0-6.0: tieng anh so cap: 10; tieng anh so trung cap: 10; tieng anh trung cap: 10
+- IELTS 4.0-4.5: tieng anh so cap: 10; tieng anh so trung cap: 9
+
+2. Nhóm ngành ngôn ngữ Anh
+- IELTS 6.5-7.5: ky nang so cap 1: 10; ky nang so cap 2: 10; ky nang so trung cap: 9; ky nang trung cap: 8
+- IELTS 5.0-6.0: ky nang so cap 1: 10; ky nang so cap 2: 10; ky nang so trung cap: 9; ky nang trung cap: 8
+- IELTS 4.0-4.5: ky nang so cap 1: 10; ky nang so cap 2: 9
+
+Nguồn: [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1)",[PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 2) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 2) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 2),0.5,"đúng một phần; structured chỉ trả quy đổi, không trả hiệu lực thời gian"
+QUY_DOI_CHUNG_CHI,nộp chứng chỉ ngoại ngữ để quy đổi điểm ở phòng đào tạo hay khoa,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+[PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ
+Chứng chỉ Tiếng Anh quốc tế
+Chứng chỉ Tiếng Anh quốc tế
+a) Các ngành không chuyên
+Loại chứng chỉ quốc tế
+Điểm quy đổi các học phần
+
+Nguồn: [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1)",[PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 11] BẢN QUY ĐỔI ĐIỂM VÀ XẾP LỚP TIẾNG ANH.pdf (trang 1),0.5,"đúng một phần; quota fallback, chưa trả lời nơi nộp"
+QUY_DOI_CHUNG_CHI,quy trình hủy điểm tiếng anh đã quy đổi để học trực tiếp trên lớp,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Ngữ cảnh chỉ chứa bảng quy đổi chứng chỉ ngoại ngữ quốc tế, không có thông tin về quy trình hủy điểm đã quy đổi.
+
+Nguồn:
+- [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (Trang 1)",[PHỤ LỤC 11] BẢN QUY ĐỔI ĐIỂM VÀ XẾP LỚP TIẾNG ANH.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1) | [PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf (trang 1),1.0,đúng; không thấy quy trình hủy điểm quy đổi trong tài liệu
+QUY_CHE_SO_TAY,tôi sẽ bị đình chỉ học khi vi phạm những điều gì,"- Học hộ hoặc nhờ người học hộ (tùy mức độ vi phạm)  
+- Thi hộ hoặc nhờ người thi hộ (tùy mức độ vi phạm)  
+- Mang tài liệu vào phòng thi hoặc trao đổi bài thi (đình chỉ thi)  
+- Mang thiết bị truyền tin (điện thoại, máy nhắn tin, đồng hồ thông minh…) vào phòng thi không tắt nguồn và không để đúng nơi quy định (tùy mức độ vi phạm)  
+- Đánh nhau, tổ chức hoặc tham gia tổ chức đánh nhau (tùy mức độ)  
+- Kích động, lôi kéo người khác biểu tình, viết truyền đơn, áp phích trái pháp luật (tùy mức độ)  
+- Tham gia biểu tình, tụ tập đông người, khiếu kiện trái quy định của pháp luật (tùy mức độ)  
+- Đăng tải, bình luận, chia sẻ bài viết, hình ảnh có nội dung dung tục, bạo lực, đồi trụy, xâm phạm an ninh quốc gia, chống phá Đảng và Nhà nước, xuyên tạc, vu khống, xúc phạm uy tín của tổ chức, danh dự và nhân phẩm của cá nhân trên mạng Internet (tùy mức độ)  
+- Có hành động quấy rối, dâm ô, xâm phạm nhân phẩm, đời tư của người khác (tùy mức độ)  
+- Vi phạm các quy định về an toàn giao thông (tùy mức độ)  
+- Các vi phạm khác (tùy mức độ)  
+
+Nguồn:
+- SỔ TAY SINH VIÊN K38.pdf (trang 38)
+- SỔ TAY SINH VIÊN K38.pdf (trang 113)",SỔ TAY SINH VIÊN K38.pdf (trang 38) | SỔ TAY SINH VIÊN K38.pdf (trang 113) | SỔ TAY SINH VIÊN K38.pdf (trang 32),0.5,đúng một phần; nêu ví dụ vi phạm đình chỉ thi/học nhưng chưa chắc đầy đủ 'đình chỉ học'
+QUY_CHE_SO_TAY,khi nào bị buộc thôi học,"Buộc thôi học được thực hiện khi:
+
+- Kết quả học tập của sinh viên sau mỗi học kỳ không đạt yêu cầu và dựa trên thời gian học tập còn lại của sinh viên, Phòng Đào tạo trình Hiệu trưởng phê duyệt quyết định buộc thôi học.  
+- Quyết định này sau đó được gửi tới sinh viên và gia đình sinh viên để thông báo.
+
+Nguồn:
+- SỔ TAY SINH VIÊN K38.pdf (trang 32)",[PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1).pdf (trang 1) | SỔ TAY SINH VIÊN K38.pdf (trang 32) | [PHỤ LỤC 18] THỦ TỤC CHUYỂN CƠ SỞ ĐÀO TẠO.pdf (trang 1),0.5,"đúng một phần; trả lẫn buộc thôi học học tập, chưa chắc đủ phần kỷ luật"
+QUY_CHE_SO_TAY,các mức xử lý kỷ luật sinh viên,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Nguồn:
+- SỔ TAY SINH VIÊN K38.pdf (trang 101)
+- SỔ TAY SINH VIÊN K38.pdf (trang 22)",SỔ TAY SINH VIÊN K38.pdf (trang 101) | SỔ TAY SINH VIÊN K38.pdf (trang 22) | SỔ TAY SINH VIÊN K38.pdf (trang 114),0.0,sai; có bảng mức kỷ luật nhưng trả không tìm thấy
+QUY_CHE_SO_TAY,quy định về trách nhiệm sinh viên,"Theo tài liệu được cung cấp, quy định về trách nhiệm sinh viên tại **Điều 21** bao gồm:
+
+- Sinh viên có trách nhiệm quán triệt và triển khai thực hiện đúng quy định của trường
+- Sinh viên vi phạm tùy theo mức độ sẽ bị xử lý theo quy định
+
+Nguồn:
+- SỔ TAY SINH VIÊN K38.pdf (trang 111)",SỔ TAY SINH VIÊN K38.pdf (trang 111) | SỔ TAY SINH VIÊN K38.pdf (trang 101) | SỔ TAY SINH VIÊN K38.pdf (trang 102),1.0,đúng; nêu đúng trách nhiệm sinh viên
+QUY_CHE_SO_TAY,quy định về quyền của sinh viên,"- Được nhận vào học đúng ngành đã đăng ký xét tuyển nếu đủ các điều kiện trúng tuyển theo quy định của Bộ Giáo dục - Đào tạo và Trường Đại học Thăng Long.  
+- Được phổ biến chủ trương, đường lối của Đảng, chính sách, pháp luật của Nhà nước.  
+- Được tôn trọng và đối xử bình đẳng; được cung cấp đầy đủ thông tin về việc học tập, rèn luyện theo quy định của nhà trường; được phổ biến nội quy, quy chế về đào tạo, quy  
+
+Nguồn:
+- SỔ TAY SINH VIÊN K38.pdf (trang 102)",SỔ TAY SINH VIÊN K38.pdf (trang 102) | SỔ TAY SINH VIÊN K38.pdf (trang 101) | SỔ TAY SINH VIÊN K38.pdf (trang 101),1.0,đúng; nêu đúng quyền sinh viên
+QUY_CHE_SO_TAY,quy định về nghĩa vụ quân sự và bảo lưu kết quả học tập,"## Quy định về nghĩa vụ quân sự và bảo lưu kết quả học tập
+
+**Hồ sơ đăng ký nghỉ học tạm thời và bảo lưu kết quả học tập (đối với người học được gọi nghĩa vụ quân sự):**
+
+- Bản sao lệnh gọi nghĩa vụ quân sự (có bản gốc đối chiếu)
+
+**Lưu ý thêm:**
+- Thời gian nghỉ học tạm thời vì lý do cá nhân không quá 1 năm và chỉ được 1 lần trong một chương trình đào tạo.
+
+Nguồn:
+- [PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (Trang 2)",[PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 2) | SỔ TAY SINH VIÊN K38.pdf (trang 13) | SỔ TAY SINH VIÊN K38.pdf (trang 35),1.0,đúng; trả đúng phần nghĩa vụ quân sự và bảo lưu
+QUY_CHE_SO_TAY,đi muộn 15 phút có được vào phòng thi cuối kỳ không,"Không tìm thấy thông tin phù hợp trong tài liệu.  
+Nguồn:  
+- Tài liệu 1 (trang 2)  
+- Tài liệu 2 (trang 26)",[PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 2) | SỔ TAY SINH VIÊN K38.pdf (trang 26) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 2),1.0,đúng; không thấy thông tin cụ thể trong tài liệu
+QUY_CHE_SO_TAY,quên mang thẻ sinh viên và cccd khi đi thi thì phải làm sao,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+SỔ TAY SINH VIÊN K38
+Điều
+Điều
+3 Quy chế này, sinh viên đáp ứng đầy đủ điều kiện tốt nghiệp nhưng chưa hoàn thành nghĩa vụ
+với Trường hoặc chưa hoàn thành thủ tục xét tốt nghiệp, được xin hoãn xét tốt nghiệp nếu có
+lý do chính đáng (kèm theo minh chứng) nhưng không quá 6 tháng kể từ ngày Hội đồng họp
+xét đủ điều kiện xét tốt nghiệp theo kế hoạch của Trường.
+4. Sinh viên phải có đơn gửi Phòng Đào tạo (thông qua Phòng Tiếp sinh viên) đề nghị
+được xét tốt nghiệp trong trường hợp đủ điều kiện tốt nghiệp sớm so với thời gian thiết kế của
+khóa học.
+5. Quy trình xét tốt nghiệp được quy định tại Phụ lục số 15 (kèm theo).
+6. Hội đồng xét tốt nghiệp, bao gồm: Chủ tịch Hội đồng là Hiệu trưởng hoặc Phó hiệu
+trưởng phụ trách đào tạo; Phó chủ tịch Hội đồng là Phó hiệu trưởng phụ trách đào tạo hoặc
+Trưởng phòng Đào tạo; Thư ký Hội đồng là Phó trưởng phòng Đào tạo; các Ủy viên còn lại là
+lãnh đạo khoa/bộ môn có sinh viên tốt nghiệp và lãnh đạo các đơn vị chức năng liên quan.
+7. Sinh viên đã hết thời g
+
+Nguồn: SỔ TAY SINH VIÊN K38.pdf (trang 34)",SỔ TAY SINH VIÊN K38.pdf (trang 34) | SỔ TAY SINH VIÊN K38.pdf (trang 24) | SỔ TAY SINH VIÊN K38.pdf (trang 28),0.5,"đúng một phần; quota fallback, có thể có quy định giấy tờ thi nhưng answer chưa rõ"
+QUY_CHE_SO_TAY,nghỉ học trên 20% số buổi có bị cấm thi không,"Không tìm thấy thông tin phù hợp trong tài liệu.  
+
+Nguồn:  
+- [PHỤ LỤC 18] THỦ TỤC CHUYỂN CƠ SỞ ĐÀO TẠO (trang 1)  
+- [PHỤ LỤC 14] QUY TRÌNH XÉT CẢNH BÁO HỌC TẬP, BUỘC THÔI HỌC (trang 2)","[PHỤ LỤC 14] QUY TRÌNH XÉT CẢNH BÁO HỌC TẬP, BUỘC THÔI HỌC.pdf (trang 2) | [PHỤ LỤC 14] QUY TRÌNH XÉT CẢNH BÁO HỌC TẬP, BUỘC THÔI HỌC.pdf (trang 2) | [PHỤ LỤC 18] THỦ TỤC CHUYỂN CƠ SỞ ĐÀO TẠO.pdf (trang 1)",1.0,đúng; không thấy thông tin rõ 20% số buổi trong tài liệu đã dùng
+QUY_CHE_SO_TAY,gian lận mang điện thoại vào phòng thi bị xử lý ra sao,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+SỔ TAY SINH VIÊN K38
+TT
+TT
+Nội dung vi phạm
+Số lần vi phạm và
+hình thức xử lý
+(Số lần vi phạm tính trong
+cả khoá học)
+Ghi chú
+Khiển
+trách
+Cảnh
+cáo
+Đình
+chỉ
+có
+thời
+hạn
+Buộc
+thôi
+học
+13
+Đưa phần tử xấu vào trong trường, gây
+ảnh hưởng xấu đến an ninh, trật tự trong
+nhà trường.
+Tuỳ theo mức độ xử lý từ
+cảnh cáo đến buộc thôi
+học
+14
+Đánh nhau, tổ chức hoặc tham gia tổ
+chức đánh nhau
+Lần
+1
+Lần
+2
+Lần
+3
+Nếu nghiêm trọng, giao
+cho cơ quan chức năng xử
+lý theo quy định của pháp
+luật
+15
+Kích động, lôi kéo người khác biểu tình,
+viết truyền đơn, áp phích trái pháp luật
+Lần
+1
+Lần
+2
+Nếu nghiêm trọng, giao
+cho cơ quan chức năng xử
+lý theo quy định của pháp
+luật
+16
+Tham gia biểu tình, tụ tập đông người,
+khiếu kiện trái quy định của pháp luật
+Lần
+1
+Lần
+2
+Lần
+3
+Lần
+4
+Nếu nghiêm trọng, giao
+cho cơ quan chức năng xử
+lý theo quy định của pháp
+luật
+17
+Đăng tải, bình luận, chia sẻ bài viết, hình
+ảnh có nội dung dung tục, bạo lực, đồi
+trụy, xâm phạm an ninh quốc gia, chống
+phá Đảng và Nhà nước, xuyên tạc, vu
+
+Nguồn: SỔ TAY SINH VIÊN K38.pdf (trang 113)",SỔ TAY SINH VIÊN K38.pdf (trang 113) | SỔ TAY SINH VIÊN K38.pdf (trang 112) | SỔ TAY SINH VIÊN K38.pdf (trang 38),0.5,"đúng một phần; quota fallback, nguồn có vẻ đúng nhưng không diễn đạt được"
+QUY_CHE_SO_TAY,nhờ người đi thi hộ bị phát hiện xử phạt thế nào,"Không tìm thấy thông tin phù hợp trong tài liệu.  
+
+Nguồn:
+- SỔ TAY SINH VIÊN K38.pdf (trang 125)  
+- SỔ TAY SINH VIÊN K38.pdf (trang 112)",SỔ TAY SINH VIÊN K38.pdf (trang 125) | SỔ TAY SINH VIÊN K38.pdf (trang 112) | SỔ TAY SINH VIÊN K38.pdf (trang 38),0.5,"đúng một phần; fallback an toàn, câu có thể có trong bảng kỷ luật"
+QUY_CHE_SO_TAY,cách tính điểm rèn luyện sinh viên hàng kỳ,"Không tìm thấy thông tin phù hợp trong tài liệu.  
+Nguồn:  
+- Tài liệu 1 (trang 1)  
+- Tài liệu 2 (trang 110)",[PHỤ LỤC 1] QUY TRÌNH ĐĂNG KÍ HỌC.pdf (trang 1) | SỔ TAY SINH VIÊN K38.pdf (trang 110) | SỔ TAY SINH VIÊN K38.pdf (trang 38),1.0,đúng; không thấy công thức điểm rèn luyện trong bộ tài liệu hiện có
+QUY_CHE_SO_TAY,không tham gia tuần sinh hoạt công dân đầu năm bị trừ bao nhiêu điểm rèn luyện,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+SỔ TAY SINH VIÊN K38
+Điều 3. Chương trình đào tạo và thời gian đào tạo
+Điều 3. Chương trình đào tạo và thời gian đào tạo
+1. Chương trình đào tạo
+a) Chương trình đào tạo (đơn ngành) trình độ đại học của Trường có khối lượng tối thiểu
+là 120 tín chỉ, tối đa là 140 tín chỉ, không bao gồm khối lượng hai môn học Giáo dục thể chất
+và Giáo dục quốc phòng và an ninh. Môn học Giáo dục thể chất, Giáo dục quốc phòng và an
+ninh là hai môn học làm điều kiện tốt nghiệp;
+b) Chương trình đào tạo, bản mô tả CTĐT (bao gồm đề cương chi tiết học phần) phải
+được công khai đối với người học và xã hội trên Trang thông tin điện tử chính thức của Trường
+Đại học Thăng Long trước khi bắt đầu khóa học; những thay đổi, điều chỉnh liên quan đến mục
+tiêu đào tạo, chuẩn đầu ra và CTĐT được thực hiện theo quy định hiện hành và công bố trước
+khi sinh viên đăng ký học phần của năm học mới, không gây bất lợi cho sinh viên;
+c) Chương trình đào tạo, bản mô tả CTĐT được rà soát định kỳ hai năm một lần hoặc
+khi có sự thay đổ
+
+Nguồn: SỔ TAY SINH VIÊN K38.pdf (trang 13)",SỔ TAY SINH VIÊN K38.pdf (trang 13) | SỔ TAY SINH VIÊN K38.pdf (trang 15) | SỔ TAY SINH VIÊN K38.pdf (trang 35),0.5,"đúng một phần; quota fallback, chưa trả lời cụ thể"
+QUY_CHE_SO_TAY,tiêu chuẩn đạt danh hiệu sinh viên 5 tốt cấp trường,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+SỔ TAY SINH VIÊN K38
+Điều 23. Xếp hạng tốt nghiệp
+Điều 23. Xếp hạng tốt nghiệp
+1. Sinh viên được xếp hạng tốt nghiệp theo điểm trung bình tích lũy toàn khóa học như
+sau:
+Từ 3,6 đến 4,0:
+
+Xuất sắc;
+Từ 3,2 đến cận 3,6:
+
+Giỏi;
+Từ 2,5 đến cận 3,2:
+
+Khá;
+Từ 2,0 đến cận 2,5:
+
+Trung bình.
+2. Hạng tốt nghiệp của những sinh viên có điểm trung bình tích lũy đạt loại xuất sắc
+hoặc giỏi sẽ bị giảm đi một mức nếu thuộc một trong các trường hợp sau:
+a) Khối lượng của các học phần phải học lại vượt quá 5% so với tổng số tín chỉ quy định
+cho toàn chương trình;
+b) Sinh viên đã bị kỷ luật từ mức cảnh cáo trở lên trong thời gian học.
+
+Nguồn: SỔ TAY SINH VIÊN K38.pdf (trang 34)","SỔ TAY SINH VIÊN K38.pdf (trang 34) | SỔ TAY SINH VIÊN K38.pdf (trang 23) | [PHỤ LỤC 12] QUY TRÌNH NHẬN, XỬ LÝ VÀ SỬA ĐIỂM QUÁ TRÌNH, ĐIỂM THI_HUNG (1).pdf (trang 2)",1.0,đúng; không thấy tiêu chuẩn SV5T trong tài liệu
+QUY_CHE_SO_TAY,quy định về mặc đồng phục hoặc đeo thẻ sinh viên khi vào thư viện,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Nguồn:
+- [PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (Trang 2)
+- [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (Trang 3)",[PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 2) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 3) | SỔ TAY SINH VIÊN K38.pdf (trang 37),1.0,đúng; không thấy quy định thư viện cụ thể trong tài liệu
+DANG_KY_HOC_PHAN,thời gian đăng ký tín chỉ học kỳ này là khi nào,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Nguồn:
+- [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (Trang 2)
+- SỔ TAY SINH VIÊN K38.pdf (Trang 35)",[PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 2) | SỔ TAY SINH VIÊN K38.pdf (trang 35) | [PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 2),1.0,đúng; không có thời gian học kỳ hiện tại trong bộ tài liệu tĩnh
+DANG_KY_HOC_PHAN,cách đăng ký học vượt,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+[PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG
+- Nội dung thông báo nhận hồ sơ tốt nghiệp nêu rõ thời gian, địa điểm, giấy tờ cần chuẩn
+- Nội dung thông báo nhận hồ sơ tốt nghiệp nêu rõ thời gian, địa điểm, giấy tờ cần chuẩn
+bị;
+- Thông báo được đăng tải trên Website, fanpage Trường ít nhất 1 tuần trước khi
+nhận hồ sơ để sinh viên kịp thời chuẩn bị giấy tờ.
+b.
+
+Nguồn: [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 2)",[PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 3) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 3) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 2),0.5,"đúng một phần; quota fallback, có thể có thông tin học vượt ở sổ tay"
+DANG_KY_HOC_PHAN,điều kiện đăng ký học lại học cải thiện điểm,"Không tìm thấy thông tin phù hợp trong tài liệu.  
+Nguồn:  
+- Tài liệu 1 (PHỤ LỤC 1) QUY TRÌNH ĐĂNG KÍ HỌC, trang 2",[PHỤ LỤC 1] QUY TRÌNH ĐĂNG KÍ HỌC.pdf (trang 2) | [PHỤ LỤC 1] QUY TRÌNH ĐĂNG KÍ HỌC.pdf (trang 1) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 3),0.5,"đúng một phần; fallback an toàn, câu chưa có trả lời trực diện"
+DANG_KY_HOC_PHAN,học cải thiện mà điểm thi thấp hơn điểm cũ thì lấy điểm nào,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Nguồn:
+- Sổ tay sinh viên K38.pdf (trang 30)",SỔ TAY SINH VIÊN K38.pdf (trang 30) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 1) | [PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1).pdf (trang 1),0.5,"đúng một phần; fallback an toàn, chưa nêu quy tắc lấy điểm"
+DANG_KY_HOC_PHAN,lớp môn cấu trúc dữ liệu và giải thuật bị hủy do ít người thì phải làm sao,"- Sinh viên có học phần bị hủy cần liên hệ cố vấn học tập để được hỗ trợ.  
+
+Nguồn:
+- PHỤ LỤC 1 QUY TRÌNH ĐĂNG KÍ HỌC (trang 2)",[PHỤ LỤC 1] QUY TRÌNH ĐĂNG KÍ HỌC.pdf (trang 2) | [PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 5) | [PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 1),0.5,đúng một phần; câu trả lời hợp lý nhưng thiếu căn cứ trực tiếp
+DANG_KY_HOC_PHAN,giới hạn số tín chỉ tối đa được đăng ký trong kỳ hè là bao nhiêu,"Không tìm thấy thông tin phù hợp trong tài liệu.  
+Nguồn:
+- PHỤ LỤC 1 QUY TRÌNH ĐĂNG KÍ HỌC (trang 2)  
+- SỔ TAY SINH VIÊN K38 (trang 18)",SỔ TAY SINH VIÊN K38.pdf (trang 18) | SỔ TAY SINH VIÊN K38.pdf (trang 32) | [PHỤ LỤC 1] QUY TRÌNH ĐĂNG KÍ HỌC.pdf (trang 2),0.5,"đúng một phần; fallback an toàn, chưa có con số cụ thể"
+DANG_KY_HOC_PHAN,đăng ký học phần song song như thế nào,"Không tìm thấy thông tin phù hợp trong tài liệu.  
+Nguồn:  
+- Tài liệu 1 (trang 1)","[PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 3) | [PHỤ LỤC 1] QUY TRÌNH ĐĂNG KÍ HỌC.pdf (trang 1) | [PHỤ LỤC 14] QUY TRÌNH XÉT CẢNH BÁO HỌC TẬP, BUỘC THÔI HỌC.pdf (trang 1)",1.0,đúng; không thấy quy trình học phần song song rõ trong tài liệu dùng
+DANG_KY_HOC_PHAN,"môn học tiên quyết là gì, môn học trước là gì","Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+[PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC
+TRƯỞNG KHOA/BỘ MÔN
+TRƯỞNG KHOA/BỘ MÔN
+(Ký, ghi rõ họ tên)
+
+TRƯỞNG PHÒNG ĐÀO TẠO
+(Ký, ghi rõ họ tên)
+
+Nguồn: [PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 9)","[PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 9) | [PHỤ LỤC 14] QUY TRÌNH XÉT CẢNH BÁO HỌC TẬP, BUỘC THÔI HỌC.pdf (trang 1) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 1)",0.5,"đúng một phần; quota fallback, có thể có định nghĩa trong sổ tay"
+DANG_KY_HOC_PHAN,chưa học môn c++ có được đăng ký môn java không,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+SỔ TAY SINH VIÊN K38
+STT
+STT
+Tên học phần/môn học
+Mã học
+phần/
+môn học
+Số tín
+chỉ
+Số tiết
+Lý
+thuyết
+Thảo
+luận/
+Seminar
+Thực
+hành
+Tổng
+số
+Nền tảng lập trình ứng dụng
+(chọn 1 trong 2 học phần sau)
+3
+43 Phát triển ứng dụng với Java core
+INT1505
+3
+30
+30
+60
+44 Phát triển ứng dụng với .Net core
+INT1506
+3
+30
+30
+60
+b) Học phần tự chọn bắt buộc
+(chọn 15/45 tín chỉ sau)
+15
+45 Kiểm thử nâng cao
+INT1531
+3
+45
+45
+46 Quản lý dự án kiểu Scrum
+INT1532
+3
+45
+45
+47 Hệ quản trị cơ sở dữ liệu
+INT1533
+3
+30
+30
+60
+48 Kỹ nghệ dữ liệu
+AIS1545
+3
+45
+45
+49 Tiền xử lý dữ liệu
+AIS1403
+2
+15
+30
+45
+50 Dữ liệu lớn
+AIS1534
+3
+45
+45
+51 Khai phá dữ liệu
+AIS1503
+3
+45
+45
+52 Học sâu
+AIS1501
+3
+30
+30
+60
+53 Thị giác máy tính
+AIS1504
+3
+45
+45
+54 Xử lý ngôn ngữ tự nhiên
+AIS1506
+3
+45
+45
+55 Lập trình an toàn
+CSE1532
+3
+45
+45
+56 Phân tích mã độc
+CSE1533
+3
+45
+45
+57 Lập trình ứng dụng IOT
+NWS1530
+2
+15
+30
+45
+58 Hệ thống thương mại điện tử
+INS1421
+3
+45
+45
+59 Hệ thống hoạch định nguồn lực doanh nghiệp
+INS1501
+3
+45
+45
+60 Một số vấn đề hiện đại
+
+Nguồn: SỔ TAY SINH VIÊN K38.pdf (trang 64)",[PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 3) | SỔ TAY SINH VIÊN K38.pdf (trang 19) | SỔ TAY SINH VIÊN K38.pdf (trang 64),0.5,"đúng một phần; quota fallback, phụ thuộc CTĐT cụ thể"
+DANG_KY_HOC_PHAN,hệ thống đăng ký tín chỉ bị sập do quá tải thì nhà trường có mở thêm thời gian không,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+[PHỤ LỤC 1] QUY TRÌNH ĐĂNG KÍ HỌC
+Bước 5: Xử lý dữ liệu đăng ký học
+Bước 5: Xử lý dữ liệu đăng ký học
+- Kết thúc thời gian đăng ký học, Phòng Đào tạo tiến hành xử lý dữ liệu đăng ký các lớp
+học phần, cụ thể:
++ Hủy các lớp học phần không đủ điều kiện mở lớp;
++ Ghép, gộp tách đôi, tách ba các lớp học phần để đảm bảo đủ kiện mở lớp.
+- Những sinh viên có học phần bị hủy và số tín chỉ tối đa không đạt liên hệ cố vấn học
+tập để được hỗ trợ.
+- Những sinh viên đăng ký học các học phần tự chọn nhưng do số lượng sinh viên đăng
+ký không đủ điều kiện mở lớp học phần theo quy định, sinh viên phải đăng ký học phần tự
+chọn còn lại đã dự kiến mở trong học kỳ. Trường hợp nếu sinh viên vẫn chưa đảm bảo đủ
+khối lượng học tập tối thiểu cho mỗi học kỳ theo quy định, sinh viên làm đơn gửi cố vấn học
+
+Nguồn: [PHỤ LỤC 1] QUY TRÌNH ĐĂNG KÍ HỌC.pdf (trang 2)",[PHỤ LỤC 1] QUY TRÌNH ĐĂNG KÍ HỌC.pdf (trang 2) | SỔ TAY SINH VIÊN K38.pdf (trang 32) | SỔ TAY SINH VIÊN K38.pdf (trang 18),0.5,"đúng một phần; quota fallback, không có thông báo thời gian mở thêm"
+DANG_KY_HOC_PHAN,quên mật khẩu tài khoản cổng thông tin sinh viên xin cấp lại ở đâu,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+[PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC
+Bước 1: Soạn và đăng tải thông báo
+Bước 1: Soạn và đăng tải thông báo
+- Phòng Đào tạo: Soạn thông báo gửi email tới Ban Biên tập và các khoa/bộ môn.
+Thông báo bao gồm: Thời gian tiếp nhận hồ sơ, đối tượng, yêu cầu thủ tục, lệ phí và quy
+định xét nghỉ học tạm thời và quay trở lại học tiếp cho sinh viên.
+Phụ lục số 16
+
+Nguồn: [PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 1)",[PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 1) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 3) | SỔ TAY SINH VIÊN K38.pdf (trang 27),1.0,đúng; không thấy quy trình cấp lại mật khẩu trong tài liệu
+HOC_PHI_HOC_BONG,cách đóng học phí qua tài khoản ngân hàng,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Nguồn:
+- PHỤ LỤC 3 MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 7)
+- SỔ TAY SINH VIÊN K38.pdf (trang 130)",[PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 7) | SỔ TAY SINH VIÊN K38.pdf (trang 130) | SỔ TAY SINH VIÊN K38.pdf (trang 55),1.0,đúng; không thấy hướng dẫn đóng học phí ngân hàng trong tài liệu
+HOC_PHI_HOC_BONG,đóng học phí qua ví điện tử momo vnpay được không,"Không tìm thấy thông tin phù hợp trong tài liệu.  
+Nguồn: - Tài liệu 1 (trang 5) - Tài liệu 2 (trang 1)",[PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 5) | [PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 1) | SỔ TAY SINH VIÊN K38.pdf (trang 121),1.0,đúng; không thấy ví điện tử trong tài liệu
+HOC_PHI_HOC_BONG,thời hạn nộp học phí học kỳ này,"Không tìm thấy thông tin phù hợp trong tài liệu.  
+Nguồn:
+- SỔ TAY SINH VIÊN K38.pdf (trang 32)  
+- SỔ TAY SINH VIÊN K38.pdf (trang 23)",SỔ TAY SINH VIÊN K38.pdf (trang 32) | SỔ TAY SINH VIÊN K38.pdf (trang 23) | SỔ TAY SINH VIÊN K38.pdf (trang 26),1.0,đúng; không có thời hạn học phí học kỳ hiện tại trong tài liệu tĩnh
+HOC_PHI_HOC_BONG,nộp học phí muộn có bị xóa tên khỏi danh sách lớp không,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Nguồn:
+- SỔ TAY SINH VIÊN K38.pdf (trang 29, 32)","SỔ TAY SINH VIÊN K38.pdf (trang 32) | SỔ TAY SINH VIÊN K38.pdf (trang 29) | [PHỤ LỤC 14] QUY TRÌNH XÉT CẢNH BÁO HỌC TẬP, BUỘC THÔI HỌC.pdf (trang 3)",1.0,đúng; không thấy quy định rõ trong tài liệu
+HOC_PHI_HOC_BONG,đã bị xóa tên do nợ học phí thì làm sao để xin khôi phục,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+[PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1)
+THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP
+THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP
+1. Điều kiện thay đổi người hướng dẫn Khóa luận tốt nghiệp
+- Sinh viên chỉ được đề nghị thay đổi người hướng dẫn nếu sau 01 tháng kể từ ngày
+được phê duyệt, giao đề tài mà sinh viên không liên hệ được với người hướng dẫn hoặc
+người hướng dẫn không hướng dẫn thực hiện đề tài khóa luận tốt nghiệp cho sinh viên với
+lý do chính đáng (Ví dụ: lý do sức khỏe, chuyên môn, điều kiện công tác…).
+2. Thủ tục
+- Sinh viên nộp đơn (theo mẫu dưới đây) điền đầy đủ thông tin nộp bản cứng về
+khoa/bộ môn để được giải quyết.
+- Thời gian giải quyết trong 07 ngày làm việc nếu sinh viên nộp đơn hợp lệ.
+
+
+Phụ lục số 05
+
+Nguồn: [PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1).pdf (trang 1)",[PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1).pdf (trang 1) | SỔ TAY SINH VIÊN K38.pdf (trang 119) | SỔ TAY SINH VIÊN K38.pdf (trang 33),0.5,"đúng một phần; quota fallback, chưa trả lời rõ"
+HOC_PHI_HOC_BONG,điều kiện gpa để xét học bổng khuyến khích học tập loại giỏi,"Không tìm thấy thông tin phù hợp trong tài liệu.  
+Nguồn:  
+- Tài liệu 1 (trang 38)",SỔ TAY SINH VIÊN K38.pdf (trang 38) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 1) | [PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 1),1.0,đúng; không thấy điều kiện GPA học bổng trong bộ tài liệu
+HOC_PHI_HOC_BONG,đang bị cảnh báo học tập kỳ trước thì kỳ này có được xét học bổng không,"Lỗi HTTP: 402 - {""error"":{""message"":""Provider returned error"",""code"":402,""metadata"":{""raw"":""{\""error\"":\""API key USD spend limit exceeded. Your account may still have USD balance, but this API key has reached its configured USD spending limit.\""}"",""provider_name"":""Venice"",""is_byok"":false}},""user_id"":""user_3COeFFXNE77RTz7fapFnDlhP9KL""}","[PHỤ LỤC 14] QUY TRÌNH XÉT CẢNH BÁO HỌC TẬP, BUỘC THÔI HỌC.pdf (trang 2) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 1) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 3)",0.0,"sai; lỗi 402 provider, không có câu trả lời"
+HOC_PHI_HOC_BONG,hồ sơ xin miễn giảm học phí cho con thương binh gồm những gì,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+[PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC
+Hồ sơ gồm:
+Hồ sơ gồm:
++ Đơn đăng ký nghỉ học tạm thời và bảo lưu kết quả học tập có xác nhận của cố vấn
+học tập (theo mẫu đính kèm): 01 bản gốc;
++ Bảng điểm học tập (tính đến học kỳ gần nhất): in tại Phòng Tiếp sinh viên;
++ Giấy xác nhận không nợ sách thư viện;
++ Bản sao lệnh gọi nghĩa vụ quân sự hoặc photo giấy xác nhận của bệnh viện (có
+bản gốc đối chiếu) đối với người học được gọi nghĩa vụ quân sự và người học
+- Lưu ý:
++ Sinh viên đăng ký nghỉ học tạm thời mà đã đăng ký học, phải hoàn thành học phí
+theo quy định;
++ Thời gian nghỉ học tạm thời vì lý do cá nhân không quá 1 năm và chỉ được 1 lần
+trong một chương trình đào tạo.
+
+Nguồn: [PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 2)","[PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 2) | SỔ TAY SINH VIÊN K38.pdf (trang 2) | [PHỤ LỤC 14] QUY TRÌNH XÉT CẢNH BÁO HỌC TẬP, BUỘC THÔI HỌC.pdf (trang 3)",1.0,đúng; không thấy hồ sơ miễn giảm học phí trong tài liệu
+HOC_PHI_HOC_BONG,sinh viên có sổ hộ nghèo được giảm bao nhiêu phần trăm học phí,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+[PHỤ LUC 19] THỦ TỤC THỰC HIỆN ĐĂNG KÝ HỌC CHƯƠNG TRÌNH THỨ HAI
+Bước 4: Đóng lệ phí
+Bước 4: Đóng lệ phí
+Sinh viên: Đóng lệ phí theo quy định của Nhà trường.
+
+Nguồn: [PHỤ LUC 19] THỦ TỤC THỰC HIỆN ĐĂNG KÝ HỌC CHƯƠNG TRÌNH THỨ HAI.pdf (trang 2)",[PHỤ LUC 19] THỦ TỤC THỰC HIỆN ĐĂNG KÝ HỌC CHƯƠNG TRÌNH THỨ HAI.pdf (trang 2) | SỔ TAY SINH VIÊN K38.pdf (trang 31) | [PHỤ LỤC 17] QUY TRÌNH CHUYỂN CHƯƠNG TRÌNH.pdf (trang 2),1.0,đúng; không thấy phần trăm giảm học phí trong tài liệu
+HOC_PHI_HOC_BONG,thông tin các học bổng doanh nghiệp cho sinh viên it xem ở đâu,"Thông tin các học bổng doanh nghiệp cho sinh viên IT có thể tìm thấy trong:
+
+- **Quy chế Công tác sinh viên của Trường** (đề cập đến điều kiện và hình thức xét khen thưởng, học bổng).
+- **Văn bản khác của Trường** (được ban hành dựa trên điều kiện cụ thể, bao gồm học bổng từ các tổ chức, doanh nghiệp, cá nhân tài trợ).
+
+Nguồn:
+- Tài liệu 1 (SỔ TAY SINH VIÊN K38, trang 30)",SỔ TAY SINH VIÊN K38.pdf (trang 38) | SỔ TAY SINH VIÊN K38.pdf (trang 8) | SỔ TAY SINH VIÊN K38.pdf (trang 37),0.5,"đúng một phần; trả lời chung chung, không chắc có nguồn cụ thể"
+DAO_TAO_KHOA_CNTT,khoa công nghệ thông tin có những chuyên ngành nào cho sinh viên năm 3,"Không tìm thấy thông tin phù hợp trong tài liệu.  
+Nguồn: - Tên file (trang X)",SỔ TAY SINH VIÊN K38.pdf (trang 22) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 1) | [PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 7),1.0,đúng; không thấy chuyên ngành năm 3 cụ thể trong tài liệu hiện dùng
+DAO_TAO_KHOA_CNTT,chuẩn đầu ra của ngành khoa học máy tính là gì,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Nguồn:
+- PHỤ LỤC 15 (trang 1)
+- PHỤ LỤC 12 (trang 1)","[PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 1) | [PHỤ LỤC 12] QUY TRÌNH NHẬN, XỬ LÝ VÀ SỬA ĐIỂM QUÁ TRÌNH, ĐIỂM THI_HUNG (1).pdf (trang 1) | [PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 6)",1.0,đúng; không thấy chuẩn đầu ra ngành Khoa học máy tính trong tài liệu đã nạp
+DAO_TAO_KHOA_CNTT,sinh viên ngành khoa học máy tính cần học bao nhiêu tín chỉ tự chọn,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+SỔ TAY SINH VIÊN K38
+l) Sinh viên phải tự mình thực hiện đề tài khóa luận tốt nghiệp. Trường hợp nếu bị phát hiện
+l) Sinh viên phải tự mình thực hiện đề tài khóa luận tốt nghiệp. Trường hợp nếu bị phát hiện
+có sao chép hoặc nhờ người khác làm hộ thì khóa luận tốt nghiệp không còn giá trị;
+m) Đối với đề tài có sử dụng tài liệu thực tế của cơ quan, doanh nghiệp, sinh viên thực
+hiện và người hướng dẫn có trách nhiệm kiểm tra việc chấp hành các quy định về bảo vệ thông
+tin, tài liệu của cơ quan cung cấp số liệu này;
+n) Sinh viên được gia hạn một lần duy nhất nếu có lý do chính đáng và phải bảo vệ khóa
+luận vào đợt kế tiếp.
+
+Nguồn: SỔ TAY SINH VIÊN K38.pdf (trang 24)",SỔ TAY SINH VIÊN K38.pdf (trang 24) | [PHỤ LỤC 2] THỦ TỤC ĐĂNG KÝ THỰC TẬP TỐT NGHIỆP (1).pdf (trang 1) | [PHỤ LUC 19] THỦ TỤC THỰC HIỆN ĐĂNG KÝ HỌC CHƯƠNG TRÌNH THỨ HAI.pdf (trang 2),0.5,"đúng một phần; quota fallback, có thể có CTĐT nhưng chưa trả cụ thể"
+DAO_TAO_KHOA_CNTT,trưởng khoa công nghệ thông tin hiện tại là ai,"Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+SỔ TAY SINH VIÊN K38
+ông (bà) Trưởng các đơn vị, cán bộ, giảng viên, sinh viên trình độ đại học Trường Đại học
+ông (bà) Trưởng các đơn vị, cán bộ, giảng viên, sinh viên trình độ đại học Trường Đại học
+Thăng Long chịu trách nhiệm thi hành Quy chế này. Trong quá trình thực hiện nếu có phát sinh
+vướng mắc, các đơn vị, cá nhân gửi ý kiến về Phòng Đào tạo để tổng hợp, trình Hiệu trưởng
+xem xét, quyết định.
+
+Nguồn: SỔ TAY SINH VIÊN K38.pdf (trang 40)",SỔ TAY SINH VIÊN K38.pdf (trang 40) | CTĐT (Quyết định số 25090503QĐ-ĐHTL ngày 0592025).pdf (trang 1) | SỔ TAY SINH VIÊN K38.pdf (trang 101),1.0,đúng; câu hỏi đòi thông tin hiện tại ngoài phạm vi tài liệu tĩnh
+DAO_TAO_KHOA_CNTT,văn phòng giáo vụ khoa cntt nằm ở phòng nào tòa nào,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Nguồn:
+- [PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (Trang 2)
+- SỔ TAY SINH VIÊN K38.pdf (Trang 110)",[PHỤ LỤC 13]QUY TRÌNH ĐÁNH GIÁ KHÓA LUẬN TỐT NGHIỆP.pdf (trang 2) | SỔ TAY SINH VIÊN K38.pdf (trang 110) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 3),1.0,đúng; không thấy phòng/tòa giáo vụ cụ thể trong tài liệu
+DAO_TAO_KHOA_CNTT,phòng lab thực hành mạng máy tính mở cửa từ mấy giờ,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Nguồn:
+- [PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 14)
+- [PHỤ LỤC 1] QUY TRÌNH ĐĂNG KÍ HỌC.pdf (trang 1)",[PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 14) | [PHỤ LỤC 1] QUY TRÌNH ĐĂNG KÍ HỌC.pdf (trang 1) | SỔ TAY SINH VIÊN K38.pdf (trang 37),1.0,đúng; không thấy giờ mở cửa lab trong tài liệu
+DAO_TAO_KHOA_CNTT,muốn mượn phòng máy của khoa để làm nghiên cứu khoa học thì xin phép ai,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Nguồn:
+- [PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (Trang 1)
+- [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (Trang 1)",[PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 1) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 1) | [PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 6),1.0,đúng; không thấy quy định mượn phòng máy trong tài liệu
+DAO_TAO_KHOA_CNTT,câu lạc bộ it của khoa thường tuyển thành viên vào tháng mấy,"Không tìm thấy thông tin phù hợp trong tài liệu.
+
+Nguồn:
+- SỔ TAY SINH VIÊN K38.pdf (trang 15, 110)",SỔ TAY SINH VIÊN K38.pdf (trang 15) | SỔ TAY SINH VIÊN K38.pdf (trang 110) | SỔ TAY SINH VIÊN K38.pdf (trang 134),1.0,đúng; không thấy thông tin CLB/tháng tuyển trong tài liệu
+DAO_TAO_KHOA_CNTT,xin review về môn trí tuệ nhân tạo và học máy của khoa,"Các môn học liên quan đến trí tuệ nhân tạo và học máy trong chương trình:
+
+- Xử lý hình ảnh (AIS1505) – 3 tín chỉ, 45 tiết lý thuyết, 45 tiết thực hành  
+- Các công cụ lập trình trí tuệ nhân tạo (AIS1502) – 3 tín chỉ, 30 tiết lý thuyết, 30 tiết thực hành  
+- Nhận dạng mẫu (AIS1532) – 3 tín chỉ, 30 tiết lý thuyết, 30 tiết thực hành  
+- Học tăng cường (AIS1531) – 3 tín chỉ, 45 tiết lý thuyết, 45 tiết thực hành  
+- Trí tuệ nhân tạo tạo sinh GAN (AIS1535) – 3 tín chỉ, 45 tiết lý thuyết, 45 tiết thực hành  
+- Hệ chuyên gia (AIS1537) – 3 tín chỉ, 45 tiết lý thuyết, 45 tiết thực hành  
+- Trí tuệ nhân tạo giải thích được XAI (AIS1536) – 3 tín chỉ, 45 tiết lý thuyết, 45 tiết thực hành  
+- Xử lý dữ liệu chuỗi thời gian (AIS1538) – 3 tín chỉ, 45 tiết lý thuyết, 45 tiết thực hành  
+- Ứng dụng trí tuệ nhân tạo trong y tế (AIS1541) – 3 tín chỉ, 45 tiết lý thuyết, 45 tiết thực hành  
+- Ứng dụng trí tuệ nhân tạo trong tài chính (AIS1542) – 3 tín chỉ, 45 tiết lý thuyết, 45 tiết thực hành  
+- Ứng dụng trí tuệ nhân tạo trong khoa học địa lý và môi trường (AIS1543) – 3 tín chỉ, 45 tiết lý thuyết, 45 tiết thực hành  
+- Ứng dụng trí tuệ nhân tạo trong truyền thông (AIS1544) – 3 tín chỉ, 45 tiết lý thuyết, 45 tiết thực hành  
+- Dữ liệu lớn (AIS1534) – 3 tín chỉ, 45 tiết lý thuyết, 45 tiết thực hành  
+- Trí tuệ doanh nghiệp (AIS1533) – 3 tín chỉ, 45 tiết lý thuyết, 45 tiết thực hành  
+- Kỹ nghệ dữ liệu (AIS1545) – 3 tín chỉ, 45 tiết lý thuyết, 45 tiết thực hành  
+- Trực quan hoá dữ liệu (AIS1539) – 3 tín chỉ, 45 tiết lý thuyết, 45 tiết thực hành  
+
+Nguồn:  
+- Tài liệu 1: SỔ TAY SINH VIÊN K38.pdf (trang 67)",SỔ TAY SINH VIÊN K38.pdf (trang 67) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 1) | [PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 6),0.0,"sai; người dùng hỏi review, answer kéo môn học liên quan không đúng nhu cầu"
+CAU_HOI_TINH_HUONG_TEST_RAG,"em đang là sinh viên năm 3, cpa 2.4, em muốn vừa xin đi thực tập doanh nghiệp vừa đăng ký học vượt 3 môn trên trường thì có vi phạm quy chế không","Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+[PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1)
+THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP
+THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP
+1. Điều kiện thay đổi người hướng dẫn Khóa luận tốt nghiệp
+- Sinh viên chỉ được đề nghị thay đổi người hướng dẫn nếu sau 01 tháng kể từ ngày
+được phê duyệt, giao đề tài mà sinh viên không liên hệ được với người hướng dẫn hoặc
+người hướng dẫn không hướng dẫn thực hiện đề tài khóa luận tốt nghiệp cho sinh viên với
+lý do chính đáng (Ví dụ: lý do sức khỏe, chuyên môn, điều kiện công tác…).
+2. Thủ tục
+- Sinh viên nộp đơn (theo mẫu dưới đây) điền đầy đủ thông tin nộp bản cứng về
+khoa/bộ môn để được giải quyết.
+- Thời gian giải quyết trong 07 ngày làm việc nếu sinh viên nộp đơn hợp lệ.
+
+
+Phụ lục số 05
+
+Nguồn: [PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1).pdf (trang 1)",[PHỤ LỤC 5] THỦ TỤC THAY ĐỔI NGƯỜI HƯỚNG DẪN KHÓA LUẬN TỐT NGHIỆP (1).pdf (trang 1) | [PHỤ LỤC 3] MẪU BÁO CÁO THỰC TẬP TỐT NGHIỆP.pdf (trang 5) | [PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 1),0.5,"đúng một phần; câu tình huống nhiều bước, quota fallback chưa giải được"
+CAU_HOI_TINH_HUONG_TEST_RAG,"em bị mất thẻ sinh viên, ngày mai có lịch thi cuối kỳ thì em phải cầm giấy tờ gì đi thay thế để được giám thị cho vào phòng thi","Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+[PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG
+tra-Pháp chế vào cuối ngày. Trường hợp thuê in in bằng, phụ lục bằng tốt nghiệp thì sẽ
+tra-Pháp chế vào cuối ngày. Trường hợp thuê in in bằng, phụ lục bằng tốt nghiệp thì sẽ
+có sự giám sát của Công an PA03 và 2 cán bộ của Phòng Đào tạo;
+- Phòng Đào tạo trình Hiệu trưởng ký bằng tốt nghiệp; Trưởng phòng Đào tạo ký
+Phụ lục văn bằng;
+- Văn Phòng Trường đóng dấu Bằng và Phụ lục văn bằng;
+- Việc in và cấp Bằng và Phụ lục văn bằng (bản sao) cũng thực hiện theo quy trình
+như trên. Thông tin in trên Bằng và Phụ lục văn bằng (bản sao) được lấy từ sổ gốc cấp phát
+bằng tốt nghiệp.
+
+Nguồn: [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 3)",[PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 3) | [PHỤ LỤC 16] THỦ TỤC XÉT NGHỈ HỌC TẠM THỜI VÀ QUAY TRỞ LẠI HỌC.pdf (trang 1) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 2),0.5,"đúng một phần; quota fallback, chưa trả lời được giấy tờ thay thế"
+CAU_HOI_TINH_HUONG_TEST_RAG,"chứng chỉ toeic của em thi từ tháng 10 năm nhất, bây giờ là tháng 4 năm tư em nộp để xét chuẩn đầu ra ngoại ngữ thì có hợp lệ không hay phải thi lại","Chứng chỉ TOEIC của em đã **hết hiệu lực** và cần phải thi lại.
+
+Theo thông tin trong tài liệu, chứng chỉ TOEIC chỉ có hiệu lực trong vòng **02 năm** kể từ ngày thi. Em thi từ tháng 10 năm nhất đến tháng 4 năm tư là khoảng 3 năm 6 tháng, đã vượt quá thời hạn hiệu lực.
+
+Nguồn:
+- Quy định chuẩn đầu ra ngoại ngữ (trang 2)",,0.0,"sai; tự bịa hiệu lực TOEIC 2 năm, không có căn cứ từ structured hiện tại"
+CAU_HOI_TINH_HUONG_TEST_RAG,em đăng ký học song bằng ngành ngôn ngữ anh nhưng hiện tại nợ môn ngành công nghệ thông tin quá 15 tín chỉ thì có bị hủy học chương trình 2 không,"Không tìm thấy thông tin phù hợp trong tài liệu.  
+Nguồn: - Tài liệu 1 (trang 2)","[PHỤ LỤC 14] QUY TRÌNH XÉT CẢNH BÁO HỌC TẬP, BUỘC THÔI HỌC.pdf (trang 1) | [PHỤ LỤC 17] QUY TRÌNH CHUYỂN CHƯƠNG TRÌNH.pdf (trang 2) | [PHỤ LỤC 15] QUY TRÌNH XÉT TỐT NGHIỆP VÀ CẤP PHÁT VĂN BẰNG.pdf (trang 1)",0.5,"đúng một phần; fallback an toàn, chưa đủ điều kiện để kết luận"
+CAU_HOI_TINH_HUONG_TEST_RAG,"điểm tổng kết môn toán rời rạc của em là 4.5 hệ 10 nhưng quy ra điểm chữ là d, vậy em có bắt buộc phải học lại để được ra trường không","Hệ thống AI tạm thời đã hết quota mô hình miễn phí hoặc đang quá tải.
+
+Thông tin gần nhất tìm được trong tài liệu:
+SỔ TAY SINH VIÊN K38
+Điều 14 Quy chế này)
+Điều 14 Quy chế này)
+phải đăng ký học lại học phần đó trong các học kỳ tiếp theo cho đến khi đạt điểm D trở lên;
+-
+Sinh viên có học phần tự chọn bị điểm F phải đăng ký học lại học phần đó hoặc
+học đổi sang học phần tự chọn khác trong cùng khối kiến thức trong các học kỳ tiếp theo cho
+đến khi đạt điểm D trở lên.
+11. Đăng ký học cải thiện điểm: Sinh viên có điểm học phần đạt từ 4,0 đến 5,4 theo
+thang điểm 10 (điểm D+, D theo thang điểm chữ) được đăng ký học cải thiện điểm 01 lần.
+Trường hợp điểm lần sau thấp hơn thì điểm chính thức của học phần sẽ là điểm học phần của
+lần học đầu.
+12. Đăng ký học vượt: Sinh viên xếp loại học lực từ trung bình trở lên quy định tại
+
+Nguồn: SỔ TAY SINH VIÊN K38.pdf (trang 19)",SỔ TAY SINH VIÊN K38.pdf (trang 19) | [PHỤ LỤC 7] QUY ĐỊNHVỀ THỂ THỨC TRÌNH BÀY KHÓA LUẬN TỐT NGHIỆP TRÌNH ĐỘ ĐẠI HỌC.pdf (trang 2) | SỔ TAY SINH VIÊN K38.pdf (trang 26),0.5,"đúng một phần; quota fallback, chưa trả lời trực diện"

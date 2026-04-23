@@ -4,6 +4,10 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
 from app.retrieval.retriever import retrieve_context
+from app.retrieval.structured_lookup import (
+    lookup_certificate_mapping,
+    format_structured_certificate_answer,
+)
 from app.llm.client import generate_answer
 
 app = FastAPI(title=settings.APP_NAME)
@@ -23,7 +27,6 @@ class AskRequest(BaseModel):
 
 def select_llm_contexts(question: str, contexts: list[str], sources: list[dict]):
     q = question.lower()
-
     pairs = list(zip(contexts, sources))
 
     if not pairs:
@@ -37,11 +40,9 @@ def select_llm_contexts(question: str, contexts: list[str], sources: list[dict])
             ctx_lower = ctx.lower()
             score = 0
 
-            # Ưu tiên đúng file quy đổi chứng chỉ
             if "ngoại ngữ quốc tế" in file_name:
                 score += 100
 
-            # Ưu tiên đúng từ khóa trong chunk
             if "ielts" in q and "ielts" in ctx_lower:
                 score += 120
             if "toeic" in q and "toeic" in ctx_lower:
@@ -55,17 +56,14 @@ def select_llm_contexts(question: str, contexts: list[str], sources: list[dict])
             if "jlpt" in q and "jlpt" in ctx_lower:
                 score += 120
 
-            # Ưu tiên chunk có nội dung bảng quy đổi
             if "điểm quy đổi" in ctx_lower:
                 score += 80
             if "loại chứng chỉ quốc tế" in ctx_lower:
                 score += 60
 
-            # Phạt mạnh file xếp lớp tiếng Anh
             if "xếp lớp tiếng anh" in file_name:
                 score -= 150
 
-            # Phạt chunk mở đầu chung chung
             if "điều kiện chứng chỉ được công nhận quy đổi" in ctx_lower:
                 score -= 100
 
@@ -108,7 +106,7 @@ def select_llm_contexts(question: str, contexts: list[str], sources: list[dict])
         top = scored[:2]
         return [x[1] for x in top], [x[2] for x in top]
 
-    # 3) Mặc định: lấy 2 context đầu
+    # 3) Mặc định
     return contexts[:2], sources[:2]
 
 
@@ -123,6 +121,30 @@ def health_check():
 
 @app.post("/ask")
 def ask(req: AskRequest):
+    # 1. Ưu tiên structured lookup trước cho case bảng quy đổi
+    structured_result = lookup_certificate_mapping(req.question)
+    if structured_result:
+        answer = format_structured_certificate_answer(structured_result)
+
+        rows = structured_result.get("rows", [])
+        sources = []
+        for row in rows:
+            sources.append({
+                "file": row.get("source_file"),
+                "source_file": row.get("source_file"),
+                "page": row.get("source_page"),
+                "category": "structured",
+                "sub_category": "certificate_mapping",
+                "id": f"{row.get('certificate')}_{row.get('level')}_{row.get('group')}",
+            })
+
+        return {
+            "question": req.question,
+            "answer": answer,
+            "sources": sources
+        }
+
+    # 2. Nếu không phải structured case thì dùng RAG + LLM như cũ
     docs = retrieve_context(req.question, k=5)
 
     sources = []

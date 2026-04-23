@@ -1,0 +1,122 @@
+[QUY_TRINH_HOC_VU]
+nghỉ học tạm thời
+hồ sơ nghỉ học tạm thời gồm gì
+điều kiện nghỉ học tạm thời là gì
+thời gian tối đa được phép nghỉ học tạm thời là bao lâu
+tôi bị ốm phải nhập viện 1 tháng, giờ xin bảo lưu thì cần giấy tờ gì của bệnh viện
+đang trong thời gian bảo lưu có được đăng ký tín chỉ kỳ tiếp theo không
+quay trở lại học cần những gì
+thủ tục xin tiếp tục học tập sau khi hết hạn bảo lưu chậm nhất là khi nào
+chuyển cơ sở đào tạo cần hồ sơ gì
+chuyển ngành cần những bước nào
+cpa dưới 2.0 có được làm đơn xin chuyển từ ngành kế toán sang khoa học máy tính không
+chuyển chương trình học cần gì
+điều kiện để học cùng lúc hai chương trình song bằng
+khi nào bị cảnh báo học tập
+bị cảnh báo học tập mức 2 thì sẽ ra sao
+3 kỳ liên tiếp bị cảnh báo học tập có bị buộc thôi học không
+thủ tục xét tốt nghiệp gồm những bước nào
+chưa có chứng chỉ thể dục có được nộp hồ sơ xét tốt nghiệp không
+quy trình sửa điểm quá trình và điểm thi như thế nào
+xin cấp bản sao bảng điểm hệ 4 ở đâu, mất phí bao nhiêu
+thủ tục xin giấy chứng nhận sinh viên để hoãn nghĩa vụ quân sự
+làm lại thẻ sinh viên bị mất tốn bao lâu
+cách tính điểm trung bình chung tích lũy cpa hệ 4 và hệ 10
+quy trình khiếu nại điểm thi phúc khảo bài thi mất bao lâu thì có kết quả
+hủy học phần đã đăng ký như thế nào, có được hoàn tiền không
+thủ tục xin chuyển lớp tín chỉ sau khi hệ thống đã đóng
+
+[THUC_TAP_KLTN]
+đăng ký thực tập tốt nghiệp
+điều kiện sinh viên đăng ký thực tập tốt nghiệp
+còn nợ 2 môn chuyên ngành có được đi thực tập tốt nghiệp không
+hướng dẫn thực tập tốt nghiệp
+hồ sơ thực tập tốt nghiệp gồm gì
+xin giấy giới thiệu thực tập của trường có cần dấu xác nhận của công ty trước không
+công ty startup không có dấu mộc tròn thì có được chấp nhận làm nơi thực tập không
+quy trình đánh giá khóa luận tốt nghiệp
+thay đổi người hướng dẫn khóa luận tốt nghiệp
+giảng viên thỉnh giảng có được hướng dẫn khóa luận tốt nghiệp không
+thể thức trình bày khóa luận tốt nghiệp
+quy định về trích dẫn tài liệu tham khảo trong quyển khóa luận
+phiếu theo dõi tiến độ khóa luận gồm những gì
+không đủ cpa làm khóa luận thì phải học mấy học phần thay thế
+khóa luận tốt nghiệp có được làm theo nhóm 2 người không
+slide bảo vệ khóa luận giới hạn trong bao nhiêu trang
+quy trình doanh nghiệp chấm điểm thực tập của sinh viên như thế nào
+
+[QUY_DOI_CHUNG_CHI]
+quy đổi ielts
+quy đổi toeic
+quy đổi toefl
+quy đổi chứng chỉ ngoại ngữ quốc tế
+quy đổi điểm và xếp lớp tiếng anh
+ielts 6.5 được quy đổi như thế nào
+ielts 4.5 được quy đổi ra sao
+toefl ibt được quy đổi như thế nào
+toeic 450 quy đổi ra mấy điểm môn tiếng anh 1
+chứng chỉ jlpt n3 tiếng nhật có thay thế được chuẩn đầu ra tiếng anh không
+chứng chỉ tin học mos ic3 có được miễn học phần tin học đại cương không
+chứng chỉ ielts thi từ năm nhất thì đến năm 4 nộp xét tốt nghiệp còn hợp lệ không
+nộp chứng chỉ ngoại ngữ để quy đổi điểm ở phòng đào tạo hay khoa
+quy trình hủy điểm tiếng anh đã quy đổi để học trực tiếp trên lớp
+
+[QUY_CHE_SO_TAY]
+tôi sẽ bị đình chỉ học khi vi phạm những điều gì
+khi nào bị buộc thôi học
+các mức xử lý kỷ luật sinh viên
+quy định về trách nhiệm sinh viên
+quy định về quyền của sinh viên
+quy định về nghĩa vụ quân sự và bảo lưu kết quả học tập
+đi muộn 15 phút có được vào phòng thi cuối kỳ không
+quên mang thẻ sinh viên và cccd khi đi thi thì phải làm sao
+nghỉ học trên 20% số buổi có bị cấm thi không
+gian lận mang điện thoại vào phòng thi bị xử lý ra sao
+nhờ người đi thi hộ bị phát hiện xử phạt thế nào
+cách tính điểm rèn luyện sinh viên hàng kỳ
+không tham gia tuần sinh hoạt công dân đầu năm bị trừ bao nhiêu điểm rèn luyện
+tiêu chuẩn đạt danh hiệu sinh viên 5 tốt cấp trường
+quy định về mặc đồng phục hoặc đeo thẻ sinh viên khi vào thư viện
+
+[DANG_KY_HOC_PHAN]
+thời gian đăng ký tín chỉ học kỳ này là khi nào
+cách đăng ký học vượt
+điều kiện đăng ký học lại học cải thiện điểm
+học cải thiện mà điểm thi thấp hơn điểm cũ thì lấy điểm nào
+lớp môn cấu trúc dữ liệu và giải thuật bị hủy do ít người thì phải làm sao
+giới hạn số tín chỉ tối đa được đăng ký trong kỳ hè là bao nhiêu
+đăng ký học phần song song như thế nào
+môn học tiên quyết là gì, môn học trước là gì
+chưa học môn c++ có được đăng ký môn java không
+hệ thống đăng ký tín chỉ bị sập do quá tải thì nhà trường có mở thêm thời gian không
+quên mật khẩu tài khoản cổng thông tin sinh viên xin cấp lại ở đâu
+
+[HOC_PHI_HOC_BONG]
+cách đóng học phí qua tài khoản ngân hàng
+đóng học phí qua ví điện tử momo vnpay được không
+thời hạn nộp học phí học kỳ này
+nộp học phí muộn có bị xóa tên khỏi danh sách lớp không
+đã bị xóa tên do nợ học phí thì làm sao để xin khôi phục
+điều kiện gpa để xét học bổng khuyến khích học tập loại giỏi
+đang bị cảnh báo học tập kỳ trước thì kỳ này có được xét học bổng không
+hồ sơ xin miễn giảm học phí cho con thương binh gồm những gì
+sinh viên có sổ hộ nghèo được giảm bao nhiêu phần trăm học phí
+thông tin các học bổng doanh nghiệp cho sinh viên it xem ở đâu
+
+[DAO_TAO_KHOA_CNTT]
+khoa công nghệ thông tin có những chuyên ngành nào cho sinh viên năm 3
+chuẩn đầu ra của ngành khoa học máy tính là gì
+sinh viên ngành khoa học máy tính cần học bao nhiêu tín chỉ tự chọn
+trưởng khoa công nghệ thông tin hiện tại là ai
+văn phòng giáo vụ khoa cntt nằm ở phòng nào tòa nào
+phòng lab thực hành mạng máy tính mở cửa từ mấy giờ
+muốn mượn phòng máy của khoa để làm nghiên cứu khoa học thì xin phép ai
+câu lạc bộ it của khoa thường tuyển thành viên vào tháng mấy
+xin review về môn trí tuệ nhân tạo và học máy của khoa
+
+[CAU_HOI_TINH_HUONG_TEST_RAG]
+em đang là sinh viên năm 3, cpa 2.4, em muốn vừa xin đi thực tập doanh nghiệp vừa đăng ký học vượt 3 môn trên trường thì có vi phạm quy chế không
+em bị mất thẻ sinh viên, ngày mai có lịch thi cuối kỳ thì em phải cầm giấy tờ gì đi thay thế để được giám thị cho vào phòng thi
+chứng chỉ toeic của em thi từ tháng 10 năm nhất, bây giờ là tháng 4 năm tư em nộp để xét chuẩn đầu ra ngoại ngữ thì có hợp lệ không hay phải thi lại
+em đăng ký học song bằng ngành ngôn ngữ anh nhưng hiện tại nợ môn ngành công nghệ thông tin quá 15 tín chỉ thì có bị hủy học chương trình 2 không
+điểm tổng kết môn toán rời rạc của em là 4.5 hệ 10 nhưng quy ra điểm chữ là d, vậy em có bắt buộc phải học lại để được ra trường không

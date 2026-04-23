@@ -1,0 +1,99 @@
+[
+  {
+    "language": "english",
+    "certificate": "IELTS",
+    "level": "8.0-9.0",
+    "group": "nganh_khong_chuyen",
+    "mappings": {
+      "tieng_anh_so_cap": 10,
+      "tieng_anh_so_trung_cap": 10,
+      "tieng_anh_trung_cap": 10
+    },
+    "source_file": "[PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf",
+    "source_page": 1
+  },
+  {
+    "language": "english",
+    "certificate": "IELTS",
+    "level": "6.5-7.5",
+    "group": "nganh_khong_chuyen",
+    "mappings": {
+      "tieng_anh_so_cap": 10,
+      "tieng_anh_so_trung_cap": 10,
+      "tieng_anh_trung_cap": 10
+    },
+    "source_file": "[PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf",
+    "source_page": 1
+  },
+  {
+    "language": "english",
+    "certificate": "IELTS",
+    "level": "5.0-6.0",
+    "group": "nganh_khong_chuyen",
+    "mappings": {
+      "tieng_anh_so_cap": 10,
+      "tieng_anh_so_trung_cap": 10,
+      "tieng_anh_trung_cap": 10
+    },
+    "source_file": "[PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf",
+    "source_page": 1
+  },
+  {
+    "language": "english",
+    "certificate": "IELTS",
+    "level": "4.0-4.5",
+    "group": "nganh_khong_chuyen",
+    "mappings": {
+      "tieng_anh_so_cap": 10,
+      "tieng_anh_so_trung_cap": 9,
+      "tieng_anh_trung_cap": null
+    },
+    "source_file": "[PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf",
+    "source_page": 1
+  },
+  {
+    "language": "english",
+    "certificate": "IELTS",
+    "level": "6.5-7.5",
+    "group": "ngon_ngu_anh",
+    "mappings": {
+      "ky_nang_so_cap_1": 10,
+      "ky_nang_so_cap_2": 10,
+      "ky_nang_so_trung_cap": 9,
+      "ky_nang_trung_cap": 8,
+      "ky_nang_cao_cap": null
+    },
+    "source_file": "[PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf",
+    "source_page": 2
+  },
+  {
+    "language": "english",
+    "certificate": "IELTS",
+    "level": "5.0-6.0",
+    "group": "ngon_ngu_anh",
+    "mappings": {
+      "ky_nang_so_cap_1": 10,
+      "ky_nang_so_cap_2": 10,
+      "ky_nang_so_trung_cap": 9,
+      "ky_nang_trung_cap": 8,
+      "ky_nang_cao_cap": null
+    },
+    "source_file": "[PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf",
+    "source_page": 2
+  },
+  {
+    "language": "english",
+    "certificate": "IELTS",
+    "level": "4.0-4.5",
+    "group": "ngon_ngu_anh",
+    "mappings": {
+      "ky_nang_so_cap_1": 10,
+      "ky_nang_so_cap_2": 9,
+      "ky_nang_so_trung_cap": null,
+      "ky_nang_trung_cap": null,
+      "ky_nang_cao_cap": null
+    },
+    "source_file": "[PHỤ LỤC 10] BẢN QUY ĐỔI CHỨNG CHỈ NGOẠI NGỮ QUỐC TẾ.pdf",
+    "source_page": 2
+  }
+]
