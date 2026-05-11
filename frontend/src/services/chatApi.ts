@@ -13,13 +13,46 @@ export interface AskResponse {
   sources: AskSource[];
 }
 
-export async function askQuestion(question: string): Promise<AskResponse> {
-  const response = await fetch("http://127.0.0.1:8010/ask", {
+export interface CreateMessageResponse {
+  answer: string;
+  conversation_id: string;
+}
+
+export async function createMessageAuto(
+  baseUrl: string,
+  userId: string,
+  content: string
+): Promise<CreateMessageResponse> {
+  const response = await fetch(`${baseUrl}/api/messages`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      "X-User-Id": userId,
     },
-    body: JSON.stringify({ question }),
+    body: JSON.stringify({ content }),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`API error ${response.status}: ${errorText}`);
+  }
+
+  return response.json();
+}
+
+export async function createMessageInConversation(
+  baseUrl: string,
+  userId: string,
+  conversationId: string | number,
+  content: string
+): Promise<CreateMessageResponse> {
+  const response = await fetch(`${baseUrl}/api/conversations/${conversationId}/messages`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-User-Id": userId,
+    },
+    body: JSON.stringify({ content }),
   });
 
   if (!response.ok) {

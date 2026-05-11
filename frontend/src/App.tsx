@@ -29,16 +29,24 @@ import {
   LogOut,
   Shield
 } from 'lucide-react';
-import { askQuestion } from './services/chatApi';
+import { createMessageAuto, createMessageInConversation } from './services/chatApi';
 import { motion, AnimatePresence } from 'motion/react';
 import { useState, useRef, useEffect } from 'react';
 import Markdown from 'react-markdown';
 import Admin from './Admin';
 import { useAuth } from './context/AuthContext';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 interface Message {
   role: 'user' | 'model';
   content: string;
+}
+
+interface Conversation {
+  id: number | string;
+  title: string;
+  updatedAt?: string;
 }
 
 export default function App() {
@@ -49,6 +57,10 @@ export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  const [conversations, setConversations] = useState<Conversation[]>([]);
+  const [activeConversationId, setActiveConversationId] = useState<number | string | null>(null);
+  const [isLoadingConversations, setIsLoadingConversations] = useState(false);
+
   const [view, setView] = useState<'chat' | 'admin'>('chat');
   const [knowledgeBase, setKnowledgeBase] = useState<Array<{
     name: string;
@@ -57,6 +69,20 @@ export default function App() {
     uploadedAt: string;
     content?: string;
   }>>([]);
+  const [chatUserId] = useState(() => {
+    const stored = localStorage.getItem('chatUserId');
+    if (stored && /^\d+$/.test(stored)) {
+      return stored;
+    }
+    const generated = String(Math.floor(Date.now() / 1000));
+    localStorage.setItem('chatUserId', generated);
+    return generated;
+  });
+
+  const apiHeaders = {
+    'Content-Type': 'application/json',
+    'X-User-Id': chatUserId,
+  };
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -66,53 +92,120 @@ export default function App() {
     scrollToBottom();
   }, [messages]);
 
-  const handleSendMessage = async () => {
-  if (!input.trim() || isTyping) return;
-
-  const currentInput = input;
-  setInput('');
-
-  // Hiển thị tin nhắn user ngay
-  const userMessage: Message = { role: 'user', content: currentInput };
-  setMessages(prev => [...prev, userMessage]);
-
-  // Khóa input trong lúc chờ AI
-  setIsTyping(true);
-
-  try {
-    // Gọi backend thật
-    const data = await askQuestion(currentInput);
-    const answer = data.answer || 'Không có câu trả lời từ hệ thống.';
-
-    let aiContent = '';
-    setMessages(prev => [...prev, { role: 'model', content: '' }]);
-
-    for (let i = 0; i < answer.length; i++) {
-      await new Promise(resolve => setTimeout(resolve, 15));
-      aiContent += answer[i];
-
-      setMessages(prev => {
-        const newMessages = [...prev];
-        newMessages[newMessages.length - 1] = {
-          role: 'model',
-          content: aiContent
-        };
-        return newMessages;
+  const loadConversations = async (preferActiveId?: number | string | null) => {
+    setIsLoadingConversations(true);
+    try {
+      const response = await fetch(`${API_URL}/api/conversations`, {
+        headers: apiHeaders,
       });
-    }
-  } catch (error) {
-    console.error('API Error:', error);
-    setMessages(prev => [
-      ...prev,
-      {
-        role: 'model',
-        content: 'Đã có lỗi khi gọi backend AI.'
+      const data = await response.json();
+      const list = Array.isArray(data) ? data : (data?.conversations || []);
+
+      setConversations(list);
+      if (preferActiveId !== undefined && preferActiveId !== null) {
+        setActiveConversationId(preferActiveId);
+      } else if (list.length > 0) {
+        setActiveConversationId(list[0].id);
       }
-    ]);
-  } finally {
-    setIsTyping(false);
-  }
-};
+    } catch (error) {
+      console.error('Load conversations error:', error);
+    } finally {
+      setIsLoadingConversations(false);
+    }
+  };
+
+  useEffect(() => {
+    loadConversations();
+  }, []);
+
+  const loadConversation = async (conversationId: number | string) => {
+    setActiveConversationId(conversationId);
+    try {
+      const response = await fetch(`${API_URL}/api/conversations/${conversationId}/messages`, {
+        headers: apiHeaders,
+      });
+      const data = await response.json();
+      const list = Array.isArray(data) ? data : (Array.isArray(data?.messages) ? data.messages : []);
+      const normalized = list.map((item: any) => ({
+        role: item.role === 'model' ? 'model' : 'user',
+        content: item.content || ''
+      }));
+      setMessages(normalized);
+    } catch (error) {
+      console.error('Load conversation detail error:', error);
+    }
+  };
+
+  const handleRenameConversation = (conversationId: number | string) => {
+    const current = conversations.find(item => item.id === conversationId);
+    const nextTitle = window.prompt('Rename conversation', current?.title || '');
+    if (!nextTitle?.trim()) return;
+
+    setConversations(prev => prev.map(item => item.id === conversationId ? { ...item, title: nextTitle.trim() } : item));
+  };
+
+  const handleDeleteConversation = (conversationId: number | string) => {
+    setConversations(prev => prev.filter(item => item.id !== conversationId));
+    if (activeConversationId === conversationId) {
+      setActiveConversationId(null);
+      setMessages([]);
+    }
+  };
+
+  const handleSendMessage = async () => {
+    if (!input.trim() || isTyping) return;
+
+    const currentInput = input;
+    setInput('');
+
+    const userMessage: Message = { role: 'user', content: currentInput };
+    setMessages(prev => [...prev, userMessage]);
+
+    setIsTyping(true);
+
+    try {
+      const data = activeConversationId
+        ? await createMessageInConversation(API_URL, chatUserId, activeConversationId, currentInput)
+        : await createMessageAuto(API_URL, chatUserId, currentInput);
+
+      const answer = data.answer || 'Không có câu trả lời từ hệ thống.';
+      const nextConversationId = data.conversation_id || activeConversationId;
+
+      if (nextConversationId) {
+        setActiveConversationId(nextConversationId);
+      }
+
+      let aiContent = '';
+      setMessages(prev => [...prev, { role: 'model', content: '' }]);
+
+      for (let i = 0; i < answer.length; i++) {
+        await new Promise(resolve => setTimeout(resolve, 15));
+        aiContent += answer[i];
+
+        setMessages(prev => {
+          const newMessages = [...prev];
+          newMessages[newMessages.length - 1] = {
+            role: 'model',
+            content: aiContent
+          };
+          return newMessages;
+        });
+      }
+
+      await loadConversations(nextConversationId ?? undefined);
+    } catch (error) {
+      console.error('API Error:', error);
+      setMessages(prev => [
+        ...prev,
+        {
+          role: 'model',
+          content: 'Đã có lỗi khi gọi backend AI.'
+        }
+      ]);
+    } finally {
+      setIsTyping(false);
+    }
+  };
 
   
   const handleSuggestionClick = (suggestion: string) => {
@@ -131,7 +224,7 @@ export default function App() {
 
       {/* SideNavBar (Drawer) */}
       <motion.aside
-        animate={{ width: sidebarOpen ? 256 : 80 }}
+        animate={{ width: sidebarOpen ? 280 : 80 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className="fixed left-0 top-0 h-full z-40 flex flex-col p-4 bg-surface-container rounded-r-2xl pt-20"
       >
@@ -143,7 +236,7 @@ export default function App() {
         <motion.button 
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          onClick={() => { setMessages([]); setView('chat'); }}
+          onClick={() => { setMessages([]); setView('chat'); setActiveConversationId(null); }}
           className={`mb-6 flex items-center justify-center gap-2 py-3 px-4 bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-headline font-bold rounded-xl shadow-lg shadow-primary/10 transition-all duration-300 ${sidebarOpen ? 'w-full' : 'w-12'}`}
         >
           <Plus className="w-4 h-4" />
@@ -151,20 +244,67 @@ export default function App() {
         </motion.button>
 
         <nav className="flex-1 space-y-2 overflow-y-auto pr-2 custom-scrollbar">
-          <div className="bg-surface-container-high text-primary rounded-lg p-3 flex items-center gap-3 transition-colors duration-300 cursor-pointer">
-            <History className="w-5 h-5 shrink-0" />
-            <span className={`text-sm font-medium truncate transition-all duration-300 ${sidebarOpen ? 'opacity-100' : 'opacity-0 hidden'}`}>Recent Activity</span>
+          <div className={`flex items-center gap-2 px-3 text-xs uppercase tracking-wide text-on-surface-variant/70 ${sidebarOpen ? '' : 'hidden'}`}>
+            <History className="w-4 h-4" />
+            Conversations
           </div>
+
+          {isLoadingConversations && (
+            <div className={`text-on-surface-variant p-3 text-sm ${sidebarOpen ? '' : 'hidden'}`}>
+              Loading...
+            </div>
+          )}
+
+          {!isLoadingConversations && conversations.length === 0 && (
+            <div className={`text-on-surface-variant p-3 text-sm ${sidebarOpen ? '' : 'hidden'}`}>
+              No conversations yet.
+            </div>
+          )}
+
+          {conversations.map((item) => (
+            <div
+              key={item.id}
+              onClick={() => loadConversation(item.id)}
+              className={`group flex items-center gap-3 p-3 rounded-lg transition-all duration-300 cursor-pointer ${activeConversationId === item.id ? 'bg-surface-container-high text-primary' : 'text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface'}`}
+            >
+              <span className={`text-sm font-medium truncate transition-all duration-300 ${sidebarOpen ? 'opacity-100' : 'opacity-0 hidden'}`}>
+                {item.title || 'Untitled'}
+              </span>
+              {sidebarOpen && (
+                <div className="ml-auto flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <button
+                    type="button"
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      handleRenameConversation(item.id);
+                    }}
+                    className="text-on-surface-variant hover:text-on-surface"
+                    aria-label="Rename"
+                  >
+                    ✏️
+                  </button>
+                  <button
+                    type="button"
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      handleDeleteConversation(item.id);
+                    }}
+                    className="text-on-surface-variant hover:text-red-400"
+                    aria-label="Delete"
+                  >
+                    🗑️
+                  </button>
+                </div>
+              )}
+            </div>
+          ))}
+
           {user?.role === 'admin' && (
             <div onClick={() => setView('admin')} className={`text-on-surface-variant hover:bg-surface-container-high ${view === 'admin' ? 'bg-surface-container-high text-primary' : ''} hover:text-on-surface p-3 flex items-center gap-3 rounded-lg transition-all duration-300 cursor-pointer`}>
               <Shield className="w-5 h-5 shrink-0" />
               <span className={`text-sm font-medium transition-all duration-300 ${sidebarOpen ? 'opacity-100' : 'opacity-0 hidden'}`}>Admin Panel</span>
             </div>
           )}
-          <div className="text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface p-3 flex items-center gap-3 rounded-lg transition-all duration-300 cursor-pointer">
-            <HelpCircle className="w-5 h-5 shrink-0" />
-            <span className={`text-sm font-medium transition-all duration-300 ${sidebarOpen ? 'opacity-100' : 'opacity-0 hidden'}`}>Help</span>
-          </div>
         </nav>
 
         <div className="mt-auto space-y-3 p-2">
@@ -174,7 +314,7 @@ export default function App() {
             </div>
             <div className={`overflow-hidden transition-all duration-300 ${sidebarOpen ? '' : 'hidden'}`}>
               <p className="text-sm font-bold text-on-surface truncate">{user?.email || 'User'}</p>
-              <p className="text-[10px] text-on-surface-variant capitalize">{user?.role === 'admin' ? '🔐 Admin' : '👤 Student'}</p>
+              <p className="text-[10px] text-on-surface-variant capitalize">{user?.role === 'admin' ? '🔐 Admin' : '👤 User'}</p>
             </div>
           </div>
           
@@ -202,13 +342,13 @@ export default function App() {
       )}
 
       {/* Main Content Canvas */}
-      <main className={`flex-1 min-h-screen flex flex-col bg-surface-container-low relative transition-all duration-300 ${sidebarOpen ? 'ml-64' : 'ml-20'}`}>
+      <main className={`flex-1 min-h-screen flex flex-col bg-surface-container-low relative transition-all duration-300 ${sidebarOpen ? 'ml-[280px]' : 'ml-20'}`}>
         {view === 'admin' ? (
           <Admin knowledgeBase={knowledgeBase} setKnowledgeBase={setKnowledgeBase} onBack={() => setView('chat')} />
         ) : (
           <div className="flex-1 flex flex-col min-h-screen w-full relative">
             {/* TopNavBar */}
-            <header className={`fixed top-0 right-0 z-50 flex justify-between items-center px-8 py-4 bg-background/70 backdrop-blur-xl transition-all duration-300 ${sidebarOpen ? 'left-64' : 'left-20'}`}>
+            <header className={`fixed top-0 right-0 z-50 flex justify-between items-center px-8 py-4 bg-background/70 backdrop-blur-xl transition-all duration-300 ${sidebarOpen ? 'left-[280px]' : 'left-20'}`}>
           <div className="flex items-center gap-4">
             <span className="text-lg font-black text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container font-headline">
               The Ethereal Interface
@@ -303,7 +443,7 @@ export default function App() {
         </div>
 
         {/* Floating Message Input */}
-        <div className={`fixed bottom-8 right-0 flex flex-col items-center px-8 pointer-events-none transition-all duration-300 ${sidebarOpen ? 'left-64' : 'left-20'}`}>
+        <div className={`fixed bottom-8 right-0 flex flex-col items-center px-8 pointer-events-none transition-all duration-300 ${sidebarOpen ? 'left-[280px]' : 'left-20'}`}>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Mail, Lock, Loader2, AlertCircle } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import Register from './Register';
 
 interface LoginProps {
   onLoginSuccess: () => void;
@@ -15,10 +16,8 @@ export default function Login({ onLoginSuccess }: LoginProps) {
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const { login } = useAuth();
+  const [showRegister, setShowRegister] = useState(false);
 
-  const validateEmail = (email: string) => {
-    return email.includes('@');
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,28 +25,8 @@ export default function Login({ onLoginSuccess }: LoginProps) {
     setIsLoading(true);
 
     try {
-      // Check if admin account first (bypass all validation)
-      if (email === 'admin@gmail.com' && password === 'admin') {
-        const result = await login('admin@gmail.com', 'admin');
-        if (result.success) {
-          onLoginSuccess();
-        } else {
-          setError(result.message || 'Lỗi đăng nhập');
-        }
-        setIsLoading(false);
-        return;
-      }
-
-      // Validate email for student accounts
       if (!email.trim()) {
-        setError('Vui lòng nhập email');
-        setIsLoading(false);
-        return;
-      }
-
-      // Validate email format
-      if (!validateEmail(email)) {
-        setError('Vui lòng nhập email hợp lệ');
+        setError('Vui lòng nhập email hoặc username');
         setIsLoading(false);
         return;
       }
@@ -58,22 +37,16 @@ export default function Login({ onLoginSuccess }: LoginProps) {
         return;
       }
 
-      // Validate password length
       if (password.length < 6) {
         setError('Mật khẩu phải có ít nhất 6 ký tự');
         setIsLoading(false);
         return;
       }
 
-      // Call login function
+      // Call login function - role will be determined from database
       const result = await login(email, password);
 
       if (result.success) {
-        // ========== COMMENTED: No OTP - Direct to Chatbot ==========
-        // Store password temporarily for later verification (if needed)
-        // sessionStorage.setItem('tempPassword', password);
-        
-        // Directly go to chatbot (no OTP)
         onLoginSuccess();
       } else {
         setError(result.message || 'Lỗi đăng nhập');
@@ -135,20 +108,21 @@ export default function Login({ onLoginSuccess }: LoginProps) {
             </motion.div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Email Input */}
+          {!showRegister ? (
+            <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Email/Username Input */}
             <div className="space-y-2">
               <label className="text-sm font-headline font-semibold text-on-surface">
-                Email
+                Email hoặc Username
               </label>
               <div className="relative">
                 <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-primary pointer-events-none" />
                 <input
-                  type="email"
+                  type="text"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   disabled={isLoading}
-                  placeholder="your.email@gmail.com"
+                  placeholder="your.email@gmail.com hoặc username"
                   className="w-full pl-12 pr-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface placeholder:text-on-surface-variant/50 outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all disabled:opacity-50"
                 />
               </div>
@@ -198,11 +172,23 @@ export default function Login({ onLoginSuccess }: LoginProps) {
               )}
             </motion.button>
           </form>
+          ) : (
+            <div>
+              <Register onRegistered={() => { setShowRegister(false); onLoginSuccess(); }} />
+            </div>
+          )}
 
           {/* Demo Account Note */}
           <div className="mt-8 p-4 bg-surface-container rounded-xl border border-white/5">
-            <p className="text-xs text-on-surface-variant font-semibold mb-2">🔐 Tài khoản Demo:</p>
-            <p className="text-xs text-on-surface-variant font-mono">admin@gmail.com / admin</p>
+            <p className="text-xs text-on-surface-variant font-semibold mb-2">� Gợi ý:</p>
+            <p className="text-xs text-on-surface-variant">Sử dụng username hoặc email đã đăng ký. Bạn chưa có tài khoản? <button onClick={() => setShowRegister(true)} className="text-primary underline">Đăng ký tại đây</button></p>
+          </div>
+          <div className="mt-4 text-center">
+            {!showRegister ? (
+              <button onClick={() => setShowRegister(true)} className="text-sm text-primary underline">Đăng Ký</button>
+            ) : (
+              <button onClick={() => setShowRegister(false)} className="text-sm text-primary underline">Quay lại Đăng Nhập</button>
+            )}
           </div>
         </motion.div>
       </div>

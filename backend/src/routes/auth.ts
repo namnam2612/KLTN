@@ -2,10 +2,20 @@ import express, { Request, Response } from 'express';
 import redis from 'redis';
 import queueService from '../services/queueService';
 import dotenv from 'dotenv';
+import accountService from '../services/accountService';
 
 dotenv.config();
 
 const router = express.Router();
+
+const normalizeRole = (rawRole: unknown): 'admin' | 'user' => {
+  if (typeof rawRole === 'string') {
+    const normalized = rawRole.trim().toLowerCase();
+    if (normalized === 'admin') return 'admin';
+  }
+  if (rawRole === 1 || rawRole === '1') return 'admin';
+  return 'user';
+};
 
 const redisClient = redis.createClient({
   socket: {
@@ -33,13 +43,15 @@ redisClient.connect();
  */
 router.post('/login', async (req: Request, res: Response) => {
   try {
-    const { email, password, sessionId } = req.body;
+    // accept `username` (preferred) or `email` for backward-compatibility
+    const { username, email, password, sessionId } = req.body;
+    const userIdentifier = username || email;
 
     // Validate inputs
-    if (!email) {
+    if (!userIdentifier) {
       return res.status(400).json({
         success: false,
-        message: 'Email là bắt buộc'
+        message: 'Username hoặc email là bắt buộc'
       });
     }
 
@@ -50,42 +62,11 @@ router.post('/login', async (req: Request, res: Response) => {
       });
     }
 
-    // Check if admin account (bypass all validation)
-    if (email === 'admin@gmail.com' && password === 'admin') {
-      // Add admin to active users immediately
-      if (sessionId) {
-        await queueService.addActiveUser(sessionId, email);
-      }
-
-      return res.status(200).json({
-        success: true,
-        message: 'Admin login successful',
-        role: 'admin',
-        token: 'admin-token-' + Date.now(),
-        canEnter: true
-      });
-    }
-
-    // Validate password
+    // Validate password length
     if (password.length < 6) {
       return res.status(400).json({
         success: false,
         message: 'Mật khẩu phải có ít nhất 6 ký tự'
-      });
-    }
-
-    // Check queue - CAN THIS USER ENTER?
-    const queueCheck = await queueService.checkCanEnter(sessionId || '', email);
-
-    if (!queueCheck.canEnter) {
-      // User is in queue
-      return res.status(200).json({
-        success: true,
-        message: 'Please wait in queue',
-        canEnter: false,
-        queuePosition: queueCheck.position,
-        waitTime: queueCheck.waitTime,
-        sessionId
       });
     }
 
@@ -95,17 +76,39 @@ router.post('/login', async (req: Request, res: Response) => {
     // await redisClient.setEx(`password:${email}`, 60, password);
     // await sendOTP(email, otp);
     
-    // ========== DIRECT LOGIN (No OTP) ==========
-    // Add user to active session
-    if (sessionId) {
-      await queueService.addActiveUser(sessionId, email);
+    // Verify credentials against `account` table
+    const verification = await accountService.verifyPassword(userIdentifier, password);
+    if (!verification.ok || !verification.account) {
+      return res.status(401).json({ success: false, message: 'Tên đăng nhập hoặc mật khẩu không đúng' });
     }
 
-    // Determine user role
-    const role = 'user'; // All non-admin users are 'user' role
+    const role = normalizeRole(verification.account.role);
+    const token = `token-${userIdentifier}-${Date.now()}`;
 
-    // Create token
-    const token = `token-${email}-${Date.now()}`;
+    // Check queue - CAN THIS USER ENTER?
+    const queueCheck = await queueService.checkCanEnter(sessionId || '', userIdentifier);
+
+    if (!queueCheck.canEnter) {
+      // User is in queue
+      return res.status(200).json({
+        success: true,
+        message: 'Please wait in queue',
+        canEnter: false,
+        queuePosition: queueCheck.position,
+        waitTime: queueCheck.waitTime,
+        role,
+        token,
+        username: verification.account.username,
+        sessionId
+      });
+    }
+
+    // Add user to active session
+    if (sessionId) {
+      await queueService.addActiveUser(sessionId, userIdentifier);
+    }
+
+    console.log(`🔐 Login attempt: username=${userIdentifier}, role from DB=${verification.account.role}, returning role=${role}`);
 
     return res.status(200).json({
       success: true,
@@ -113,7 +116,7 @@ router.post('/login', async (req: Request, res: Response) => {
       canEnter: true,
       role: role,
       token: token,
-      email: email,
+      username: verification.account.username,
       sessionId
     });
   } catch (error) {
@@ -195,6 +198,87 @@ router.post('/logout', async (req: Request, res: Response) => {
       success: false,
       message: 'Server error'
     });
+  }
+});
+
+/**
+ * POST /api/auth/register
+ * Register new account
+ */
+router.post('/register', async (req: Request, res: Response) => {
+  try {
+    const { username, password, confirmPassword, role } = req.body;
+
+    if (!username || !password || !confirmPassword) {
+      return res.status(400).json({ success: false, message: 'Username và mật khẩu là bắt buộc' });
+    }
+
+    if (password !== confirmPassword) {
+      return res.status(400).json({ success: false, message: 'Mật khẩu và xác nhận mật khẩu không khớp' });
+    }
+
+    if (password.length < 6) {
+      return res.status(400).json({ success: false, message: 'Mật khẩu phải có ít nhất 6 ký tự' });
+    }
+
+    const existing = await accountService.findByUsername(username);
+    if (existing) {
+      return res.status(409).json({ success: false, message: 'Username đã tồn tại' });
+    }
+
+    const acct = await accountService.createAccount(username, password, role || 'user');
+    console.log(`✅ Account created: username=${acct.username}, role=${acct.role}`);
+
+    return res.status(201).json({ success: true, message: 'Đăng ký thành công', account: { id: acct.id, username: acct.username, role: acct.role } });
+  } catch (error) {
+    console.error('Register error:', error);
+    return res.status(500).json({ success: false, message: 'Server error' });
+  }
+});
+
+/**
+ * POST /api/auth/verify
+ * Verify token and restore user session
+ */
+router.post('/verify', async (req: Request, res: Response) => {
+  try {
+    const { token, sessionId } = req.body;
+    
+    if (!token || !sessionId) {
+      return res.status(401).json({ success: false, message: 'Token hoặc sessionId không hợp lệ' });
+    }
+
+    // Simple token format: token-username-timestamp
+    // Extract username from token
+    const parts = token.split('-');
+    if (parts.length < 3) {
+      return res.status(401).json({ success: false, message: 'Token không hợp lệ' });
+    }
+
+    const username = parts.slice(1, -1).join('-'); // Join in case username has hyphens
+
+    // Verify token exists and get user from database
+    const account = await accountService.findByUsername(username);
+    if (!account) {
+      return res.status(401).json({ success: false, message: 'User không tồn tại' });
+    }
+
+    // Check if user is still active in queue system
+    const isActive = await queueService.isUserActive(sessionId);
+    
+    return res.status(200).json({
+      success: true,
+      message: 'Token verified',
+      username: account.username,
+      email: account.username,
+      role: normalizeRole(account.role),
+      token: token,
+      canEnter: isActive || false,
+      sessionId
+    });
+  } catch (error) {
+    console.error('Verify error:', error);
+    return res.status(500).json({ success: false, message: 'Server error' });
   }
 });
 

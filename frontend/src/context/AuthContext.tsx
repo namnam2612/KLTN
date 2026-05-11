@@ -4,7 +4,7 @@ const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
 interface User {
   email: string;
-  role: 'admin' | 'student';
+  role: 'admin' | 'user';
   isAuthenticated: boolean;
 }
 
@@ -25,6 +25,7 @@ interface AuthContextType {
   verifyOTP: (otp: string) => Promise<{ success: boolean; message?: string }>;
   logout: () => void;
   checkQueueStatus: () => Promise<void>;
+  register: (username: string, password: string, confirmPassword: string, role?: string) => Promise<{ success: boolean; message?: string }>;
 }
 
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -37,20 +38,56 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [sessionId, setSessionId] = useState<string>('');
   const [queueStatus, setQueueStatus] = useState<QueueStatus | null>(null);
 
-  // Generate session ID on mount
+  // Generate session ID on mount and verify existing token
   useEffect(() => {
     const newSessionId = `session-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
     setSessionId(newSessionId);
     localStorage.setItem('sessionId', newSessionId);
 
-    // Restore user session
-    const storedUser = localStorage.getItem('user');
-    if (storedUser) {
-      const userData = JSON.parse(storedUser);
-      setUser(userData);
-      setIsAuthenticated(true);
-    }
-    setIsLoading(false);
+    // Try to restore user session from token
+    const verifySession = async () => {
+      const token = localStorage.getItem('token');
+      const storedUser = localStorage.getItem('user');
+      
+      if (token && storedUser) {
+        try {
+          // Verify token with backend
+          const response = await fetch(`${API_URL}/api/auth/verify`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ token, sessionId: newSessionId })
+          });
+
+          const data = await response.json();
+          if (data.success && data.role) {
+            // Token is valid, restore user with data from server
+            const normalizedRole = data.role.toString().trim().toLowerCase();
+            const userRole = (normalizedRole === 'admin' ? 'admin' : 'user') as 'admin' | 'user';
+            const userData: User = {
+              email: data.email || data.username,
+              role: userRole,
+              isAuthenticated: true
+            };
+            console.log('Session restored with role:', userRole);
+            setUser(userData);
+            setIsAuthenticated(true);
+            localStorage.setItem('user', JSON.stringify(userData));
+          } else {
+            // Token is invalid, clear storage
+            console.log('Token verification failed');
+            localStorage.removeItem('user');
+            localStorage.removeItem('token');
+          }
+        } catch (error) {
+          console.error('Session verification error:', error);
+          localStorage.removeItem('user');
+          localStorage.removeItem('token');
+        }
+      }
+      setIsLoading(false);
+    };
+
+    verifySession();
   }, []);
 
   const checkQueueStatus = async () => {
@@ -71,22 +108,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const login = async (email: string, password: string): Promise<{ success: boolean; message?: string; queueStatus?: QueueStatus }> => {
     try {
-      // Check if admin account first (bypass all validation)
-      if (email === 'admin@gmail.com' && password === 'admin') {
-        const userData: User = {
-          email: 'admin@gmail.com',
-          role: 'admin',
-          isAuthenticated: true
-        };
-        setUser(userData);
-        setIsAuthenticated(true);
-        localStorage.setItem('user', JSON.stringify(userData));
-        localStorage.setItem('token', 'admin-token');
-        setQueueStatus({ canEnter: true });
-        return { success: true, message: 'Admin login successful', queueStatus: { canEnter: true } };
-      }
-
-
       // Call backend to send OTP
       const response = await fetch(`${API_URL}/api/auth/login`, {
         method: 'POST',
@@ -98,6 +119,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       if (!response.ok) {
         return { success: false, message: data.message || 'Lỗi đăng nhập' };
+      }
+
+      // ========== DIRECT LOGIN (No OTP) ==========
+      // No OTP needed - directly authenticate user from backend response
+      const userEmail = data.username || data.email || email;
+      const normalizedRole = data.role?.toString().trim().toLowerCase();
+      const userRole = (normalizedRole === 'admin' ? 'admin' : 'user') as 'admin' | 'user';
+      console.log('Login response role:', data.role, 'Converted role:', userRole);
+      
+      const userData: User = {
+        email: userEmail,
+        role: userRole,
+        isAuthenticated: true
+      };
+      setUser(userData);
+      setIsAuthenticated(true);
+      localStorage.setItem('user', JSON.stringify(userData));
+      if (data.token) {
+        localStorage.setItem('token', data.token);
       }
 
       // If user is in queue, show queue status
@@ -112,20 +152,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         return { success: true, message: qStatus.message, queueStatus: qStatus };
       }
 
-      // ========== COMMENTED: OTP Flow ==========
-      // setSessionEmail(email);
-      
-      // ========== DIRECT LOGIN (No OTP) ==========
-      // No OTP needed - directly authenticate user from backend response
-      const userData: User = {
-        email: data.email,
-        role: data.role,
-        isAuthenticated: true
-      };
-      setUser(userData);
-      setIsAuthenticated(true);
-      localStorage.setItem('user', JSON.stringify(userData));
-      localStorage.setItem('token', data.token);
       setQueueStatus({ canEnter: true });
       return { success: true, message: 'Login successful', queueStatus: { canEnter: true } };
     } catch (error) {
@@ -134,35 +160,30 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  // ========== COMMENTED: OTP Verification (No longer needed) ==========
-  // const verifyOTP = async (otp: string): Promise<{ success: boolean; message?: string }> => {
-  //   try {
-  //     const response = await fetch(`${API_URL}/api/auth/verify-otp`, {
-  //       method: 'POST',
-  //       headers: { 'Content-Type': 'application/json' },
-  //       body: JSON.stringify({ email: sessionEmail, otp, sessionId })
-  //     });
-  //     const data = await response.json();
-  //     if (!response.ok) {
-  //       return { success: false, message: data.message || 'OTP không đúng hoặc đã hết hạn' };
-  //     }
-  //     const userData: User = {
-  //       email: sessionEmail,
-  //       role: data.role,
-  //       isAuthenticated: true
-  //     };
-  //     setUser(userData);
-  //     setIsAuthenticated(true);
-  //     localStorage.setItem('user', JSON.stringify(userData));
-  //     localStorage.setItem('token', data.token);
-  //     setQueueStatus({ canEnter: true });
-  //     return { success: true };
-  //   } catch (error) {
-  //     console.error('OTP verification error:', error);
-  //     return { success: false, message: 'Không thể kết nối tới server. Đảm bảo backend đã chạy: npm start' };
-  //   }
-  // };
+  const register = async (username: string, password: string, confirmPassword: string, role = 'user'): Promise<{ success: boolean; message?: string }> => {
+    try {
+      const response = await fetch(`${API_URL}/api/auth/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password, confirmPassword, role })
+      });
 
+      const data = await response.json();
+      console.log('Register response:', data);
+      
+      if (!response.ok) {
+        return { success: false, message: data.message || 'Đăng ký không thành công' };
+      }
+
+      // Auto-login after register
+      console.log('Auto-login with username:', username, 'role selected:', role);
+      await login(username, password);
+      return { success: true, message: data.message || 'Đăng ký thành công' };
+    } catch (error) {
+      console.error('Register error:', error);
+      return { success: false, message: 'Không thể kết nối tới server' };
+    }
+  };
   // Placeholder for removed verifyOTP function - kept in context type for compatibility
   const verifyOTP = async (_otp: string): Promise<{ success: boolean; message?: string }> => {
     return { success: false, message: 'OTP verification is disabled' };
@@ -170,12 +191,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const logout = async () => {
     try {
+      console.log('Calling logout API with sessionId=', sessionId);
       // Notify backend to remove from queue
       await fetch(`${API_URL}/api/auth/logout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ sessionId })
-      });
+      }).then(res => console.log('Logout response status:', res.status)).catch(err => console.error('Logout request failed:', err));
     } catch (error) {
       console.error('Logout error:', error);
     }
@@ -189,7 +211,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated, isLoading, sessionId, queueStatus, login, verifyOTP, logout, checkQueueStatus }}>
+    <AuthContext.Provider value={{ user, isAuthenticated, isLoading, sessionId, queueStatus, login, verifyOTP, logout, checkQueueStatus, register }}>
       {children}
     </AuthContext.Provider>
   );

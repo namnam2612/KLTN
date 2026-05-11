@@ -1,9 +1,9 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import Login from './Login';
 // import OTP from './OTP'; // COMMENTED - OTP flow disabled
 
-type AuthPage = 'login' | 'otp' | 'authenticated';
+type AuthPage = 'login' | 'authenticated';
 
 interface AuthGuardProps {
   children: ReactNode;
@@ -12,6 +12,10 @@ interface AuthGuardProps {
 export default function AuthGuard({ children }: AuthGuardProps) {
   const { isAuthenticated, isLoading } = useAuth();
   const [currentPage, setCurrentPage] = useState<AuthPage>('login');
+
+  useEffect(() => {
+    setCurrentPage(isAuthenticated ? 'authenticated' : 'login');
+  }, [isAuthenticated]);
 
   if (isLoading) {
     return (
@@ -24,33 +28,14 @@ export default function AuthGuard({ children }: AuthGuardProps) {
     );
   }
 
-  if (!isAuthenticated) {
-    if (currentPage === 'login') {
-      return (
-        <Login
-          onLoginSuccess={() => {
-            // ========== COMMENTED: OTP Flow (No longer needed) ==========
-            // setCurrentPage(user?.role === 'admin' ? 'authenticated' : 'otp');
-            
-            // ========== DIRECT AUTH (No OTP) ==========
-            // All users (admin or regular) go directly to chatbot
-            setCurrentPage('authenticated');
-          }}
-        />
-      );
-    }
-
-    // ========== COMMENTED: OTP Page (No longer rendered) ==========
-    // if (currentPage === 'otp') {
-    //   return (
-    //     <OTP
-    //       onOTPSuccess={() => {
-    //         setCurrentPage('authenticated');
-    //       }}
-    //       onBack={() => setCurrentPage('login')}
-    //     />
-    //   );
-    // }
+  if (currentPage === 'login') {
+    return (
+      <Login
+        onLoginSuccess={() => {
+          setCurrentPage('authenticated');
+        }}
+      />
+    );
   }
 
   return <>{children}</>;
