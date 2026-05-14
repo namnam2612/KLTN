@@ -1,7 +1,9 @@
-venv/
 .venv/
-env/
+venv/
+myenv/
+.env
 __pycache__/
-*.pyc
-# Nếu site-packages nằm trong project của bạn:
-site-packages/
+*.sqlite3
+data/indexes/
+.pytest_cache/
+*.log
