@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
+from app.api.conversations import router as conversations_router
 from app.retrieval.retriever import retrieve_context
 from app.retrieval.structured_lookup import (
     lookup_certificate_mapping,
@@ -12,10 +13,12 @@ from app.llm.client import generate_answer
 
 app = FastAPI(title=settings.APP_NAME)
 
+app.include_router(conversations_router)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
