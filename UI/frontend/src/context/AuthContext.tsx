@@ -24,7 +24,7 @@ interface AuthContextType {
   login: (email: string, password: string) => Promise<{ success: boolean; message?: string; queueStatus?: QueueStatus }>;
   logout: () => void;
   checkQueueStatus: () => Promise<void>;
-  register: (username: string, password: string, confirmPassword: string, role?: string) => Promise<{ success: boolean; message?: string }>;
+  register: (username: string, password: string, confirmPassword: string) => Promise<{ success: boolean; message?: string }>;
   refreshAccessToken: () => Promise<boolean>;
 }
 
@@ -247,12 +247,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const register = async (username: string, password: string, confirmPassword: string, role = 'user'): Promise<{ success: boolean; message?: string }> => {
+  const register = async (username: string, password: string, confirmPassword: string): Promise<{ success: boolean; message?: string }> => {
     try {
       const response = await fetch(`${AUTH_API_URL}/api/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password, confirmPassword, role })
+        body: JSON.stringify({ username, password, confirmPassword })
       });
 
       const data = await response.json();
@@ -262,9 +262,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         return { success: false, message: data.message || 'Đăng ký không thành công' };
       }
 
-      // Auto-login after register
-      console.log('Auto-login with username:', username, 'role:', role);
-      await login(username, password);
       return { success: true, message: data.message || 'Đăng ký thành công' };
     } catch (error) {
       console.error('Register error:', error);

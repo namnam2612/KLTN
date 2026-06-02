@@ -5,6 +5,7 @@
 
 import http from 'http';
 import redis from 'redis';
+import { getNumberEnv, getRequiredEnv } from '../config/env';
 
 interface LoadTestOptions {
   url: string;
@@ -30,8 +31,8 @@ class LoadTester {
   async resetRedisState(): Promise<void> {
     const redisClient = redis.createClient({
       socket: {
-        host: process.env.REDIS_HOST || 'localhost',
-        port: parseInt(process.env.REDIS_PORT || '6379', 10),
+        host: getRequiredEnv('REDIS_HOST'),
+        port: getNumberEnv('REDIS_PORT'),
       },
     });
 
@@ -197,6 +198,16 @@ class LoadTester {
   }
 }
 
+function getAuthLoginUrl(): string {
+  const explicitUrl = process.env.AUTH_LOGIN_URL;
+
+  if (explicitUrl) {
+    return explicitUrl;
+  }
+
+  return `${getRequiredEnv('AUTH_API_URL')}/api/auth/login`;
+}
+
 /**
  * Main - Run load test
  */
@@ -207,7 +218,7 @@ async function main() {
 
   // Test 1: Simple load
   await tester.runLoadTest({
-    url: 'http://localhost:3001/api/auth/login',
+    url: getAuthLoginUrl(),
     method: 'POST',
     numRequests: 20,
     concurrent: 5
@@ -220,7 +231,7 @@ async function main() {
 
   // Test 2: Stress test
   await tester.runLoadTest({
-    url: 'http://localhost:3001/api/auth/login',
+    url: getAuthLoginUrl(),
     method: 'POST',
     numRequests: 100,
     concurrent: 20

@@ -12,6 +12,7 @@ build/
 .env
 .env.*
 .env.local
+!.env.example
 
 # Logs
 npm-debug.log*
@@ -53,4 +54,3 @@ indexes/
 
 # Local test artifacts
 *.sqlite3
-
