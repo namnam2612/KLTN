@@ -9,7 +9,6 @@ from uuid import uuid4
 from fastapi import APIRouter, Header, HTTPException, status
 from pydantic import BaseModel
 
-from app.core.config import settings
 from app.retrieval.retriever import retrieve_context
 from app.retrieval.structured_lookup import (
 	lookup_certificate_mapping,
@@ -55,12 +54,9 @@ class UpdateTitleRequest(BaseModel):
 
 
 def _get_db_path() -> Path:
-	db_path = Path(settings.CHAT_DB_PATH)
-	if not db_path.is_absolute():
-		base_dir = Path(__file__).resolve().parents[2]
-		db_path = (base_dir / db_path).resolve()
-	db_path.parent.mkdir(parents=True, exist_ok=True)
-	return db_path
+	base_dir = Path(__file__).resolve().parents[2]
+	db_path = os.getenv("CHAT_DB_PATH", "data/indexes/chat_db.sqlite3")
+	return (base_dir / db_path).resolve()
 
 
 _schema_lock = threading.Lock()
@@ -117,50 +113,6 @@ def _require_user_id(x_user_id: Optional[str]) -> int:
 	if not x_user_id or not x_user_id.isdigit():
 		raise HTTPException(status_code=400, detail="Missing or invalid X-User-Id header")
 	return int(x_user_id)
-
-
-def _build_conversation_title(content: str, max_length: int = 80) -> str:
-	cleaned = " ".join((content or "").split()).strip()
-	if not cleaned:
-		return "Cuộc trò chuyện mới"
-	if len(cleaned) <= max_length:
-		return cleaned
-	return cleaned[: max_length - 1].rstrip() + "…"
-
-
-def _refresh_title_from_first_user_message(
-	conn: sqlite3.Connection,
-	conversation_id: str,
-	current_title: str,
-) -> str:
-	if current_title and current_title != "Cuộc trò chuyện mới":
-		return current_title
-
-	row = conn.execute(
-		"""
-		SELECT content
-		FROM messages
-		WHERE conversation_id = ? AND role = 'user'
-		ORDER BY created_at ASC
-		LIMIT 1
-		""",
-		(conversation_id,),
-	).fetchone()
-
-	if not row or not row["content"]:
-		return current_title or "Cuộc trò chuyện mới"
-
-	next_title = _build_conversation_title(row["content"])
-	if next_title != current_title:
-		conn.execute(
-			"""
-			UPDATE conversations
-			SET title = ?, updated_at = ?
-			WHERE id = ?
-			""",
-			(next_title, datetime.utcnow().isoformat(timespec="seconds"), conversation_id),
-		)
-	return next_title
 
 
 def select_llm_contexts(question: str, contexts: list[str], sources: list[dict]):
@@ -284,17 +236,8 @@ def list_conversations(x_user_id: Optional[str] = Header(default=None)):
 			""",
 			(user_id,),
 		).fetchall()
-		updated_rows = []
-		for row in rows:
-			row_dict = dict(row)
-			row_dict["title"] = _refresh_title_from_first_user_message(
-				conn,
-				row_dict["id"],
-				row_dict.get("title") or "",
-			)
-			updated_rows.append(row_dict)
 
-	return [ConversationResponse(**row) for row in updated_rows]
+	return [ConversationResponse(**dict(row)) for row in rows]
 
 
 @router.delete("/conversations/{conversation_id}", status_code=status.HTTP_204_NO_CONTENT)
@@ -322,13 +265,11 @@ def create_message(
 
 	with _get_conn() as conn:
 		conv = conn.execute(
-			"SELECT id, title FROM conversations WHERE id = ? AND user_id = ?",
+			"SELECT id FROM conversations WHERE id = ? AND user_id = ?",
 			(conversation_id, user_id),
 		).fetchone()
 		if not conv:
 			raise HTTPException(status_code=404, detail="Conversation not found")
-
-		current_title = conv["title"] or ""
 
 		user_message_id = str(uuid4())
 		assistant_message_id = str(uuid4())
@@ -340,17 +281,6 @@ def create_message(
 			""",
 			(user_message_id, conversation_id, "user", req.content),
 		)
-
-		if not current_title or current_title == "Cuộc trò chuyện mới":
-			next_title = _build_conversation_title(req.content)
-			conn.execute(
-				"""
-				UPDATE conversations
-				SET title = ?, updated_at = ?
-				WHERE id = ?
-				""",
-				(next_title, datetime.utcnow().isoformat(timespec="seconds"), conversation_id),
-			)
 
 		structured_result = lookup_certificate_mapping(req.content)
 		if structured_result:
@@ -398,7 +328,7 @@ def create_message(
 def create_message_auto(req: CreateMessageRequest, x_user_id: Optional[str] = Header(default=None)):
 	user_id = _require_user_id(x_user_id)
 	conversation_id = str(uuid4())
-	default_title = _build_conversation_title(req.content)
+	default_title = "Cuộc trò chuyện mới"
 
 	with _get_conn() as conn:
 		conn.execute(
