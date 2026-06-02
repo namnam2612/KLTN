@@ -48,7 +48,7 @@ interface Conversation {
 }
 
 export default function App() {
-  const { user, logout } = useAuth();
+  const { user, chatUserId, logout } = useAuth();
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -60,6 +60,7 @@ export default function App() {
   const [isLoadingConversations, setIsLoadingConversations] = useState(false);
 
   const [view, setView] = useState<'chat' | 'admin'>('chat');
+  const [deleteTargetId, setDeleteTargetId] = useState<number | string | null>(null);
   const [knowledgeBase, setKnowledgeBase] = useState<Array<{
     name: string;
     type: string;
@@ -67,19 +68,9 @@ export default function App() {
     uploadedAt: string;
     content?: string;
   }>>([]);
-  const [chatUserId] = useState(() => {
-    const stored = localStorage.getItem('chatUserId');
-    if (stored && /^\d+$/.test(stored)) {
-      return stored;
-    }
-    const generated = String(Math.floor(Date.now() / 1000));
-    localStorage.setItem('chatUserId', generated);
-    return generated;
-  });
-
   const apiHeaders = {
     'Content-Type': 'application/json',
-    'X-User-Id': chatUserId,
+    'X-User-Id': chatUserId, // Sẽ tự động cập nhật khi user thay đổi
   };
 
   const scrollToBottom = () => {
@@ -113,8 +104,16 @@ export default function App() {
   };
 
   useEffect(() => {
-    loadConversations();
-  }, []);
+    if (chatUserId) {
+      loadConversations();
+      return;
+    }
+
+    // Xóa sạch dữ liệu chat trên màn hình khi logout tài khoản cũ
+    setConversations([]);
+    setMessages([]);
+    setActiveConversationId(null);
+  }, [chatUserId]);
 
   const loadConversation = async (conversationId: number | string) => {
     setActiveConversationId(conversationId);
@@ -134,24 +133,67 @@ export default function App() {
     }
   };
 
-  const handleRenameConversation = (conversationId: number | string) => {
+  const handleRenameConversation = async(conversationId: number | string) => {
+    // const current = conversations.find(item => item.id === conversationId);
+    // const nextTitle = window.prompt('Rename conversation', current?.title || '');
+    // if (!nextTitle?.trim()) return;
+
+    // setConversations(prev => prev.map(item => item.id === conversationId ? { ...item, title: nextTitle.trim() } : item));
+
     const current = conversations.find(item => item.id === conversationId);
     const nextTitle = window.prompt('Rename conversation', current?.title || '');
     if (!nextTitle?.trim()) return;
 
-    setConversations(prev => prev.map(item => item.id === conversationId ? { ...item, title: nextTitle.trim() } : item));
+    try {
+      const response = await fetch(`${CHAT_API_URL}/api/conversations/${conversationId}/title`, {
+        headers: apiHeaders,
+        method: 'PATCH',
+        body: JSON.stringify({ title: nextTitle.trim() }), // Gửi kèm dữ liệu body
+      });
+      if (response.ok) {
+        loadConversations();
+      }
+    } catch (error) {
+      console.error('Rename conversation error:', error);
+    }
   };
 
-  const handleDeleteConversation = (conversationId: number | string) => {
-    setConversations(prev => prev.filter(item => item.id !== conversationId));
-    if (activeConversationId === conversationId) {
-      setActiveConversationId(null);
-      setMessages([]);
+  const handleDeleteConversation = async (conversationId: number | string) => {
+    try {
+      await fetch(`${CHAT_API_URL}/api/conversations/${conversationId}`, {
+        headers: apiHeaders,
+        method: 'DELETE',
+      });
+      if (activeConversationId === conversationId) {
+        setActiveConversationId(null);
+        setMessages([]);
+      }
+      loadConversations()
+    } catch (error) {
+      console.error('Delete conversation detail error:', error);
     }
+    return ;
+  };
+
+  const confirmDeleteConversation = async () => {
+    if (deleteTargetId === null) return;
+    await handleDeleteConversation(deleteTargetId);
+    setDeleteTargetId(null);
   };
 
   const handleSendMessage = async () => {
     if (!input.trim() || isTyping) return;
+    if (!chatUserId) {
+      console.error('Missing chat user id');
+      setMessages(prev => [
+        ...prev,
+        {
+          role: 'assistant',
+          content: 'Không thể gửi câu hỏi vì chưa xác định được người dùng hiện tại. Hãy đăng xuất và đăng nhập lại.'
+        }
+      ]);
+      return;
+    }
 
     const currentInput = input;
     setInput('');
@@ -268,7 +310,7 @@ export default function App() {
               <span className={`text-sm font-medium truncate transition-all duration-300 ${sidebarOpen ? 'opacity-100' : 'opacity-0 hidden'}`}>
                 {item.title || 'Untitled'}
               </span>
-              {sidebarOpen && (
+              {sidebarOpen && user?.role === 'admin' && (
                 <div className="ml-auto flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   <button
                     type="button"
@@ -285,7 +327,7 @@ export default function App() {
                     type="button"
                     onClick={(event) => {
                       event.stopPropagation();
-                      handleDeleteConversation(item.id);
+                      setDeleteTargetId(item.id);
                     }}
                     className="text-on-surface-variant hover:text-red-400"
                     aria-label="Delete"
@@ -327,6 +369,45 @@ export default function App() {
           </motion.button>
         </div>
       </motion.aside>
+
+      <AnimatePresence>
+        {deleteTargetId !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4"
+          >
+            <motion.div
+              initial={{ scale: 0.96, y: 12 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.96, y: 12 }}
+              className="w-full max-w-md rounded-2xl bg-surface-container p-6 shadow-2xl border border-white/10"
+            >
+              <h3 className="text-lg font-headline font-bold text-on-surface">Xóa cuộc trò chuyện?</h3>
+              <p className="mt-2 text-sm text-on-surface-variant">
+                Hành động này sẽ xóa vĩnh viễn cuộc trò chuyện và toàn bộ tin nhắn liên quan.
+              </p>
+              <div className="mt-6 flex justify-end gap-3">
+                <button
+                  type="button"
+                  onClick={() => setDeleteTargetId(null)}
+                  className="rounded-xl border border-white/10 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface"
+                >
+                  Hủy
+                </button>
+                <button
+                  type="button"
+                  onClick={confirmDeleteConversation}
+                  className="rounded-xl bg-red-500 px-4 py-2 text-sm font-semibold text-white hover:bg-red-400"
+                >
+                  Xóa
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Sidebar Overlay */}
       {sidebarOpen && (
@@ -381,7 +462,7 @@ export default function App() {
                 {/* Bento Prompt Suggestions */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
                   {[
-                    { icon: Lightbulb, color: 'text-primary', title: 'Quy đổi điểm', desc: 'Các quy đổi điểm IELTS.' },
+                    { icon: Lightbulb, color: 'text-primary', title: 'Quy đổi điểm', desc: 'Cách quy đổi điểm IELTS.' },
                     { icon: Code2, color: 'text-tertiary', title: 'Thủ tục bảo lưu', desc: 'Hướng dẫn cách làm thủ tục bảo lưu học phần.' },
                     { icon: FileEdit, color: 'text-secondary', title: 'Cách đăng ký học phần', desc: 'Hướng dẫn cách đăng ký học phần.' }
                   ].map((item, i) => (

@@ -8,6 +8,48 @@ interface User {
   userId?: number;
 }
 
+const USER_ID_STORAGE_KEY = 'chatUserId';
+const USER_STORAGE_KEY = 'user';
+
+function decodeJwtPayload(token: string): { userId?: number; email?: string; username?: string; role?: 'admin' | 'user' } | null {
+  try {
+    const parts = token.split('.');
+    if (parts.length !== 3) return null;
+
+    const normalized = parts[1].replace(/-/g, '+').replace(/_/g, '/');
+    const padded = normalized + '='.repeat((4 - (normalized.length % 4)) % 4);
+    const payload = JSON.parse(atob(padded));
+    return payload;
+  } catch {
+    return null;
+  }
+}
+
+function parseStoredUser(): User | null {
+  const storedUser = localStorage.getItem(USER_STORAGE_KEY);
+  if (!storedUser) return null;
+
+  try {
+    return JSON.parse(storedUser) as User;
+  } catch {
+    return null;
+  }
+}
+
+function extractUserIdFromToken(token: string): number | undefined {
+  const decoded = decodeJwtPayload(token);
+  return decoded?.userId;
+}
+
+function normalizeUserData(data: any, fallbackEmail?: string): User {
+  return {
+    email: data.email || data.username || fallbackEmail || 'User',
+    role: data.role === 'admin' ? 'admin' : 'user',
+    isAuthenticated: true,
+    userId: typeof data.userId === 'number' ? data.userId : Number(data.userId) || undefined
+  };
+}
+
 interface QueueStatus {
   queuePosition?: number;
   canEnter: boolean;
@@ -17,6 +59,7 @@ interface QueueStatus {
 
 interface AuthContextType {
   user: User | null;
+  chatUserId: string;
   isAuthenticated: boolean;
   isLoading: boolean;
   sessionId: string;
@@ -36,6 +79,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
   const [sessionId, setSessionId] = useState<string>('');
   const [queueStatus, setQueueStatus] = useState<QueueStatus | null>(null);
+  const chatUserId = user?.userId ? String(user.userId) : '';
+
+  const persistUser = (userData: User) => {
+    localStorage.setItem(USER_STORAGE_KEY, JSON.stringify(userData));
+    if (typeof userData.userId === 'number' && Number.isFinite(userData.userId)) {
+      localStorage.setItem(USER_ID_STORAGE_KEY, String(userData.userId));
+    } else {
+      localStorage.removeItem(USER_ID_STORAGE_KEY);
+    }
+  };
 
   // Helper: Check if access token is still valid
   const isAccessTokenValid = useCallback((): boolean => {
@@ -103,17 +156,49 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     const verifySession = async () => {
       const accessToken = localStorage.getItem('accessToken');
-      const storedUser = localStorage.getItem('user');
+      const storedUser = parseStoredUser();
       
       if (accessToken && storedUser) {
         try {
           // Check if access token is still valid
           if (isAccessTokenValid()) {
-            // Token is valid, restore user directly
-            const userData = JSON.parse(storedUser) as User;
-            console.log('Session restored from valid token, role:', userData.role);
-            setUser(userData);
-            setIsAuthenticated(true);
+            if (storedUser.userId) {
+              console.log('Session restored from valid token, role:', storedUser.role);
+              setUser(storedUser);
+              setIsAuthenticated(true);
+              persistUser(storedUser);
+            } else {
+              const fallbackUserId = extractUserIdFromToken(accessToken);
+
+              if (fallbackUserId) {
+                const userData: User = {
+                  ...storedUser,
+                  userId: fallbackUserId,
+                  isAuthenticated: true,
+                };
+                persistUser(userData);
+                setUser(userData);
+                setIsAuthenticated(true);
+              } else {
+                const response = await fetch(`${AUTH_API_URL}/api/auth/verify`, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ accessToken, sessionId: newSessionId })
+                });
+
+                const data = await response.json();
+                if (data.success && data.userId) {
+                  const userData = normalizeUserData(data, storedUser.email);
+                  persistUser(userData);
+                  setUser(userData);
+                  setIsAuthenticated(true);
+                } else {
+                  localStorage.removeItem(USER_STORAGE_KEY);
+                  localStorage.removeItem('accessToken');
+                  localStorage.removeItem('refreshToken');
+                }
+              }
+            }
           } else {
             // Access token expired, try to refresh
             console.log('Access token expired, attempting refresh...');
@@ -135,32 +220,27 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                   localStorage.setItem('refreshToken', data.refreshToken);
                 }
 
-                const userData: User = {
-                  email: data.email || data.username,
-                  role: data.role === 'admin' ? 'admin' : 'user',
-                  isAuthenticated: true,
-                  userId: data.userId
-                };
+                const userData = normalizeUserData(data, data.email || data.username);
                 console.log('Session restored after token refresh');
                 setUser(userData);
                 setIsAuthenticated(true);
-                localStorage.setItem('user', JSON.stringify(userData));
+                persistUser(userData);
               } else {
                 // Refresh failed, clear storage
                 console.log('Token refresh failed during session restore');
-                localStorage.removeItem('user');
+                localStorage.removeItem(USER_STORAGE_KEY);
                 localStorage.removeItem('accessToken');
                 localStorage.removeItem('refreshToken');
               }
             } else {
               // No refresh token, clear storage
-              localStorage.removeItem('user');
+              localStorage.removeItem(USER_STORAGE_KEY);
               localStorage.removeItem('accessToken');
             }
           }
         } catch (error) {
           console.error('Session verification error:', error);
-          localStorage.removeItem('user');
+          localStorage.removeItem(USER_STORAGE_KEY);
           localStorage.removeItem('accessToken');
           localStorage.removeItem('refreshToken');
         }
@@ -220,7 +300,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       if (data.refreshToken) {
         localStorage.setItem('refreshToken', data.refreshToken);
       }
-      localStorage.setItem('user', JSON.stringify(userData));
+      persistUser(userData);
 
       setUser(userData);
       setIsAuthenticated(true);
@@ -284,13 +364,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setUser(null);
     setIsAuthenticated(false);
     setQueueStatus(null);
-    localStorage.removeItem('user');
+    localStorage.removeItem(USER_STORAGE_KEY);
     localStorage.removeItem('accessToken');
     localStorage.removeItem('refreshToken');
+    localStorage.removeItem(USER_ID_STORAGE_KEY);
   };
 
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated, isLoading, sessionId, queueStatus, login, logout, checkQueueStatus, register, refreshAccessToken }}>
+    <AuthContext.Provider value={{ user, chatUserId, isAuthenticated, isLoading, sessionId, queueStatus, login, logout, checkQueueStatus, register, refreshAccessToken }}>
       {children}
     </AuthContext.Provider>
   );

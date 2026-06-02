@@ -1,8 +1,6 @@
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode } from 'react';
 import { useAuth } from '../context/AuthContext';
 import Login from './Login';
-
-type AuthPage = 'login' | 'authenticated';
 
 interface AuthGuardProps {
   children: ReactNode;
@@ -10,11 +8,6 @@ interface AuthGuardProps {
 
 export default function AuthGuard({ children }: AuthGuardProps) {
   const { isAuthenticated, isLoading } = useAuth();
-  const [currentPage, setCurrentPage] = useState<AuthPage>('login');
-
-  useEffect(() => {
-    setCurrentPage(isAuthenticated ? 'authenticated' : 'login');
-  }, [isAuthenticated]);
 
   if (isLoading) {
     return (
@@ -27,12 +20,10 @@ export default function AuthGuard({ children }: AuthGuardProps) {
     );
   }
 
-  if (currentPage === 'login') {
+  if (!isAuthenticated) {
     return (
       <Login
-        onLoginSuccess={() => {
-          setCurrentPage('authenticated');
-        }}
+        onLoginSuccess={() => undefined}
       />
     );
   }
