@@ -1,1 +1,22 @@
 venv/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# IDEs
+.idea/
+
+# Node
+node_modules/
+**/node_modules/
+
+# Build / caches
+dist/
+build/
+.vite/
+coverage/
+
+# Python
+__pycache__/
+*.pyc
