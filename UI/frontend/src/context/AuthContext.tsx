@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect, useCallback } from 'react';
 import { AUTH_API_URL } from '../config/api';
 
 interface User {
-  email: string;
+  username: string;
   role: 'admin' | 'user';
   isAuthenticated: boolean;
   userId?: number;
@@ -11,7 +11,7 @@ interface User {
 const USER_ID_STORAGE_KEY = 'chatUserId';
 const USER_STORAGE_KEY = 'user';
 
-function decodeJwtPayload(token: string): { userId?: number; email?: string; username?: string; role?: 'admin' | 'user' } | null {
+function decodeJwtPayload(token: string): { userId?: number; username?: string; role?: 'admin' | 'user' } | null {
   try {
     const parts = token.split('.');
     if (parts.length !== 3) return null;
@@ -41,9 +41,9 @@ function extractUserIdFromToken(token: string): number | undefined {
   return decoded?.userId;
 }
 
-function normalizeUserData(data: any, fallbackEmail?: string): User {
+function normalizeUserData(data: any, fallbackUsername?: string): User {
   return {
-    email: data.email || data.username || fallbackEmail || 'User',
+    username: data.username || fallbackUsername || 'User',
     role: data.role === 'admin' ? 'admin' : 'user',
     isAuthenticated: true,
     userId: typeof data.userId === 'number' ? data.userId : Number(data.userId) || undefined
@@ -64,7 +64,7 @@ interface AuthContextType {
   isLoading: boolean;
   sessionId: string;
   queueStatus: QueueStatus | null;
-  login: (email: string, password: string) => Promise<{ success: boolean; message?: string; queueStatus?: QueueStatus }>;
+  login: (username: string, password: string) => Promise<{ success: boolean; message?: string; queueStatus?: QueueStatus }>;
   logout: () => void;
   checkQueueStatus: () => Promise<void>;
   register: (username: string, password: string, confirmPassword: string) => Promise<{ success: boolean; message?: string }>;
@@ -130,7 +130,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         console.log('Token refresh failed:', data.message);
         localStorage.removeItem('accessToken');
         localStorage.removeItem('refreshToken');
-        localStorage.removeItem('user');
+        localStorage.removeItem(USER_STORAGE_KEY);
         return false;
       }
 
@@ -188,7 +188,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
                 const data = await response.json();
                 if (data.success && data.userId) {
-                  const userData = normalizeUserData(data, storedUser.email);
+                  const userData = normalizeUserData(data, storedUser.username);
                   persistUser(userData);
                   setUser(userData);
                   setIsAuthenticated(true);
@@ -220,7 +220,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                   localStorage.setItem('refreshToken', data.refreshToken);
                 }
 
-                const userData = normalizeUserData(data, data.email || data.username);
+                const userData = normalizeUserData(data, data.username);
                 console.log('Session restored after token refresh');
                 setUser(userData);
                 setIsAuthenticated(true);
@@ -267,12 +267,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const login = async (email: string, password: string): Promise<{ success: boolean; message?: string; queueStatus?: QueueStatus }> => {
+  const login = async (username: string, password: string): Promise<{ success: boolean; message?: string; queueStatus?: QueueStatus }> => {
     try {
       const response = await fetch(`${AUTH_API_URL}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password, sessionId })
+        body: JSON.stringify({ username, password, sessionId })
       });
 
       const data = await response.json();
@@ -285,11 +285,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         return { success: false, message: data.message || 'Lỗi đăng nhập' };
       }
 
-      const userEmail = data.email || data.username || email;
       const userRole = (data.role === 'admin' ? 'admin' : 'user') as 'admin' | 'user';
       
       const userData: User = {
-        email: userEmail,
+        username: data.username || username,
         role: userRole,
         isAuthenticated: true,
         userId: data.userId

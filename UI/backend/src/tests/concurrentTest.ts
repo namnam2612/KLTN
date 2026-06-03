@@ -43,8 +43,8 @@ async function testSimpleConcurrent(): Promise<TestResult> {
   // Create promises for all users
   const promises = Array.from({ length: numUsers }, (_, i) => {
     const sessionId = `session-${i}`;
-    const email = `user${i}@example.com`;
-    return queueService.checkCanEnter(sessionId, email);
+    const username = `user${i}`;
+    return queueService.checkCanEnter(sessionId, username);
   });
 
   // Execute all concurrently
@@ -94,8 +94,8 @@ async function testSequentialWaves(): Promise<TestResult> {
     // Create users for this wave
     const promises = Array.from({ length: waveSize }, (_, i) => {
       const sessionId = `wave${wave}-user${i}`;
-      const email = `wave${wave}user${i}@example.com`;
-      return queueService.checkCanEnter(sessionId, email);
+      const username = `wave${wave}user${i}`;
+      return queueService.checkCanEnter(sessionId, username);
     });
 
     const results = await Promise.all(promises);
@@ -140,8 +140,8 @@ async function testStressLoad(): Promise<TestResult> {
 
   const promises = Array.from({ length: numUsers }, (_, i) => {
     const sessionId = `stress-session-${i}`;
-    const email = `stressuser${i}@example.com`;
-    return queueService.checkCanEnter(sessionId, email);
+    const username = `stressuser${i}`;
+    return queueService.checkCanEnter(sessionId, username);
   });
 
   const results = await Promise.all(promises);

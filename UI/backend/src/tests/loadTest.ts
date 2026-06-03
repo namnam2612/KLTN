@@ -125,7 +125,7 @@ class LoadTester {
     return new Promise((resolve) => {
       const startTime = Date.now();
       const payload = JSON.stringify({
-        email: `loadtest${index}@example.com`,
+        username: `loadtest${index}`,
         password: 'password123',
         sessionId: `session-${index}-${Date.now()}`
       });

@@ -18,7 +18,7 @@ const QUEUE_TIMEOUT = getNumberEnv('QUEUE_TIMEOUT_SECONDS', 60);
 // ========== COMMENTED: QueuePosition Interface (Not used) ==========
 // interface QueuePosition {
 //   sessionId: string;
-//   email: string;
+//   username: string;
 //   timestamp: number;
 //   position: number;
 // }
@@ -28,7 +28,7 @@ class QueueService {
    * Check if user can enter (active users < 5)
    * Using atomic INCR to prevent race conditions
    */
-  async checkCanEnter(sessionId: string, email: string): Promise<{ canEnter: boolean; position?: number; waitTime?: number }> {
+  async checkCanEnter(sessionId: string, username: string): Promise<{ canEnter: boolean; position?: number; waitTime?: number }> {
     try {
       // Step 1: Atomically increment counter
       const newCount = await redisClient.incr('active_users_count');
@@ -36,21 +36,21 @@ class QueueService {
       if (newCount <= MAX_CONCURRENT_USERS) {
         // User can enter - add to active users
         const key = `active_user:${sessionId}`;
-        await redisClient.setEx(key, SESSION_TIMEOUT, JSON.stringify({ email, timestamp: Date.now() }));
-        console.log(`✅ User ${email} entered. Active: ${newCount}/${MAX_CONCURRENT_USERS}`);
+        await redisClient.setEx(key, SESSION_TIMEOUT, JSON.stringify({ username, timestamp: Date.now() }));
+        console.log(`✅ User ${username} entered. Active: ${newCount}/${MAX_CONCURRENT_USERS}`);
         return { canEnter: true };
       } else {
         // Exceeded limit - decrement counter and add to queue instead
         await redisClient.decr('active_users_count');
         const queueKey = `queue:${sessionId}`;
-        await redisClient.setEx(queueKey, QUEUE_TIMEOUT, JSON.stringify({ email, timestamp: Date.now() }));
+        await redisClient.setEx(queueKey, QUEUE_TIMEOUT, JSON.stringify({ username, timestamp: Date.now() }));
         
         // Get queue position
         const queueKeys = await redisClient.keys('queue:*');
         const position = queueKeys.length;
         const waitTime = Math.ceil((position - 1) / 2) * 60; // Estimate: 2 users per minute
         
-        console.log(`⏳ User ${email} queued. Position: ${position} (Wait: ~${waitTime}s)`);
+        console.log(`⏳ User ${username} queued. Position: ${position} (Wait: ~${waitTime}s)`);
         return { canEnter: false, position, waitTime };
       }
     } catch (error) {
@@ -62,11 +62,11 @@ class QueueService {
   /**
    * Add user to active users list (Direct - called from checkCanEnter)
    */
-  async addActiveUser(sessionId: string, email: string): Promise<void> {
+  async addActiveUser(sessionId: string, username: string): Promise<void> {
     try {
       const key = `active_user:${sessionId}`;
-      await redisClient.setEx(key, SESSION_TIMEOUT, JSON.stringify({ email, timestamp: Date.now() }));
-      console.log(`✅ User added to active: ${email}`);
+      await redisClient.setEx(key, SESSION_TIMEOUT, JSON.stringify({ username, timestamp: Date.now() }));
+      console.log(`✅ User added to active: ${username}`);
     } catch (error) {
       console.error('Error adding active user:', error);
     }
@@ -75,15 +75,15 @@ class QueueService {
   /**
    * Add user to queue (Direct - called from checkCanEnter)
    */
-  async addToQueue(sessionId: string, email: string): Promise<number> {
+  async addToQueue(sessionId: string, username: string): Promise<number> {
     try {
       const queueKey = `queue:${sessionId}`;
-      await redisClient.setEx(queueKey, QUEUE_TIMEOUT, JSON.stringify({ email, timestamp: Date.now() }));
+      await redisClient.setEx(queueKey, QUEUE_TIMEOUT, JSON.stringify({ username, timestamp: Date.now() }));
       
       const queueKeys = await redisClient.keys('queue:*');
       const position = queueKeys.length;
 
-      console.log(`⏳ User added to queue: ${email} (Position: ${position})`);
+      console.log(`⏳ User added to queue: ${username} (Position: ${position})`);
       return position;
     } catch (error) {
       console.error('Error adding to queue:', error);
@@ -129,14 +129,14 @@ class QueueService {
       const queueData = await redisClient.get(firstQueueKey);
 
       if (queueData) {
-        const { email } = JSON.parse(queueData);
+        const { username } = JSON.parse(queueData);
         const sessionId = firstQueueKey.replace('queue:', '');
 
         // Move to active
         await redisClient.del(firstQueueKey);
-        await this.addActiveUser(sessionId, email);
+        await this.addActiveUser(sessionId, username);
 
-        console.log(`⬆️  Promoted from queue: ${email}`);
+        console.log(`⬆️  Promoted from queue: ${username}`);
       }
     } catch (error) {
       console.error('Error promoting from queue:', error);

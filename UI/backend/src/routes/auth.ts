@@ -20,14 +20,13 @@ const normalizeRole = (rawRole: unknown): 'admin' | 'user' => {
  */
 router.post('/login', async (req: Request, res: Response) => {
   try {
-    const { username, email, password, sessionId } = req.body;
-    const userIdentifier = username || email;
+    const { username, password, sessionId } = req.body;
 
     // Validate inputs
-    if (!userIdentifier) {
+    if (!username) {
       return res.status(400).json({
         success: false,
-        message: 'Username hoặc email là bắt buộc'
+        message: 'Username là bắt buộc'
       });
     }
 
@@ -46,7 +45,7 @@ router.post('/login', async (req: Request, res: Response) => {
     }
     
     // Verify credentials against account table
-    const verification = await accountService.verifyPassword(userIdentifier, password);
+    const verification = await accountService.verifyPassword(username, password);
     if (!verification.ok || !verification.account) {
       return res.status(401).json({ success: false, message: 'Tên đăng nhập hoặc mật khẩu không đúng' });
     }
@@ -55,7 +54,7 @@ router.post('/login', async (req: Request, res: Response) => {
     const role = normalizeRole(account.role);
 
     // Check queue - CAN THIS USER ENTER?
-    const queueCheck = await queueService.checkCanEnter(sessionId || '', userIdentifier);
+    const queueCheck = await queueService.checkCanEnter(sessionId || '', username);
 
     if (!queueCheck.canEnter) {
       // User is in queue - return JWT anyway so they can monitor position
@@ -74,7 +73,6 @@ router.post('/login', async (req: Request, res: Response) => {
         role,
         userId: account.id,
         username: account.username,
-        email: account.username,
         accessToken,
         refreshToken,
         sessionId
@@ -88,7 +86,7 @@ router.post('/login', async (req: Request, res: Response) => {
       role
     });
 
-    console.log(`🔐 Login successful: username=${userIdentifier}, role=${role}`);
+    console.log(`🔐 Login successful: username=${username}, role=${role}`);
 
     return res.status(200).json({
       success: true,
@@ -97,7 +95,6 @@ router.post('/login', async (req: Request, res: Response) => {
       role,
       userId: account.id,
       username: account.username,
-      email: account.username,
       accessToken,
       refreshToken,
       sessionId
@@ -205,7 +202,6 @@ router.post('/verify', async (req: Request, res: Response) => {
       success: true,
       message: 'Token verified',
       username: account.username,
-      email: account.username,
       role: normalizeRole(account.role),
       userId: account.id,
       canEnter: isActive,
@@ -256,7 +252,6 @@ router.post('/refresh', async (req: Request, res: Response) => {
       accessToken: newAccessToken,
       refreshToken: newRefreshToken,
       username: account.username,
-      email: account.username,
       role: normalizeRole(account.role),
       userId: account.id
     });

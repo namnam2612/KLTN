@@ -9,7 +9,7 @@ interface LoginProps {
 }
 
 export default function Login({ onLoginSuccess }: LoginProps) {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   // const [isAdmin, setIsAdmin] = useState(false); // COMMENTED - No longer used
   const [isLoading, setIsLoading] = useState(false);
@@ -25,8 +25,8 @@ export default function Login({ onLoginSuccess }: LoginProps) {
     setIsLoading(true);
 
     try {
-      if (!email.trim()) {
-        setError('Vui lòng nhập email hoặc username');
+      if (!username.trim()) {
+        setError('Vui lòng nhập username');
         setIsLoading(false);
         return;
       }
@@ -44,7 +44,7 @@ export default function Login({ onLoginSuccess }: LoginProps) {
       }
 
       // Call login function - role will be determined from database
-      const result = await login(email, password);
+      const result = await login(username, password);
 
       if (result.success) {
         onLoginSuccess();
@@ -109,21 +109,21 @@ export default function Login({ onLoginSuccess }: LoginProps) {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="mb-8">
                 <h2 className="text-3xl font-headline font-extrabold text-on-surface mb-2">Đăng Nhập</h2>
-                <p className="text-on-surface-variant">Sử dụng tài khoản Gmail hoặc email của bạn</p>
+                <p className="text-on-surface-variant">Sử dụng username đã đăng ký</p>
               </div>
             {/* Email/Username Input */}
             <div className="space-y-2">
               <label className="text-sm font-headline font-semibold text-on-surface">
-                Email hoặc Username
+                Username
               </label>
               <div className="relative">
                 <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-primary pointer-events-none" />
                 <input
                   type="text"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                   disabled={isLoading}
-                  placeholder="your.email@gmail.com hoặc username"
+                  placeholder="your_username"
                   className="w-full pl-12 pr-4 py-3 bg-surface-container border border-white/10 rounded-xl text-on-surface placeholder:text-on-surface-variant/50 outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all disabled:opacity-50"
                 />
               </div>
@@ -182,7 +182,7 @@ export default function Login({ onLoginSuccess }: LoginProps) {
           {/* Demo Account Note */}
           <div className="mt-8 p-4 bg-surface-container rounded-xl border border-white/5">
             <p className="text-xs text-on-surface-variant font-semibold mb-2">� Gợi ý:</p>
-            <p className="text-xs text-on-surface-variant">Sử dụng username hoặc email đã đăng ký. Bạn chưa có tài khoản? <button onClick={() => setShowRegister(true)} className="text-primary underline">Đăng ký tại đây</button></p>
+            <p className="text-xs text-on-surface-variant">Sử dụng username đã đăng ký. Bạn chưa có tài khoản? <button onClick={() => setShowRegister(true)} className="text-primary underline">Đăng ký tại đây</button></p>
           </div>
           <div className="mt-4 text-center">
             {!showRegister ? (

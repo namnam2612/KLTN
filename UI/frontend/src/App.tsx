@@ -350,10 +350,10 @@ export default function App() {
         <div className="mt-auto space-y-3 p-2">
           <div className={`flex items-center gap-3 p-2 rounded-xl bg-surface-container-high/50 transition-all duration-300 ${sidebarOpen ? '' : 'justify-center'}`}>
             <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-primary-container flex items-center justify-center overflow-hidden shrink-0">
-              <span className="text-on-primary-container font-bold text-sm">{user?.email?.charAt(0).toUpperCase() || 'U'}</span>
+              <span className="text-on-primary-container font-bold text-sm">{user?.username?.charAt(0).toUpperCase() || 'U'}</span>
             </div>
             <div className={`overflow-hidden transition-all duration-300 ${sidebarOpen ? '' : 'hidden'}`}>
-              <p className="text-sm font-bold text-on-surface truncate">{user?.email || 'User'}</p>
+              <p className="text-sm font-bold text-on-surface truncate">{user?.username || 'User'}</p>
               <p className="text-[10px] text-on-surface-variant capitalize">{user?.role === 'admin' ? '🔐 Admin' : '👤 User'}</p>
             </div>
           </div>
