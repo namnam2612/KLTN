@@ -49,6 +49,7 @@ interface Conversation {
 
 export default function App() {
   const { user, chatUserId, logout } = useAuth();
+  const ACTIVE_CONVERSATION_STORAGE_KEY = 'activeConversationId';
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -61,6 +62,7 @@ export default function App() {
 
   const [view, setView] = useState<'chat' | 'admin'>('chat');
   const [deleteTargetId, setDeleteTargetId] = useState<number | string | null>(null);
+  const [hasHydratedConversation, setHasHydratedConversation] = useState(false);
   const [knowledgeBase, setKnowledgeBase] = useState<Array<{
     name: string;
     type: string;
@@ -71,6 +73,23 @@ export default function App() {
   const apiHeaders = {
     'Content-Type': 'application/json',
     'X-User-Id': chatUserId, // Sẽ tự động cập nhật khi user thay đổi
+  };
+
+  const readStoredConversationId = (): number | string | null => {
+    const stored = localStorage.getItem(ACTIVE_CONVERSATION_STORAGE_KEY);
+    if (!stored) return null;
+
+    const parsed = Number(stored);
+    return Number.isNaN(parsed) ? stored : parsed;
+  };
+
+  const persistConversationId = (conversationId: number | string | null) => {
+    if (conversationId === null) {
+      localStorage.removeItem(ACTIVE_CONVERSATION_STORAGE_KEY);
+      return;
+    }
+
+    localStorage.setItem(ACTIVE_CONVERSATION_STORAGE_KEY, String(conversationId));
   };
 
   const scrollToBottom = () => {
@@ -91,11 +110,13 @@ export default function App() {
       const list = Array.isArray(data) ? data : (data?.conversations || []);
 
       setConversations(list);
-      if (preferActiveId !== undefined && preferActiveId !== null) {
-        setActiveConversationId(preferActiveId);
-      } else if (list.length > 0) {
-        setActiveConversationId(list[0].id);
+      const preferredId = preferActiveId ?? readStoredConversationId();
+      if (preferredId !== null && list.some((item: Conversation) => item.id === preferredId)) {
+        setActiveConversationId(preferredId);
+      } else {
+        setActiveConversationId(null);
       }
+      setHasHydratedConversation(false);
     } catch (error) {
       console.error('Load conversations error:', error);
     } finally {
@@ -105,7 +126,7 @@ export default function App() {
 
   useEffect(() => {
     if (chatUserId) {
-      loadConversations();
+      loadConversations(readStoredConversationId());
       return;
     }
 
@@ -113,10 +134,28 @@ export default function App() {
     setConversations([]);
     setMessages([]);
     setActiveConversationId(null);
+    persistConversationId(null);
+    setHasHydratedConversation(false);
   }, [chatUserId]);
+
+  useEffect(() => {
+    persistConversationId(activeConversationId);
+  }, [activeConversationId]);
+
+  useEffect(() => {
+    if (!chatUserId) return;
+    if (isLoadingConversations) return;
+    if (hasHydratedConversation) return;
+    if (!activeConversationId) return;
+    if (!conversations.some((item) => item.id === activeConversationId)) return;
+
+    setHasHydratedConversation(true);
+    loadConversation(activeConversationId);
+  }, [chatUserId, isLoadingConversations, hasHydratedConversation, activeConversationId, conversations]);
 
   const loadConversation = async (conversationId: number | string) => {
     setActiveConversationId(conversationId);
+    setHasHydratedConversation(true);
     try {
       const response = await fetch(`${CHAT_API_URL}/api/conversations/${conversationId}/messages`, {
         headers: apiHeaders,
@@ -213,6 +252,7 @@ export default function App() {
 
       if (nextConversationId) {
         setActiveConversationId(nextConversationId);
+        persistConversationId(nextConversationId);
       }
 
       let aiContent = '';
@@ -276,7 +316,7 @@ export default function App() {
         <motion.button 
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          onClick={() => { setMessages([]); setView('chat'); setActiveConversationId(null); }}
+          onClick={() => { setMessages([]); setView('chat'); setActiveConversationId(null); persistConversationId(null); }}
           className={`mb-6 flex items-center justify-center gap-2 py-3 px-4 bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-headline font-bold rounded-xl shadow-lg shadow-primary/10 transition-all duration-300 ${sidebarOpen ? 'w-full' : 'w-12'}`}
         >
           <Plus className="w-4 h-4" />
@@ -304,7 +344,10 @@ export default function App() {
           {conversations.map((item) => (
             <div
               key={item.id}
-              onClick={() => loadConversation(item.id)}
+              onClick={() => {
+                persistConversationId(item.id);
+                loadConversation(item.id);
+              }}
               className={`group flex items-center gap-3 p-3 rounded-lg transition-all duration-300 cursor-pointer ${activeConversationId === item.id ? 'bg-surface-container-high text-primary' : 'text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface'}`}
             >
               <span className={`text-sm font-medium truncate transition-all duration-300 ${sidebarOpen ? 'opacity-100' : 'opacity-0 hidden'}`}>
@@ -463,7 +506,7 @@ export default function App() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
                   {[
                     { icon: Lightbulb, color: 'text-primary', title: 'Quy đổi điểm', desc: 'Cách quy đổi điểm IELTS.' },
-                    { icon: Code2, color: 'text-tertiary', title: 'Thủ tục bảo lưu', desc: 'Hướng dẫn cách làm thủ tục bảo lưu học phần.' },
+                    { icon: Code2, color: 'text-tertiary', title: 'Thủ tục nghỉ học', desc: 'Thủ tục nghỉ học tạm thời.' },
                     { icon: FileEdit, color: 'text-secondary', title: 'Cách đăng ký học phần', desc: 'Hướng dẫn cách đăng ký học phần.' }
                   ].map((item, i) => (
                     <motion.div 
