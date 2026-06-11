@@ -18,6 +18,54 @@ export interface CreateMessageResponse {
   conversation_id: string;
 }
 
+export async function askQuestion(
+  baseUrl: string,
+  question: string
+): Promise<AskResponse> {
+  const response = await fetch(`${baseUrl}/ask`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ question }),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`API error ${response.status}: ${errorText}`);
+  }
+
+  return response.json();
+}
+
+export async function saveAskedMessage(
+  baseUrl: string,
+  userId: string,
+  content: string,
+  answer: string,
+  conversationId?: string | number | null
+): Promise<CreateMessageResponse> {
+  const response = await fetch(`${baseUrl}/api/asked-messages`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-User-Id": userId,
+    },
+    body: JSON.stringify({
+      content,
+      answer,
+      conversation_id: conversationId || null,
+    }),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`API error ${response.status}: ${errorText}`);
+  }
+
+  return response.json();
+}
+
 export async function createMessageAuto(
   baseUrl: string,
   userId: string,

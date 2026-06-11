@@ -28,7 +28,7 @@ import {
   LogOut,
   Shield
 } from 'lucide-react';
-import { createMessageAuto, createMessageInConversation } from './services/chatApi';
+import { askQuestion, saveAskedMessage } from './services/chatApi';
 import { motion, AnimatePresence } from 'motion/react';
 import { useState, useRef, useEffect } from 'react';
 import Markdown from 'react-markdown';
@@ -243,12 +243,16 @@ export default function App() {
     setIsTyping(true);
 
     try {
-      const data = activeConversationId
-        ? await createMessageInConversation(CHAT_API_URL, chatUserId, activeConversationId, currentInput)
-        : await createMessageAuto(CHAT_API_URL, chatUserId, currentInput);
-
-      const answer = data.answer || 'Không có câu trả lời từ hệ thống.';
-      const nextConversationId = data.conversation_id || activeConversationId;
+      const askData = await askQuestion(CHAT_API_URL, currentInput);
+      const answer = askData.answer || 'Không có câu trả lời từ hệ thống.';
+      const savedData = await saveAskedMessage(
+        CHAT_API_URL,
+        chatUserId,
+        currentInput,
+        answer,
+        activeConversationId
+      );
+      const nextConversationId = savedData.conversation_id || activeConversationId;
 
       if (nextConversationId) {
         setActiveConversationId(nextConversationId);
@@ -346,9 +350,10 @@ export default function App() {
               key={item.id}
               onClick={() => {
                 persistConversationId(item.id);
+                setView('chat');
                 loadConversation(item.id);
               }}
-              className={`group flex items-center gap-3 p-3 rounded-lg transition-all duration-300 cursor-pointer ${activeConversationId === item.id ? 'bg-surface-container-high text-primary' : 'text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface'}`}
+              className={`group flex items-center gap-3 p-3 rounded-lg transition-all duration-300 cursor-pointer ${view === 'chat' && activeConversationId === item.id ? 'bg-surface-container-high text-primary' : 'text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface'}`}
             >
               <span className={`text-sm font-medium truncate transition-all duration-300 ${sidebarOpen ? 'opacity-100' : 'opacity-0 hidden'}`}>
                 {item.title || 'Untitled'}

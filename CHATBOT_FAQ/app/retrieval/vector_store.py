@@ -1,4 +1,5 @@
 import json
+import shutil
 from pathlib import Path
 
 from langchain_chroma import Chroma
@@ -32,15 +33,28 @@ def load_documents_from_jsonl(jsonl_path: Path) -> list[Document]:
 
 def build_vector_store():
     chunks_file = Path(settings.CHUNKS_DIR) / "chunks.jsonl"
-    persist_dir = settings.INDEX_DIR
+    persist_dir = Path(settings.INDEX_DIR)
+
+    if not chunks_file.exists():
+        raise FileNotFoundError(
+            f"{chunks_file} does not exist. Run `python -m scripts.build_chunks` first."
+        )
+
+    docs = load_documents_from_jsonl(chunks_file)
+
+    if not docs:
+        raise ValueError(f"{chunks_file} does not contain any chunks.")
 
     embeddings = get_embedding_model()
-    docs = load_documents_from_jsonl(chunks_file)
+
+    if persist_dir.exists():
+        shutil.rmtree(persist_dir)
+    persist_dir.parent.mkdir(parents=True, exist_ok=True)
 
     vectordb = Chroma.from_documents(
         documents=docs,
         embedding=embeddings,
-        persist_directory=persist_dir
+        persist_directory=str(persist_dir)
     )
     return vectordb
 

@@ -16,6 +16,10 @@ interface AdminProps {
   onBack: () => void;
 }
 
+function getFileExtension(fileName: string): string {
+  return fileName.split('.').pop()?.toLowerCase() || '';
+}
+
 export default function Admin({ knowledgeBase, setKnowledgeBase, onBack }: AdminProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isUploading, setIsUploading] = useState(false);
@@ -29,26 +33,24 @@ export default function Admin({ knowledgeBase, setKnowledgeBase, onBack }: Admin
     setIsUploading(true);
 
     for (const file of Array.from(files)) {
-      // Validate file type
-      const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-      if (!allowedTypes.includes(file.type)) {
+      const extension = getFileExtension(file.name);
+      const allowedExtensions = ['pdf', 'doc', 'docx'];
+      if (!allowedExtensions.includes(extension)) {
         setError('Chỉ hỗ trợ file PDF hoặc Word (.docx, .doc)');
-        setIsUploading(false);
         continue;
       }
 
       // Validate file size (max 10MB)
       if (file.size > 10 * 1024 * 1024) {
         setError('Kích thước file không được vượt quá 10MB');
-        setIsUploading(false);
         continue;
       }
 
       const newFile: KnowledgeFile = {
         name: file.name,
-        type: file.type,
+        type: file.type || extension,
         size: file.size,
-        uploadedAt: new Date().toLocaleString('vi-VN')
+        uploadedAt: new Date().toLocaleString('vi-VN'),
       };
 
       setKnowledgeBase(prev => [newFile, ...prev]);

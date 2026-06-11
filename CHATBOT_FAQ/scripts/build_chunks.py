@@ -6,6 +6,18 @@ from app.core.config import settings
 from app.ingest.chunker import build_text_splitter
 
 
+def normalize_source_path(source_file: str) -> str:
+    return source_file.replace("\\", "/")
+
+
+def path_name(source_file: str) -> str:
+    return re.split(r"[\\/]", source_file)[-1]
+
+
+def path_stem(source_file: str) -> str:
+    return Path(path_name(source_file)).stem
+
+
 def infer_category_and_subcategory(source_file: str) -> tuple[str, str]:
     path_str = source_file.lower().replace("/", "\\")
 
@@ -99,7 +111,7 @@ def extract_section_title(chunk_text: str) -> str:
 
 
 def build_search_text(source_file: str, page_text: str, section_title: str) -> str:
-    filename = Path(source_file).stem
+    filename = path_stem(source_file)
     boosted = f"{filename}\n{section_title}\n{page_text}"
     return boosted.strip()
 
@@ -112,10 +124,10 @@ def main():
     splitter = build_text_splitter()
     all_chunks = []
 
-    for json_file in cleaned_root.rglob("*.json"):
+    for json_file in sorted(cleaned_root.rglob("*.json"), key=lambda p: p.as_posix().lower()):
         data = json.loads(json_file.read_text(encoding="utf-8"))
-        source_file = data["source_file"]
-        filename = Path(source_file).name
+        source_file = normalize_source_path(data["source_file"])
+        filename = path_name(source_file)
         category, sub_category = infer_category_and_subcategory(source_file)
         document_type = infer_document_type(category, sub_category, filename)
 

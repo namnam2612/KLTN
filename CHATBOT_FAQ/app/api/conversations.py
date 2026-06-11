@@ -50,6 +50,12 @@ class CreateMessageResponse(BaseModel):
 	conversation_id: str
 
 
+class SaveAskedMessageRequest(BaseModel):
+	content: str
+	answer: str
+	conversation_id: Optional[str] = None
+
+
 class UpdateTitleRequest(BaseModel):
 	title: str
 
@@ -460,6 +466,65 @@ def create_message_auto(req: CreateMessageRequest, x_user_id: Optional[str] = He
 		)
 
 	return CreateMessageResponse(answer=answer, conversation_id=conversation_id)
+
+
+@router.post("/asked-messages", response_model=CreateMessageResponse)
+def save_asked_message(req: SaveAskedMessageRequest, x_user_id: Optional[str] = Header(default=None)):
+	user_id = _require_user_id(x_user_id)
+	conversation_id = req.conversation_id or str(uuid4())
+	now = datetime.utcnow().isoformat(timespec="seconds")
+
+	with _get_conn() as conn:
+		if req.conversation_id:
+			conv = conn.execute(
+				"SELECT id, title FROM conversations WHERE id = ? AND user_id = ?",
+				(conversation_id, user_id),
+			).fetchone()
+			if not conv:
+				raise HTTPException(status_code=404, detail="Conversation not found")
+
+			if not conv["title"] or conv["title"] == "Cuộc trò chuyện mới":
+				conn.execute(
+					"""
+					UPDATE conversations
+					SET title = ?, updated_at = ?
+					WHERE id = ?
+					""",
+					(_build_conversation_title(req.content), now, conversation_id),
+				)
+		else:
+			conn.execute(
+				"""
+				INSERT INTO conversations (id, user_id, title, created_at, updated_at)
+				VALUES (?, ?, ?, ?, ?)
+				""",
+				(conversation_id, user_id, _build_conversation_title(req.content), now, now),
+			)
+
+		conn.execute(
+			"""
+			INSERT INTO messages (id, conversation_id, role, content, created_at)
+			VALUES (?, ?, ?, ?, ?)
+			""",
+			(str(uuid4()), conversation_id, "user", req.content, now),
+		)
+		conn.execute(
+			"""
+			INSERT INTO messages (id, conversation_id, role, content, created_at)
+			VALUES (?, ?, ?, ?, ?)
+			""",
+			(str(uuid4()), conversation_id, "assistant", req.answer, now),
+		)
+		conn.execute(
+			"""
+			UPDATE conversations
+			SET updated_at = ?
+			WHERE id = ?
+			""",
+			(now, conversation_id),
+		)
+
+	return CreateMessageResponse(answer=req.answer, conversation_id=conversation_id)
 
 
 @router.get("/conversations/{conversation_id}/messages", response_model=list[MessageResponse])
