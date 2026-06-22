@@ -4,6 +4,7 @@ myenv/
 .env
 __pycache__/
 *.sqlite3
+data/chunks/
 data/indexes/
 .pytest_cache/
 *.log

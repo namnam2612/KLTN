@@ -1,12 +1,20 @@
 import redis from 'redis';
-import { getNumberEnv, getRequiredEnv } from '../config/env';
+import { getNumberEnv, getOptionalEnv, getRequiredEnv } from '../config/env';
 
-const redisClient = redis.createClient({
-  socket: {
-    host: getRequiredEnv('REDIS_HOST'),
-    port: getNumberEnv('REDIS_PORT'),
-  },
-});
+const REDIS_URL = getOptionalEnv('REDIS_URL', '');
+const REDIS_PASSWORD = getOptionalEnv('REDIS_PASSWORD', '');
+
+const redisClient = REDIS_URL
+  ? redis.createClient({
+      url: REDIS_URL,
+    })
+  : redis.createClient({
+      socket: {
+        host: getRequiredEnv('REDIS_HOST'),
+        port: getNumberEnv('REDIS_PORT'),
+      },
+      password: REDIS_PASSWORD || undefined,
+    });
 
 redisClient.on('error', (err) => console.log('Redis Client Error', err));
 redisClient.connect();

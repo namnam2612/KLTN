@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     APP_ENV: str = "dev"
     APP_HOST: str = "127.0.0.1"
     APP_PORT: int = 8000
+    CORS_ORIGINS: str = "http://localhost:3000"
 
     RAW_DIR: str = "data/raw"
     EXTRACTED_DIR: str = "data/extracted"
